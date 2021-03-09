@@ -37,7 +37,7 @@ class Personnage {
 	/**
 	 * @brief Position en x et y du personnage
 	*/
-	int posX, posY;
+	unsigned int posX, posY;
 
 	/**
 	 * @brief Tableau de bombes du personnage
@@ -54,7 +54,7 @@ class Personnage {
 	 * @param x : Entier
 	 * @param y : Entier
 	*/
-	Personnage(string &pnom, int x, int y);
+	Personnage(string &pnom, unsigned int x, unsigned int y);
 
 	/**
 	 * @brief Destruction du personnage de l'utilisateur
@@ -85,13 +85,13 @@ class Personnage {
 	 * @brief Mutateur pour la position en x
 	 * @param x : Entier
 	*/
-	void setPosX(const int &x);
+	void setPosX(const unsigned int &x);
 
 	/**
 	 * @brief Mutateur pour la position en y
 	 * @param y : Entier
 	*/
-	void setPosY(const int &y);
+	void setPosY(const unsigned int &y);
 
 	/**
 	 * @brief Mutateur pour la vitesse en x,y
@@ -101,10 +101,11 @@ class Personnage {
 	void setVitesse(const int &x, const int &y);
 
 	/**
-	 * @brief Deplacement du personnage
+	 * @brief Déplacement du personnage
 	 * @param Terrain : Classe Terrain
-	 * @param jsp : Entier
+	 * @param x : Entier
 	*/
+
 	
 };
 
