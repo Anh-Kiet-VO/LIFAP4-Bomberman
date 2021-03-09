@@ -41,11 +41,6 @@ class Brique{
         bool detruit;
 
         /**
-         * @brief Le booléen pour indiquer si la brique est détruite
-        */
-        bool detruit;
-
-        /**
          * @brief Constructeur par défaut de la classe : initialise sa position, si il a un bonus, son type de bonus et sa couleur
         */
         Brique();
