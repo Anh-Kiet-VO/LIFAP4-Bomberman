@@ -1,6 +1,6 @@
 /**
   @brief Module gérant un tableau de Brique
-  @file Brique.h
+  @file TabBrique.h
 
   @date 9 mars 2021
 */      
