@@ -8,23 +8,23 @@ using namespace std;
 Brique::Brique(){
     posX = posY = 0;
     bonus = false;
-    typeBonus = "NULL";
+    //typeBonus = "NULL";
     coulBrique = Couleur(0,0,0);
 }
 
-Brique::Brique(int x, int y, bool det, string typeBon, Couleur c){
+Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur c){
     assert(x >= 0 && y >= 0);
     posX = x;
     posY = y;
-    détruit = det;
+    detruit = det;
     typeBonus = typeBon;
     coulBrique = c;
 }
 
-int Brique::getPosX() const{
+unsigned int Brique::getPosX() const{
     return posX;
 }
 
-int Brique::getPosY() const{
+unsigned int Brique::getPosY() const{
     return posY;
 }

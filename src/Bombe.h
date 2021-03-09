@@ -8,7 +8,7 @@ class Bombe {
 
     public:
     Bombe();
-    Bombe(unsigned int positionX, unsigned int positionY, unsigned int porteeBombe);
+    Bombe(unsigned int positionX, unsigned int positionY, unsigned int nouvPortee);
     ~Bombe();
 
     unsigned int getPosX() const;

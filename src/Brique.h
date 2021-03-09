@@ -10,6 +10,7 @@
 
 #include "Couleur.h"
 #include <string>
+using namespace std;
 
 class Brique{
     private:
@@ -17,7 +18,7 @@ class Brique{
          * @brief
          * Le booléen pour indiquer si la brique est détruite
         */
-        bool détruit;
+        bool detruit;
 
         /**
          * @brief
@@ -62,7 +63,7 @@ class Brique{
          @param typeBon : chaine de caractères
          @param coul : Couleur
         */
-        Brique(int x, int y, bool det, string typeBon, Couleur c);
+        Brique(unsigned int x, unsigned int y, bool det, string typeBon, Couleur c);
 
         /**
          * @brief
@@ -75,13 +76,13 @@ class Brique{
          * @brief
          * Accesseur de la position en x d'une brique
         */
-        int getPosX() const;
+        unsigned int getPosX() const;
 
         /**
          * @brief
          * Accesseur de la position en y d'une brique
         */
-        int getPosY() const;
+        unsigned int getPosY() const;
 };
 
 #endif
