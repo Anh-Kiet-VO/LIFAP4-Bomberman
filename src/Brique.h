@@ -10,6 +10,7 @@
 
 #include "Couleur.h"
 #include <string>
+using namespace std;
 
 class Brique{
     private:

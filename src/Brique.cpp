@@ -8,7 +8,7 @@ using namespace std;
 Brique::Brique(){
     posX = posY = 0;
     bonus = false;
-    typeBonus = "NULL";
+    //typeBonus = "NULL";
     coulBrique = Couleur(0,0,0);
 }
 
