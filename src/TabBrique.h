@@ -28,49 +28,53 @@ class TabBrique{
     public:
         /**
          * @brief
-         * Le nombre de briques
+         * Constructeur par défaut de la classe: initialise un tableau
+         * par défaut et un nombre de briques par défaut.
         */
         TabBrique();
 
         /**
          * @brief
-         * Le nombre de briques
+         * Constructeur de la classe: initialise un tableau
+         * et un nombre de briques.
+         @param tab : tableau dynamique
+         @param n : entier
         */
-        TabBrique();
+        TabBrique(unsigned int n);
 
         /**
          * @brief
-         * Le nombre de briques
+         * Destructeur de la classe :
         */
         ~TabBrique();
 
         /**
          * @brief
-         * Le nombre de briques
+         * Accesseur du nombre de briques
         */
         unsigned int getNbBrique();
 
         /**
          * @brief
-         * Le nombre de briques
+         * Accesseur de l'état d'une brique
         */
-        unsigned int getDetruit();
+        bool getDetruit(unsigned int bri);
 
         /**
          * @brief
-         * Le nombre de briques
+         * Mutateur de l'état d'une brique
         */
         void setDetruit(unsigned int bri, bool det);
 
         /**
          * @brief
-         * Le nombre de briques
+         * Accesseur d'une brique
         */
         Brique getBrique(unsigned int nbBrique);
 
         /**
          * @brief
-         * Le nombre de briques
+         * Test de regression
         */
         void testRegression();
 };

@@ -47,7 +47,7 @@ class Brique{
 
         /**
          * @brief
-         * Constructeur par défaut de la classe: initialise sa position, si il a un bonus,
+         * Constructeur par défaut de la classe: initialise sa position par défaut, son bonus par défaut,
          * son type de bonus et sa couleur.
          @param posX : 
         */
@@ -61,7 +61,7 @@ class Brique{
          @param y : entier
          @param det : booléen
          @param typeBon : chaine de caractères
-         @param coul : Couleur
+         @param c : Couleur
         */
         Brique(unsigned int x, unsigned int y, bool det, string typeBon, Couleur c);
 
