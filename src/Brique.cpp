@@ -12,7 +12,7 @@ Brique::Brique(){
     coulBrique = Couleur(0,0,0);
 }
 
-Brique::Brique(int x, int y, bool det, string typeBon, Couleur c){
+Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur c){
     assert(x >= 0 && y >= 0);
     posX = x;
     posY = y;
@@ -21,10 +21,10 @@ Brique::Brique(int x, int y, bool det, string typeBon, Couleur c){
     coulBrique = c;
 }
 
-int Brique::getPosX() const{
+unsigned int Brique::getPosX() const{
     return posX;
 }
 
-int Brique::getPosY() const{
+unsigned int Brique::getPosY() const{
     return posY;
 }
