@@ -9,8 +9,8 @@
 #define BRIQUE_H
 
 #include "Couleur.h"
-
 #include <string>
+
 class Brique{
     private:
         /**
@@ -71,8 +71,17 @@ class Brique{
         */
         ~Brique();
 
-        int getPosX();
-        int getPosY();
+        /**
+         * @brief
+         * Accesseur de la position en x d'une brique
+        */
+        int getPosX() const;
+
+        /**
+         * @brief
+         * Accesseur de la position en y d'une brique
+        */
+        int getPosY() const;
 };
 
 #endif

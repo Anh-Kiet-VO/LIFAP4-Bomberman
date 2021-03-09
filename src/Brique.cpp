@@ -21,3 +21,10 @@ Brique::Brique(int x, int y, bool det, string typeBon, Couleur c){
     coulBrique = c;
 }
 
+int Brique::getPosX() const{
+    return posX;
+}
+
+int Brique::getPosY() const{
+    return posY;
+}
