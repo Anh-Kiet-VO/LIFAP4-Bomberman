@@ -30,13 +30,13 @@ class Personnage {
 	bool vivant;
 
 	/**
-	 * @brief Vitesse en x et y du personnage
+	 * @brief Vitesse en X et Y du personnage
 	*/
 	float vitesseX, vitesseY;
 
 	public:
 	/**
-	 * @brief Position en x et y du personnage
+	 * @brief Position en X et Y du personnage
 	*/
 	unsigned int posX, posY;
 
@@ -51,9 +51,9 @@ class Personnage {
 
 	/**
 	 * @brief Création du personnage de l'utilisateur
-	 * @param pnom : Chaîne de caractère
-	 * @param x : Entier
-	 * @param y : Entier
+	 * @param pnom : chaîne de caractère
+	 * @param x : entier
+	 * @param y : entier
 	*/
 	Personnage(string &pnom, unsigned int x, unsigned int y);
 
@@ -63,48 +63,48 @@ class Personnage {
 	~Personnage();
 
 	/**
-	 * @brief Accesseur pour la position en x
+	 * @brief Accesseur pour la position en X
 	*/
 	int getPosX() const;
 
 	/**
-	 * @brief Accesseur pour la position en y
+	 * @brief Accesseur pour la position en Y
 	*/
 	int getPosY() const;
 
 	/**
-	 * @brief Accesseur pour la vitesse en x
+	 * @brief Accesseur pour la vitesse en X
 	*/
 	int getVitesseX() const;
 
 	/**
-	 * @brief Accesseur pour la vitesse en y
+	 * @brief Accesseur pour la vitesse en Y
 	*/
 	int getVitesseY() const;
 
 	/**
-	 * @brief Mutateur pour la position en x
-	 * @param x : Entier
+	 * @brief Mutateur pour la position en X
+	 * @param x : entier
 	*/
 	void setPosX(const unsigned int &x);
 
 	/**
-	 * @brief Mutateur pour la position en y
-	 * @param y : Entier
+	 * @brief Mutateur pour la position en Y
+	 * @param y : entier
 	*/
 	void setPosY(const unsigned int &y);
 
 	/**
-	 * @brief Mutateur pour la vitesse en x,y
-	 * @param x : Entier
-	 * @param y : Entier
+	 * @brief Mutateur pour la vitesse en X, Y
+	 * @param x : entier
+	 * @param y : entier
 	*/
 	void setVitesse(const int &x, const int &y);
 
 	/**
 	 * @brief Déplacement du personnage
-	 * @param Terrain : Classe Terrain
-	 * @param x : Entier
+	 * @param Terrain : classe Terrain
+	 * @param x : entier
 	*/
 	void deplacement();
 	
