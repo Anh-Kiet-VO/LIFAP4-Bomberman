@@ -51,9 +51,9 @@ class Personnage {
 
 	/**
 	 * @brief Création du personnage de l'utilisateur
-	 * @param pnom : Chaîne de caractère
-	 * @param x : Entier
-	 * @param y : Entier
+	 * @param pnom : chaîne de caractère
+	 * @param x : entier
+	 * @param y : entier
 	*/
 	Personnage(string &pnom, unsigned int x, unsigned int y);
 
@@ -84,29 +84,49 @@ class Personnage {
 
 	/**
 	 * @brief Mutateur pour la position en x
-	 * @param x : Entier
+	 * @param x : entier
 	*/
 	void setPosX(const unsigned int &x);
 
 	/**
 	 * @brief Mutateur pour la position en y
-	 * @param y : Entier
+	 * @param y : entier
 	*/
 	void setPosY(const unsigned int &y);
 
 	/**
 	 * @brief Mutateur pour la vitesse en x,y
-	 * @param x : Entier
-	 * @param y : Entier
+	 * @param x : entier
+	 * @param y : entier
 	*/
 	void setVitesse(const int &x, const int &y);
 
 	/**
 	 * @brief Déplacement du personnage
-	 * @param Terrain : Classe Terrain
-	 * @param x : Entier
+	 * @param Terrain : classe Terrain
+	 * @param x : entier
 	*/
 	void deplacement();
+
+	/**
+	 * @brief Décremente la position en x
+	*/
+	void moveLeft();
+
+	/**
+	 * @brief Incrémente la position en x
+	*/
+	void moveRight();
+
+	/**
+	 * @brief Décremente la position en y
+	*/
+	void moveUp();
+
+	/**
+	 * @brief Décremente la position en y
+	*/
+	void moveDown();
 	
 };
 
