@@ -17,7 +17,7 @@ using namespace std;
 
 class TabBrique{
     private:
-        //vector<Brique> tabBrique;
+        vector<Brique> tabBrique;
         
         /**
          * @brief
@@ -40,7 +40,7 @@ class TabBrique{
          @param tab : tableau dynamique
          @param n : entier
         */
-        TabBrique(unsigned int n);
+        TabBrique(vector<Brique> tab, unsigned int n);
 
         /**
          * @brief
