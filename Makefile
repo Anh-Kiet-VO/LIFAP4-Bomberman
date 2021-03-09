@@ -18,8 +18,8 @@ all: ./obj/Couleur.o ./obj/Personnage.o ./obj/Brique.o ./obj/TabBrique.o ./obj/B
 ./obj/Bombe.o: ./src/Bombe.cpp ./src/Bombe.h
 	$(CC) $(FLAGS) ./src/Bombe.cpp -o ./obj/Bombe.o
 
-./obj/TabBombe.o: ./src/Bombe.cpp ./src/Bombe.h
-	$(CC) $(FLAGS) ./src/Bombe.cpp -o ./obj/Bombe.o
+./obj/TabBombe.o: ./src/TabBombe.cpp ./src/TabBombe.h
+	$(CC) $(FLAGS) ./src/TabBombe.cpp -o ./obj/TabBombe.o
 
 doc:
 	doxygen -g doc/image.doxy

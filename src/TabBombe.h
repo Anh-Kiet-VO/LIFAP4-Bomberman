@@ -10,9 +10,11 @@
 
 #include "Bombe.h"
 #include <vector>
+using namespace std;
 
 class TabBombe {
     private:
+    vector<Bombe> tabBombe;
     unsigned int nbBombe;
 
     public:
