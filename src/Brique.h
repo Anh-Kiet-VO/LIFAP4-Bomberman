@@ -15,16 +15,7 @@ using namespace std;
 class Brique{
     private:
         /**
-<<<<<<< HEAD
-         * @brief Le booléen pour indiquer si la brique contient un bonus
-=======
-         * @brief Booléen pour indiquer si la brique est détruite
-        */
-        bool detruit;
-
-        /**
          * @brief Booléen pour indiquer si la brique contient un bonus
->>>>>>> d831c3508f4656973865b546f7e572f032c31d47
         */
         bool bonus;
 
@@ -45,37 +36,27 @@ class Brique{
         int posX, posY;
         
         /**
+         * @brief Booléen pour indiquer si la brique est détruite
+        */
+        bool detruit;
+
+        /**
          * @brief Le booléen pour indiquer si la brique est détruite
         */
         bool detruit;
 
         /**
-<<<<<<< HEAD
-         * @brief Constructeur par défaut de la classe: initialise sa position, si il a un bonus,
-         * son type de bonus et sa couleur.
-=======
          * @brief Constructeur par défaut de la classe : initialise sa position, si il a un bonus, son type de bonus et sa couleur
->>>>>>> d831c3508f4656973865b546f7e572f032c31d47
         */
         Brique();
 
         /**
-<<<<<<< HEAD
-         * @brief Constructeur de la classe: initialise sa position, si il a un bonus,
-         * son type de bonus et sa couleur.
-         * @param x : Entier
-         * @param y : Entier
-         * @param det : Booléen
-         * @param typeBon : Chaine de caractères
-         * @param c : Couleur
-=======
          * @brief Constructeur de la classe : initialise sa position, si il a un bonus, son type de bonus et sa couleur
          @param x : entier
          @param y : entier
          @param det : booléen
          @param typeBon : chaîne de caractères
          @param c : Couleur
->>>>>>> d831c3508f4656973865b546f7e572f032c31d47
         */
         Brique(unsigned int x, unsigned int y, bool det, string typeBon, Couleur c);
 
