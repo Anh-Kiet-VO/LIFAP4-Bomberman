@@ -17,7 +17,7 @@ class Brique{
          * @brief
          * Le booléen pour indiquer si la brique est détruite
         */
-        bool détruit;
+        bool detruit;
 
         /**
          * @brief

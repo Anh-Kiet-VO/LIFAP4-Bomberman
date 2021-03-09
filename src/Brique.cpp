@@ -16,7 +16,7 @@ Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur 
     assert(x >= 0 && y >= 0);
     posX = x;
     posY = y;
-    détruit = det;
+    detruit = det;
     typeBonus = typeBon;
     coulBrique = c;
 }
