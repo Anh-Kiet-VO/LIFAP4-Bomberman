@@ -16,3 +16,18 @@ Bombe::~Bombe() {
     portee = 0;
 }
 
+unsigned int Bombe::getPosX() const {
+  return posX;
+}
+
+unsigned int Bombe::getPosY() const {
+  return posY;
+}
+
+unsigned int Bombe::getPortee() const {
+  return portee;
+}
+
+void Bombe::setPortee(unsigned int p) {
+    portee = p;
+}

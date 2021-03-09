@@ -2,16 +2,13 @@
 #include <cassert>
 
 Personnage::Personnage() {
-	posX = 0;
-	posY = 0;
-
+	posX = posY = 0;
 	vitesseX = vitesseY = 0;
 	vivant = true;
-
-	Couleur p = Couleur(0,0,0);
+	coulPerso = Couleur(0,0,0);
 }
 
-Personnage::Personnage(string &pnom, int x, int y) {
+Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
 	assert(x >= 0 && y >= 0);
 
 	nom = pnom;
@@ -25,14 +22,14 @@ Personnage::Personnage(string &pnom, int x, int y) {
 	vitesseX = vitesseY = 1;
 	vivant = true;
 	
-	Couleur p = Couleur(255,255,255);
+	coulPerso = Couleur(255,255,255);
 }
 
 Personnage::~Personnage() {
 	nom = "";
 	vivant = false;
-	vitesseX = vitesseY = NULL;
-	bombe = NULL;
+	vitesseX = vitesseY = 0.0;
+	//bombe = NULL;
 
 }
 
@@ -52,12 +49,12 @@ int Personnage::getVitesseY() const {
 	return vitesseY;
 }
 
-void Personnage::setPosX(const int &x) {
+void Personnage::setPosX(const unsigned int &x) {
 	assert(posX >= 0);
 	posX = x;
 }
 
-void Personnage::setPosY(const int &y) {
+void Personnage::setPosY(const unsigned int &y) {
 	assert(posY >= 0);
 	posY = y;
 }
