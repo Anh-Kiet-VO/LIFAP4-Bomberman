@@ -27,9 +27,9 @@ class Bombe {
 
     /**
      * @brief Constructeur de la classe : initialise la position avec positionX, positionY et la portée avec nouvPortee
-     * @param positionX : Unsigned int
-     * @param positionY : Unsigned int
-     * @param nouvPortee : Unsigned int 
+     * @param positionX : unsigned int
+     * @param positionY : unsigned int
+     * @param nouvPortee : unsigned int 
     */
     Bombe(unsigned int positionX, unsigned int positionY, unsigned int nouvPortee);
 
