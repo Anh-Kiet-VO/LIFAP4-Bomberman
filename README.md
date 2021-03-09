@@ -1,8 +1,8 @@
 # LIFAP4 - Bomberman
 
 ## TO DO LIST
-- [ ] Finir diagramme des classes UML + Gantt
-- [ ] Cahier des charges
+- [X] Finir diagramme des classes UML + Gantt
+- [X] Cahier des charges
 
 
 ### Étudiants :
