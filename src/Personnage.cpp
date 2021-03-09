@@ -65,7 +65,9 @@ void Personnage::setVitesse(const int &x, const int &y) {
 	vitesseY = y;
 }
 
-void Personnage::Deplacement () {
+// ================================== PAS FINI ================================
+/*
+void Personnage::deplacement () {
 	// Creation d'une nouvelle fenetre en mode texte
 	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
     WinTXT win (jeu.getConstTerrain().getDimX(),jeu.getConstTerrain().getDimY());
@@ -96,3 +98,4 @@ void Personnage::Deplacement () {
 
 	} while (ok);
 }
+*/
