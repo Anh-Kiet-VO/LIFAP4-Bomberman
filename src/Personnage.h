@@ -30,13 +30,13 @@ class Personnage {
 	bool vivant;
 
 	/**
-	 * @brief Vitesse en x et y du personnage
+	 * @brief Vitesse en X et Y du personnage
 	*/
 	float vitesseX, vitesseY;
 
 	public:
 	/**
-	 * @brief Position en x et y du personnage
+	 * @brief Position en X et Y du personnage
 	*/
 	unsigned int posX, posY;
 
@@ -63,39 +63,51 @@ class Personnage {
 	~Personnage();
 
 	/**
-	 * @brief Accesseur pour la position en x
+	 * @brief Accesseur pour la position en X
 	*/
 	int getPosX() const;
 
 	/**
-	 * @brief Accesseur pour la position en y
+	 * @brief Accesseur pour la position en Y
 	*/
 	int getPosY() const;
 
 	/**
-	 * @brief Accesseur pour la vitesse en x
+	 * @brief Accesseur pour la vitesse en X
 	*/
 	int getVitesseX() const;
 
 	/**
-	 * @brief Accesseur pour la vitesse en y
+	 * @brief Accesseur pour la vitesse en Y
 	*/
 	int getVitesseY() const;
 
 	/**
+<<<<<<< HEAD
 	 * @brief Mutateur pour la position en x
+=======
+	 * @brief Mutateur pour la position en X
+>>>>>>> 879a701c96dc348852f082798bf9b13844d14b47
 	 * @param x : entier
 	*/
 	void setPosX(const unsigned int &x);
 
 	/**
+<<<<<<< HEAD
 	 * @brief Mutateur pour la position en y
+=======
+	 * @brief Mutateur pour la position en Y
+>>>>>>> 879a701c96dc348852f082798bf9b13844d14b47
 	 * @param y : entier
 	*/
 	void setPosY(const unsigned int &y);
 
 	/**
+<<<<<<< HEAD
 	 * @brief Mutateur pour la vitesse en x,y
+=======
+	 * @brief Mutateur pour la vitesse en X, Y
+>>>>>>> 879a701c96dc348852f082798bf9b13844d14b47
 	 * @param x : entier
 	 * @param y : entier
 	*/
