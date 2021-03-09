@@ -9,6 +9,7 @@
 
 #include "Couleur.h"
 #include <string>
+
 using namespace std;
 
 class Personnage {
@@ -105,7 +106,7 @@ class Personnage {
 	 * @param Terrain : Classe Terrain
 	 * @param x : Entier
 	*/
-
+	void deplacement();
 	
 };
 
