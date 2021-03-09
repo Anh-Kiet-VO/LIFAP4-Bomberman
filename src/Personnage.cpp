@@ -5,6 +5,10 @@ Personnage::Personnage() {
 	posX = 0;
 	posY = 0;
 
+	vitesseX = vitesseY = 0;
+	vivant = true;
+
+	Couleur p = Couleur(0,0,0);
 }
 
 Personnage::Personnage(string &pnom, int x, int y) {
