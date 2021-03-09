@@ -64,3 +64,35 @@ void Personnage::setVitesse(const int &x, const int &y) {
 	vitesseX = x;
 	vitesseY = y;
 }
+
+void Personnage::Deplacement () {
+	// Creation d'une nouvelle fenetre en mode texte
+	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
+    WinTXT win (jeu.getConstTerrain().getDimX(),jeu.getConstTerrain().getDimY());
+
+	bool ok = true;
+	int c;
+
+	do {
+	    txtAff(win,jeu);
+
+		jeu.actionsAutomatiques();
+
+		c = win.getCh();
+		switch (c) {
+			case 'z':
+				jeu.actionClavier('z');
+				break;
+			case 's':
+				jeu.actionClavier('ds');
+				break;
+			case 'q':
+				jeu.actionClavier('q');
+				break;
+			case 'd':
+				jeu.actionClavier('d');
+				break;
+		}
+
+	} while (ok);
+}
