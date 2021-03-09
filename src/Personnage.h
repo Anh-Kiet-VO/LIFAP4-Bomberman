@@ -83,19 +83,31 @@ class Personnage {
 	int getVitesseY() const;
 
 	/**
+<<<<<<< HEAD
+	 * @brief Mutateur pour la position en x
+=======
 	 * @brief Mutateur pour la position en X
+>>>>>>> 879a701c96dc348852f082798bf9b13844d14b47
 	 * @param x : entier
 	*/
 	void setPosX(const unsigned int &x);
 
 	/**
+<<<<<<< HEAD
+	 * @brief Mutateur pour la position en y
+=======
 	 * @brief Mutateur pour la position en Y
+>>>>>>> 879a701c96dc348852f082798bf9b13844d14b47
 	 * @param y : entier
 	*/
 	void setPosY(const unsigned int &y);
 
 	/**
+<<<<<<< HEAD
+	 * @brief Mutateur pour la vitesse en x,y
+=======
 	 * @brief Mutateur pour la vitesse en X, Y
+>>>>>>> 879a701c96dc348852f082798bf9b13844d14b47
 	 * @param x : entier
 	 * @param y : entier
 	*/
@@ -107,6 +119,26 @@ class Personnage {
 	 * @param x : entier
 	*/
 	void deplacement();
+
+	/**
+	 * @brief Décremente la position en x
+	*/
+	void moveLeft();
+
+	/**
+	 * @brief Incrémente la position en x
+	*/
+	void moveRight();
+
+	/**
+	 * @brief Décremente la position en y
+	*/
+	void moveUp();
+
+	/**
+	 * @brief Décremente la position en y
+	*/
+	void moveDown();
 	
 };
 
