@@ -26,6 +26,11 @@ unsigned int TabBrique::getNbBrique(){
     return nbBrique;
 }
 
+void TabBrique::setNbBrique(unsigned int nouvNbBrique){
+    assert(nouvNbBrique >= 0);
+    nbBrique = nouvNbBrique;
+}
+
 Brique TabBrique::getBrique(int i){
     return tabBrique[i];
 }
@@ -38,3 +43,13 @@ void TabBrique::setDetruit(unsigned int bri, bool det){
     tabBrique[bri].detruit = det;
 }
 
+void TabBrique::testRegression(){
+    TabBrique tab_br;
+    assert(getNbBrique() == 0);
+    setNbBrique(5);
+    assert(getNbBrique() == 5);
+    
+    assert(tab_br.getDetruit(0) == true);
+    tab_br.setDetruit(0,false);
+    assert(tab_br.getDetruit(0) == false);
+}
