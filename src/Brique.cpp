@@ -21,10 +21,6 @@ Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur 
     coulBrique = c;
 }
 
-Brique::~Brique(){
-
-}
-
 unsigned int Brique::getPosX() const{
     return posX;
 }

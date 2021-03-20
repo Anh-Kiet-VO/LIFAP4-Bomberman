@@ -7,7 +7,7 @@
 using namespace std;
 
 TabBrique::TabBrique(){
-    nbBrique = 0;
+    nbBrique = 1;
     vector<Brique> tabBrique(nbBrique);
 }
 
@@ -18,7 +18,7 @@ TabBrique::TabBrique(vector<Brique> tab, unsigned int n){
 
 TabBrique::~TabBrique(){
     nbBrique = 0;
-    //tabBrique = 0;
+    tabBrique.~vector();
 }
 
 unsigned int TabBrique::getNbBrique(){
@@ -45,7 +45,7 @@ void TabBrique::setDetruit(unsigned int bri, bool det){
 
 void TabBrique::testRegression(){
     TabBrique tab_br;
-    assert(getNbBrique() == 0);
+    assert(getNbBrique() == 1);
     setNbBrique(5);
     assert(getNbBrique() == 5);
     
