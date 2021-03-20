@@ -14,8 +14,8 @@
 
 class Terrain {
 	private:
-	int dimX;
-	int dimY;
+	unsigned int dimX;
+	unsigned int dimY;
 	char ter[100][100];
 
 	public:
