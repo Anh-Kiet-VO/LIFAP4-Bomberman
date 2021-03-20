@@ -17,16 +17,46 @@ class TabBombe {
 
     /**
       * @brief
-      * Tableau de taille variable de brique
+      * Tableau de taille variable de bombes
     */
     vector<Bombe> tabBombe;
+
+    /**
+     * @brief
+     * Nombre de bombes
+    */
     unsigned int nbBombe;
 
     public:
+
+    /**
+     * @brief
+     * Constructeur de TabBombe
+    */
     TabBombe();
+
+    /**
+     * @brief
+     * Destructeur de TabBombe
+    */
     ~TabBombe();
+
+    /**
+     * @brief
+     * Accesseur du nombre de Bombes
+    */
     unsigned int getNbBombe() const;
+
+    /**
+     * @brief
+     * Mutateur pour ajouter une nouvelle bombe
+    */
     void setNbBombe(unsigned int nouvNbBombe);
+    
+    /**
+     * @brief
+     * Test de regression
+    */
     void testRegression();
 };
 
