@@ -1,7 +1,7 @@
 CC = g++
 FLAGS = -c -ggdb -Wall
 
-all: ./obj/Couleur.o ./obj/Personnage.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o
+all: ./obj/Couleur.o ./obj/Personnage.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Terrain.o
 
 ./obj/Couleur.o: ./src/Couleur.cpp ./src/Couleur.h
 	$(CC) $(FLAGS) ./src/Couleur.cpp -o ./obj/Couleur.o
@@ -21,11 +21,14 @@ all: ./obj/Couleur.o ./obj/Personnage.o ./obj/Brique.o ./obj/TabBrique.o ./obj/B
 ./obj/TabBombe.o: ./src/TabBombe.cpp ./src/TabBombe.h
 	$(CC) $(FLAGS) ./src/TabBombe.cpp -o ./obj/TabBombe.o
 
+./obj/Terrain.o: ./src/Terrain.cpp ./src/Terrain.h
+	$(CC) $(FLAGS) ./src/Terrain.cpp -o ./obj/Terrain.o
+
 doc:
 	doxygen -g doc/image.doxy
 
 clean:
-ifneq ($(OS), Win32)
+ifneq ($(OS), Windows_NT)
 	del ./obj/*.o | del ./bin/*
 else
 	rm ./obj/*.o ./bin/*
