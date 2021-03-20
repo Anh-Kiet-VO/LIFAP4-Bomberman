@@ -3,7 +3,8 @@
 ## TO DO LIST
 - [X] Finir diagramme des classes UML + Gantt
 - [X] Cahier des charges
-
+- [] Problème des bombes sur le terrain
+- [] Petit problème avec le make
 
 ### Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
