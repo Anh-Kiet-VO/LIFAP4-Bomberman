@@ -60,31 +60,31 @@ void Personnage::setPosY(const unsigned int &y) {
 	posY = y;
 }
 
-void Personnage::setVitesse(const int &x, const int &y) {
+void Personnage::setVitesse(const float &x, const float &y) {
 	assert(vitesseX > 0 && vitesseY > 0);
 	vitesseX = x;
 	vitesseY = y;
 }
 
-void Personnage::moveLeft() {
-	posX -= 2;
+void Personnage::moveLeft(const Terrain &t) {
+	if(t.isValidPos(posX-1,posY)) posX--;
 }
 
-void Personnage::moveRight() {
-	posX += 2;
+void Personnage::moveRight(const Terrain &t) {
+	if(t.isValidPos(posX+1,posY)) posX++;
 }
 
-void Personnage::moveUp() {
-	posY += 2;
+void Personnage::moveUp(const Terrain &t) {
+	if (t.isValidPos(posY,posY+1)) posY++;
 }
 
-void Personnage::moveDown() {
-	posY -= 2;
+void Personnage::moveDown(const Terrain &t) {
+	if (t.isValidPos(posY,posY-1)) posY--;
 }
 
 // ================================== PAS FINI ================================
 /*
-void Personnage::deplacement () {
+void Personnage::deplacement() {
 	// Creation d'une nouvelle fenetre en mode texte
 	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
     WinTXT win (jeu.getConstTerrain().getDimX(),jeu.getConstTerrain().getDimY());

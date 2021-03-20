@@ -8,6 +8,7 @@
 #define PERSONNAGE_H
 
 #include "Couleur.h"
+#include "Terrain.h"
 #include <string>
 
 using namespace std;
@@ -99,7 +100,7 @@ class Personnage {
 	 * @param x : entier
 	 * @param y : entier
 	*/
-	void setVitesse(const int &x, const int &y);
+	void setVitesse(const float &x, const float &y);
 
 	/**
 	 * @brief Déplacement du personnage
@@ -111,22 +112,22 @@ class Personnage {
 	/**
 	 * @brief Décremente la position en x
 	*/
-	void moveLeft();
+	void moveLeft(const Terrain &t);
 
 	/**
 	 * @brief Incrémente la position en x
 	*/
-	void moveRight();
+	void moveRight(const Terrain &t);
 
 	/**
 	 * @brief Décremente la position en y
 	*/
-	void moveUp();
+	void moveUp(const Terrain &t);
 
 	/**
 	 * @brief Décremente la position en y
 	*/
-	void moveDown();
+	void moveDown(const Terrain &t);
 };
 
 #endif
