@@ -28,7 +28,7 @@ doc:
 	doxygen -g doc/image.doxy
 
 clean:
-ifneq ($(OS), Windows_NT)
+ifeq ($(OS), Windows_NT)
 	del ./obj/*.o | del ./bin/*
 else
 	rm ./obj/*.o ./bin/*
