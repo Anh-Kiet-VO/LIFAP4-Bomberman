@@ -6,6 +6,8 @@ Personnage::Personnage() {
 	vitesseX = vitesseY = 1;
 	vivant = true;
 	coulPerso = Couleur(0,0,0);
+
+	TabBombe bombes;
 }
 
 Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
@@ -23,6 +25,8 @@ Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
 	vivant = true;
 	
 	coulPerso = Couleur(255,255,255);
+
+	TabBombe bombes;
 }
 
 Personnage::~Personnage() {
@@ -30,8 +34,6 @@ Personnage::~Personnage() {
 	vivant = false;
 	vitesseX = vitesseY = 0.0;
 	posX = posY = 0;
-	//bombe = NULL;
-
 }
 
 int Personnage::getPosX() const {

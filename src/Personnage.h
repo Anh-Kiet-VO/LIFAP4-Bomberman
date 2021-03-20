@@ -9,6 +9,7 @@
 
 #include "Couleur.h"
 #include "Terrain.h"
+#include "TabBombe.h"
 #include <string>
 
 using namespace std;
