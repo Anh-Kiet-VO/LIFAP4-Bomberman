@@ -29,7 +29,7 @@ class Terrain {
 	 * @param x : entier
 	 * @param y : entier
 	*/
-	bool isValidPos(const unsigned int x, const unsigned int y) const;
+	bool estPosValid(const unsigned int x, const unsigned int y) const;
 
     /**
 	 * @brief Renvoie le type d'objet se trouvant en X,Y

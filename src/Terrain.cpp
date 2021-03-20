@@ -26,7 +26,7 @@ Terrain::Terrain() {
 	}
 }
 
-bool Terrain::isValidPos(const unsigned int x, const unsigned int y) const {
+bool Terrain::estPosValid(const unsigned int x, const unsigned int y) const {
 	return ( (x >= 0) && (x < dimX) && (y >= 0) && (y < dimY) && (ter[x][y] !='#') );
 }
 
