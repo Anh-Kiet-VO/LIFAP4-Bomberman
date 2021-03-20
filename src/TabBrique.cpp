@@ -8,7 +8,7 @@ using namespace std;
 
 TabBrique::TabBrique(){
     nbBrique = 0;
-    //tabBrique = vector<Brique> tabBrique(0);
+    vector<Brique> tabBrique(nbBrique);
 }
 
 TabBrique::TabBrique(vector<Brique> tab, unsigned int n){

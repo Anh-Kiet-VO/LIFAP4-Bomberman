@@ -6,7 +6,8 @@
 using namespace std;
 
 TabBombe::TabBombe(){
-
+    nbBombe = 1;
+    vector<Bombe> tabBombe(nbBombe);
 }
 
 unsigned int TabBombe::getNbBombe() const{
