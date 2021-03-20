@@ -61,6 +61,12 @@ class TabBrique{
 
         /**
          * @brief
+         * Mutateur de nombre de briques
+        */
+        void setNbBrique(unsigned int nouvNbBrique);
+
+        /**
+         * @brief
          * Accesseur de l'état d'une brique
         */
         bool getDetruit(unsigned int bri);

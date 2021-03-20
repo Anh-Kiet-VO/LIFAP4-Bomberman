@@ -7,7 +7,7 @@
 using namespace std;
 
 TabBrique::TabBrique(){
-    nbBrique = 0;
+    nbBrique = 1;
     vector<Brique> tabBrique(nbBrique);
 }
 
@@ -18,12 +18,17 @@ TabBrique::TabBrique(vector<Brique> tab, unsigned int n){
 
 TabBrique::~TabBrique(){
     nbBrique = 0;
-    //tabBrique = 0;
+    tabBrique.~vector();
 }
 
 unsigned int TabBrique::getNbBrique(){
     assert(nbBrique >= 0);
     return nbBrique;
+}
+
+void TabBrique::setNbBrique(unsigned int nouvNbBrique){
+    assert(nouvNbBrique >= 0);
+    nbBrique = nouvNbBrique;
 }
 
 Brique TabBrique::getBrique(int i){
@@ -38,3 +43,13 @@ void TabBrique::setDetruit(unsigned int bri, bool det){
     tabBrique[bri].detruit = det;
 }
 
+void TabBrique::testRegression(){
+    TabBrique tab_br;
+    assert(getNbBrique() == 1);
+    setNbBrique(5);
+    assert(getNbBrique() == 5);
+    
+    assert(tab_br.getDetruit(0) == true);
+    tab_br.setDetruit(0,false);
+    assert(tab_br.getDetruit(0) == false);
+}

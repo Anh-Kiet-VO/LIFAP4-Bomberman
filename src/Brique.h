@@ -56,11 +56,6 @@ class Brique{
         Brique(unsigned int x, unsigned int y, bool det, string typeBon, Couleur c);
 
         /**
-         * @brief Destructeur de la classe 
-        */
-        ~Brique();
-
-        /**
          * @brief Accesseur de la position en X d'une brique
         */
         unsigned int getPosX() const;
