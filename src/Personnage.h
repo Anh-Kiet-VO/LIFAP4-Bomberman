@@ -113,22 +113,22 @@ class Personnage {
 	/**
 	 * @brief Décremente la position en x
 	*/
-	void moveLeft(const Terrain &t);
+	void gauche(const Terrain &t);
 
 	/**
 	 * @brief Incrémente la position en x
 	*/
-	void moveRight(const Terrain &t);
+	void droite(const Terrain &t);
 
 	/**
 	 * @brief Décremente la position en y
 	*/
-	void moveUp(const Terrain &t);
+	void haut(const Terrain &t);
 
 	/**
 	 * @brief Décremente la position en y
 	*/
-	void moveDown(const Terrain &t);
+	void bas(const Terrain &t);
 };
 
 #endif

@@ -68,53 +68,18 @@ void Personnage::setVitesse(const float &x, const float &y) {
 	vitesseY = y;
 }
 
-void Personnage::moveLeft(const Terrain &t) {
-	if(t.isValidPos(posX-1,posY)) posX--;
+void Personnage::gauche(const Terrain &t) {
+	if(t.estPosValid(posX-1,posY)) posX--;
 }
 
-void Personnage::moveRight(const Terrain &t) {
-	if(t.isValidPos(posX+1,posY)) posX++;
+void Personnage::droite(const Terrain &t) {
+	if(t.estPosValid(posX+1,posY)) posX++;
 }
 
-void Personnage::moveUp(const Terrain &t) {
-	if (t.isValidPos(posY,posY+1)) posY++;
+void Personnage::haut(const Terrain &t) {
+	if (t.estPosValid(posY,posY+1)) posY++;
 }
 
-void Personnage::moveDown(const Terrain &t) {
-	if (t.isValidPos(posY,posY-1)) posY--;
+void Personnage::bas(const Terrain &t) {
+	if (t.estPosValid(posY,posY-1)) posY--;
 }
-
-// ================================== PAS FINI ================================
-/*
-void Personnage::deplacement() {
-	// Creation d'une nouvelle fenetre en mode texte
-	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
-    WinTXT win (jeu.getConstTerrain().getDimX(),jeu.getConstTerrain().getDimY());
-
-	bool ok = true;
-	int c;
-
-	do {
-	    txtAff(win,jeu);
-
-		jeu.actionsAutomatiques();
-
-		c = win.getCh();
-		switch (c) {
-			case 'z':
-				jeu.actionClavier('z');
-				break;
-			case 's':
-				jeu.actionClavier('s');
-				break;
-			case 'q':
-				jeu.actionClavier('q');
-				break;
-			case 'd':
-				jeu.actionClavier('d');
-				break;
-		}
-
-	} while (ok);
-}
-*/
