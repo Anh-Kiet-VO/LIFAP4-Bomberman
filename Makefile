@@ -1,28 +1,36 @@
 CC = g++
-FLAGS = -c -ggdb -Wall
+FLAGS = -ggdb -Wall
 
-all: ./obj/Couleur.o ./obj/Personnage.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Terrain.o
+all: ./obj/Couleur.o ./obj/Personnage.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Terrain.o ./bin/Test
+
+./bin/Test: ./obj/Test.o ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o
+	$(CC) $(FLAGS) ./obj/Test.o ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o -o ./bin/Test
+
+./obj/Test.o: ./src/Test.cpp ./src/Couleur.h ./src/Brique.h ./src/TabBrique.h ./src/Bombe.h ./src/TabBombe.h
+	$(CC) $(FLAGS) -c ./src/Test.cpp -o ./obj/Test.o
+
+# ----------------------------------------------------- #
 
 ./obj/Couleur.o: ./src/Couleur.cpp ./src/Couleur.h
-	$(CC) $(FLAGS) ./src/Couleur.cpp -o ./obj/Couleur.o
+	$(CC) $(FLAGS) -c ./src/Couleur.cpp -o ./obj/Couleur.o
 
 ./obj/Personnage.o: ./src/Personnage.cpp ./src/Personnage.h
-	$(CC) $(FLAGS) ./src/Personnage.cpp -o ./obj/Personnage.o
+	$(CC) $(FLAGS) -c ./src/Personnage.cpp -o ./obj/Personnage.o
 
 ./obj/Brique.o: ./src/Brique.cpp ./src/Brique.h
-	$(CC) $(FLAGS) ./src/Brique.cpp -o ./obj/Brique.o
+	$(CC) $(FLAGS) -c ./src/Brique.cpp -o ./obj/Brique.o
 
 ./obj/TabBrique.o: ./src/TabBrique.cpp ./src/TabBrique.h
-	$(CC) $(FLAGS) ./src/TabBrique.cpp -o ./obj/TabBrique.o
+	$(CC) $(FLAGS) -c ./src/TabBrique.cpp -o ./obj/TabBrique.o
 
 ./obj/Bombe.o: ./src/Bombe.cpp ./src/Bombe.h
-	$(CC) $(FLAGS) ./src/Bombe.cpp -o ./obj/Bombe.o
+	$(CC) $(FLAGS) -c ./src/Bombe.cpp -o ./obj/Bombe.o
 
 ./obj/TabBombe.o: ./src/TabBombe.cpp ./src/TabBombe.h
-	$(CC) $(FLAGS) ./src/TabBombe.cpp -o ./obj/TabBombe.o
+	$(CC) $(FLAGS) -c ./src/TabBombe.cpp -o ./obj/TabBombe.o
 
 ./obj/Terrain.o: ./src/Terrain.cpp ./src/Terrain.h
-	$(CC) $(FLAGS) ./src/Terrain.cpp -o ./obj/Terrain.o
+	$(CC) $(FLAGS) -c ./src/Terrain.cpp -o ./obj/Terrain.o
 
 doc:
 	doxygen -g doc/image.doxy

@@ -14,11 +14,6 @@ Bombe::Bombe(unsigned int positionX, unsigned int positionY, int nouvPortee) {
   portee = nouvPortee;
 }
 
-Bombe::~Bombe() {
-  posX = posY = 0;
-  portee = 0;
-}
-
 unsigned int Bombe::getPosX() const {
   assert(posX >= 0);
   return posX;

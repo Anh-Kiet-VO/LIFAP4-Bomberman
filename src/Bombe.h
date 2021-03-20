@@ -34,11 +34,6 @@ class Bombe {
     Bombe(unsigned int positionX, unsigned int positionY, int nouvPortee);
 
     /**
-     * @brief Destruction de la classe : met la position à 0 et la portée à 0
-    */
-    ~Bombe();
-
-    /**
      * @brief Accesseur : récupère la position X de la bombe
     */
     unsigned int getPosX() const;

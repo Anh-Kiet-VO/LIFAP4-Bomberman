@@ -10,6 +10,10 @@ TabBombe::TabBombe(){
     vector<Bombe> tabBombe(nbBombe);
 }
 
+TabBombe::~TabBombe() {
+    tabBombe.~vector();
+}
+
 unsigned int TabBombe::getNbBombe() const{
     assert(nbBombe > 0);
     return nbBombe;
@@ -21,5 +25,8 @@ void TabBombe::setNbBombe(unsigned int nouvNbBombe){
 }
 
 void TabBombe::testRegression(){
+    TabBombe bombes;
 
+    //Vérification du nombre de bombes
+    assert(bombes.nbBombe == 1);
 }
