@@ -19,8 +19,8 @@ const char terrain1[20][27] = {
 Terrain::Terrain() {
 	dimX = 26;
 	dimY = 20;
-	for(int x = 0 ; x < dimX ; x++) {
-		for(int y = 0 ; y < dimY ; y++) {
+	for(unsigned int x = 0 ; x < dimX ; x++) {
+		for(unsigned int y = 0 ; y < dimY ; y++) {
 			ter[x][y] = terrain1[dimY-1-y][x];
 		}
 	}
