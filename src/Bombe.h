@@ -17,7 +17,7 @@ class Bombe {
     /**
      * @brief Portée de la bombe
     */
-    unsigned int portee;
+    int portee;
 
     public:
     /**
@@ -51,7 +51,7 @@ class Bombe {
     /**
      * @brief Accesseur : récupère la portée de la bombe
     */
-    unsigned int getPortee() const;
+    int getPortee() const;
 
     /**
      * @brief Mutateur : modifie la portée de la bombe

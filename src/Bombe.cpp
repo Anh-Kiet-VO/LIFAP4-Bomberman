@@ -29,7 +29,7 @@ unsigned int Bombe::getPosY() const {
   return posY;
 }
 
-unsigned int Bombe::getPortee() const {
+int Bombe::getPortee() const {
   return portee;
 }
 
