@@ -33,7 +33,7 @@ class Brique{
         /**
          * @brief Position de la brique
         */
-        int posX, posY;
+        unsigned int posX, posY;
         
         /**
          * @brief Booléen pour indiquer si la brique est détruite
@@ -41,19 +41,14 @@ class Brique{
         bool detruit;
 
         /**
-         * @brief Le booléen pour indiquer si la brique est détruite
-        */
-        bool detruit;
-
-        /**
-         * @brief Constructeur par défaut de la classe : initialise sa position, si il a un bonus, son type de bonus et sa couleur
+         * @brief Constructeur par défaut de la classe : : mise à jour de posX et posY à 0, détruit à false, typeBonus à NULL, et couleur à noir
         */
         Brique();
 
         /**
          * @brief Constructeur de la classe : initialise sa position, si il a un bonus, son type de bonus et sa couleur
-         @param x : entier
-         @param y : entier
+         @param x : entier non signé
+         @param y : entier non signé
          @param det : booléen
          @param typeBon : chaîne de caractères
          @param c : Couleur
@@ -61,7 +56,7 @@ class Brique{
         Brique(unsigned int x, unsigned int y, bool det, string typeBon, Couleur c);
 
         /**
-         * @brief Destructeur de la classe : mise à jour de posX et posY à 0, détruit à false, typeBonus à NULL, et couleur à noir
+         * @brief Destructeur de la classe 
         */
         ~Brique();
 

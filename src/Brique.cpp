@@ -8,7 +8,7 @@ using namespace std;
 Brique::Brique(){
     posX = posY = 0;
     bonus = false;
-    //typeBonus = "NULL";
+    typeBonus = "NULL";
     coulBrique = Couleur(0,0,0);
 }
 
@@ -19,6 +19,10 @@ Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur 
     detruit = det;
     typeBonus = typeBon;
     coulBrique = c;
+}
+
+Brique::~Brique(){
+
 }
 
 unsigned int Brique::getPosX() const{

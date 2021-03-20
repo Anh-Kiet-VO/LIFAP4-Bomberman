@@ -1,22 +1,24 @@
 #include "TabBrique.h"
 #include <cassert>
 #include <stdlib.h>
+#include <vector>
 
 #include <iostream>
 using namespace std;
 
 TabBrique::TabBrique(){
     nbBrique = 0;
-    //tabBrique = new tabBrique[];
+    //tabBrique = vector<Brique> tabBrique(0);
 }
 
 TabBrique::TabBrique(vector<Brique> tab, unsigned int n){
     nbBrique = n;
-    //tabBrique = tab;
+    tabBrique = tab;
 }
 
 TabBrique::~TabBrique(){
-
+    nbBrique = 0;
+    //tabBrique = 0;
 }
 
 unsigned int TabBrique::getNbBrique(){
@@ -24,15 +26,15 @@ unsigned int TabBrique::getNbBrique(){
     return nbBrique;
 }
 
+Brique TabBrique::getBrique(int i){
+    return tabBrique[i];
+}
+
 bool TabBrique::getDetruit(unsigned int bri){
-    /*for(unsigned int = 0 ; i < nbBrique ; i++){
-        return tabBrique[bri].detruit;
-    }  */
+    return tabBrique[bri].detruit;
 }
 
 void TabBrique::setDetruit(unsigned int bri, bool det){
-    for(int i = 0 ; i < nbBrique ; i++){
-        tabBrique[bri].detruit = det;
-    }
+    tabBrique[bri].detruit = det;
 }
 

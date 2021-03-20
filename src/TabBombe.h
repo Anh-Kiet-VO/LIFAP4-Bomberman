@@ -14,6 +14,11 @@ using namespace std;
 
 class TabBombe {
     private:
+
+    /**
+      * @brief
+      * Tableau de taille variable de brique
+    */
     vector<Bombe> tabBombe;
     unsigned int nbBombe;
 

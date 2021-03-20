@@ -17,6 +17,11 @@ using namespace std;
 
 class TabBrique{
     private:
+
+        /**
+         * @brief
+         * Tableau de taille variable de brique
+        */
         vector<Brique> tabBrique;
         
         /**
@@ -70,7 +75,7 @@ class TabBrique{
          * @brief
          * Accesseur d'une brique
         */
-        Brique getBrique(unsigned int nbBrique);
+        Brique getBrique(int i);
 
         /**
          * @brief
