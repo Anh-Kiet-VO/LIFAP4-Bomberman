@@ -41,7 +41,11 @@ class Brique{
         bool detruit;
 
         /**
+<<<<<<< HEAD
          * @brief Constructeur par défaut de la classe : : mise à jour de posX et posY à 0, détruit à false, typeBonus à NULL, et couleur à noir
+=======
+         * @brief Constructeur par défaut de la classe : initialise sa position, si il a un bonus, son type de bonus et sa couleur
+>>>>>>> cc184b4c857f4c2ff062c84328bbe7697628ec77
         */
         Brique();
 

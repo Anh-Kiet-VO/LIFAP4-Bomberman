@@ -2,8 +2,8 @@
 #include <cassert>
 
 Personnage::Personnage() {
-	posX = posY = 0;
-	vitesseX = vitesseY = 0;
+	posX = posY = 1;
+	vitesseX = vitesseY = 1;
 	vivant = true;
 	coulPerso = Couleur(0,0,0);
 }
@@ -29,6 +29,7 @@ Personnage::~Personnage() {
 	nom = "";
 	vivant = false;
 	vitesseX = vitesseY = 0.0;
+	posX = posY = 0;
 	//bombe = NULL;
 
 }
@@ -65,6 +66,22 @@ void Personnage::setVitesse(const int &x, const int &y) {
 	vitesseY = y;
 }
 
+void Personnage::moveLeft() {
+	posX -= 2;
+}
+
+void Personnage::moveRight() {
+	posX += 2;
+}
+
+void Personnage::moveUp() {
+	posY += 2;
+}
+
+void Personnage::moveDown() {
+	posY -= 2;
+}
+
 // ================================== PAS FINI ================================
 /*
 void Personnage::deplacement () {
@@ -86,7 +103,7 @@ void Personnage::deplacement () {
 				jeu.actionClavier('z');
 				break;
 			case 's':
-				jeu.actionClavier('ds');
+				jeu.actionClavier('s');
 				break;
 			case 'q':
 				jeu.actionClavier('q');
