@@ -50,6 +50,7 @@ class TabBombe {
     /**
      * @brief
      * Mutateur pour ajouter une nouvelle bombe
+     * @param nouvNbBombe : unsigned int
     */
     void setNbBombe(unsigned int nouvNbBombe);
     

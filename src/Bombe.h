@@ -29,9 +29,9 @@ class Bombe {
      * @brief Constructeur de la classe : initialise la position avec positionX, positionY et la portée avec nouvPortee
      * @param positionX : unsigned int
      * @param positionY : unsigned int
-     * @param nouvPortee : unsigned int 
+     * @param nouvPortee : int 
     */
-    Bombe(unsigned int positionX, unsigned int positionY, unsigned int nouvPortee);
+    Bombe(unsigned int positionX, unsigned int positionY, int nouvPortee);
 
     /**
      * @brief Destruction de la classe : met la position à 0 et la portée à 0
@@ -55,8 +55,9 @@ class Bombe {
 
     /**
      * @brief Mutateur : modifie la portée de la bombe
+     * @param p : int
     */
-    void setPortee(unsigned int p);
+    void setPortee(int p);
 };
 
 #endif
