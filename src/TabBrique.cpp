@@ -18,7 +18,7 @@ TabBrique::TabBrique(vector<Brique> tab, unsigned int n){
 
 TabBrique::~TabBrique(){
     nbBrique = 0;
-    tabBrique.~vector();
+    tabBrique.clear();
 }
 
 unsigned int TabBrique::getNbBrique(){
@@ -50,8 +50,10 @@ void TabBrique::testRegression(){
     cout << nbBrique << endl;
     assert(getNbBrique() == 5);
 
-    TabBrique tab_br;
-    //assert(tab_br.getDetruit(0) == 0);
-    //tab_br.setDetruit(0,false);
-    //assert(tab_br.getDetruit(0) == false);
+    
+    vector<Brique> tab_br;
+    tab_br.resize(5);
+    assert(tab_br(0).getDetruit(0) == 0);
+    tab_br.setDetruit(0,false);
+    assert(tab_br.getDetruit(0) == false);
 }
