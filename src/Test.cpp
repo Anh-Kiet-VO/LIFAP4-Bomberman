@@ -1,6 +1,7 @@
 #include "TabBombe.h"
 #include "TabBrique.h"
 #include "Personnage.h"
+#include "Terrain.h"
 #include <iostream>
 using namespace std;
 
