@@ -51,6 +51,6 @@ void TabBombe::testRegression(){
     assert(nbBombe == 4);
 
     //Vérification de la taille du tabBombe
-    cout << "taille max du tab: " << size() << endl;
+    //cout << "taille max du tab: " << capacity() << endl;
     //assert(max_size() == 1);
 }

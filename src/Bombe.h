@@ -44,6 +44,13 @@ class Bombe {
     unsigned int getPosY() const;
 
     /**
+     * @brief Mutateur : modifie la position de la bombe
+     * @param x : unsigned int
+     * @param y : unsigned int
+    */
+    void setPos(unsigned int x, unsigned int y);
+
+    /**
      * @brief Accesseur : récupère la portée de la bombe
     */
     int getPortee() const;

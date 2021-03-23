@@ -48,13 +48,7 @@ void TabBrique::testRegression(){
     
     vector<TabBrique> tab_br;
     tab_br.resize(5);
-<<<<<<< HEAD
-    assert(tab_br.getDetruit(0) == 0);
-    tab_br.setDetruit(0,false);
-    assert(tab_br.getDetruit(0) == false);
-=======
     assert(tab_br[0].getDetruit(0) == 0);
     tab_br[0].setDetruit(0,false);
     assert(tab_br[0].getDetruit(0) == false);
->>>>>>> 22792450f80b1ca23e6ab236f4c6a011fff4d8e5
 }

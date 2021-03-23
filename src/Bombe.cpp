@@ -24,6 +24,13 @@ unsigned int Bombe::getPosY() const {
   return posY;
 }
 
+void Bombe::setPos(unsigned int x, unsigned int y) {
+  assert(x >= 0);
+  assert(y >= 0);
+  posX = x;
+  posY = y;
+}
+
 int Bombe::getPortee() const {
   return portee;
 }
