@@ -49,11 +49,10 @@ void TabBrique::testRegression(){
     setNbBrique(5);
     cout << nbBrique << endl;
     assert(getNbBrique() == 5);
-    /*
+    
     vector<Brique> tab_br;
     tab_br.resize(5);
     assert(tab_br.getDetruit(0) == 0);
     tab_br.setDetruit(0,false);
     assert(tab_br.getDetruit(0) == false);
-    */
 }
