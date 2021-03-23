@@ -129,6 +129,12 @@ class Personnage {
 	 * @brief Décremente la position en y
 	*/
 	void bas(const Terrain &t);
+
+	/**
+     * @brief
+     * Test de regression
+    */
+    void testRegression();
 };
 
 #endif
