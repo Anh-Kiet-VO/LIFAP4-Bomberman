@@ -6,13 +6,13 @@ Jeu::Jeu () : ter(), perso() {
 
 Terrain& Jeu::getTerrain() { return ter; }
 
-Personnage& Jeu::getPerso() {	return perso; }
+Personnage& Jeu::getPerso() { return perso; }
 
-const Terrain& Jeu::getConstTerrain () const { return ter; }
+const Terrain& Jeu::getConstTerrain() const { return ter; }
 
-const Personnage& Jeu::getConstPerso () const { return perso; }
+const Personnage& Jeu::getConstPerso() const { return perso; }
 
-bool Jeu::actionClavier (const char touche) {
+bool Jeu::actionClavier(const char touche) {
 	switch(touche) {
 		case 'g' :
 				perso.gauche(ter);

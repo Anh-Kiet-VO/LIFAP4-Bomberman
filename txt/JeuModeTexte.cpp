@@ -6,8 +6,8 @@
 
 #include <iostream>
 #include "JeuModeTexte.h"
-#include "../src/Jeu.h"
-#include "winTxt.h"
+//#include "../src/Jeu.h"
+//#include "winTxt.h"
 
 void txtAff(WinTXT & win, const Jeu & jeu){
 	const Terrain& ter = jeu.getConstTerrain();
@@ -64,6 +64,5 @@ void txtBoucle(Jeu & jeu) {
 				ok = false;
 				break;
 		}
-
 	} while (ok);
 }
