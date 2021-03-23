@@ -2,14 +2,14 @@
 #include <cassert>
 #include <stdlib.h>
 #include <vector>
-#include <iostream>
-using namespace std;
 
+#include <iostream>
 using namespace std;
 
 TabBombe::TabBombe(){
     nbBombe = 1;
-    vector<Bombe> tabBombe(nbBombe);
+    vector<Bombe> tabBombe;
+    tabBombe.resize(nbBombe);
 }
 
 TabBombe::~TabBombe() {
@@ -51,6 +51,12 @@ void TabBombe::testRegression(){
     assert(nbBombe == 4);
 
     //Vérification de la taille du tabBombe
-    //cout << "taille max du tab: " << capacity() << endl;
-    //assert(max_size() == 1);
+    tabBombe.resize(5);
+    assert(tabBombe.size() == 5);
+
+    //Vérification de l'ajout d'une bombe
+    tabBombe.push_back(une_bombe);
+    assert(tabBombe[5].getPosX() == 5);
+    assert(tabBombe[5].getPosY() == 7);
+    assert(tabBombe[5].getPortee() == 3);
 }
