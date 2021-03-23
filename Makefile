@@ -5,7 +5,9 @@ CORE = ./src/Terrain.cpp ./src/Jeu.cpp ./src/Personnage.cpp ./src/TabBrique.cpp 
 
 SRCS_TXT = $(CORE) txt/JeuModeTexte.cpp txt/winTxt.cpp txt/main_txt.cpp
 
-all: ./bin/Test
+LIB = -I/src -Ilib
+
+all: ./bin/Test ./bin/mainTXT
 
 ./bin/Test: ./obj/Test.o ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Personnage.o ./obj/Terrain.o
 	$(CC) $(FLAGS) ./obj/Test.o ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Personnage.o ./obj/Terrain.o -o ./bin/Test
@@ -38,22 +40,19 @@ all: ./bin/Test
 
 # ----------------------------------------------------- #
 
-./obj/JeuModeTexte.o: ./txt/JeuModeTexte.cpp ./txt/JeuModeTexte.h
-	$(CC) $(FLAGS) -c ./txt/JeuModeTexte.cpp -o ./obj/JeuModeTexte.o
+./obj/JeuModeTexte.o: ./txt/JeuModeTexte.cpp ./txt/JeuModeTexte.h ./txt/txtWin.h
+	$(CC) $(FLAGS) -c ./txt/JeuModeTexte.cpp $(LIB) -o ./obj/JeuModeTexte.o
 
 ./obj/winTxt.o: ./txt/winTxt.cpp ./txt/winTxt.h
 	$(CC) $(FLAGS) -c ./txt/winTxt.cpp -o ./obj/winTxt.o
 
-./obj/main_txt.o: ./txt/main_txt.cpp ./txt/main_txt.h
-	$(CC) $(FLAGS) -c ./txt/main_txt.cpp -o ./obj/main_txt.o
+./bin/mainTXT: ./txt/main_txt.o ./txt/txtWin.o ./txt/JeuModeTexte.o
+	$(CC) $(FLAGS) -c ./obj/main_txt.o ./obj/txtWin.o ./obj/JeuModeTexte.o
+
+./obj/main_txt.o: ./txt/main_txt.cpp ./txt/txtWin.h ./txt/JeuModeTexte.h
+	$(CC) $(FLAGS) -c ./txt/main_txt.cpp $(LIB) -o ./obj/main_txt.o
 
 # ----------------------------------------------------- #
-
-./bin/bomberman_txt: $(SRCS_TXT) ./obj/JeuModeTexte.o ./obj/winTxt.o ./obj/main_txt.o
-	$(CC) $(FLAGS) ./obj/JeuModeTexte.o ./obj/winTxt.o ./obj/main_txt.o -o /bin/bomberman_txt
-
-./obj/bomberman_txt.o: ./txt/main_txt.cpp ./txt/JeuModeTexte.h ./txt/winTxt.h ./txt/main_txt.h
-	$(CC) $(FLAGS) -c ./txt/main_txt.cpp -o ./obj/bomberman_txt.o
 
 #$(CORE) $(SRCS_TXT:%.cpp=obj/%.o)
 	#$(CC) $(FLAGS) $+ -o $@ $(LDFLAGS)
