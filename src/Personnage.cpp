@@ -15,8 +15,13 @@ Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
 
 	nom = pnom;
 
+<<<<<<< HEAD
 	x = posX;
 	y = posY;
+=======
+	posX = x;
+	posY = y;
+>>>>>>> a9933f5505ec89f51f42147a7f27fdce8c1cd9cd
 
 	vitesseX = vitesseY = 1;
 	vivant = true;
@@ -94,10 +99,11 @@ void Personnage::testRegression() {
 	assert(getVitesseX() == 5 && getVitesseY() == 5);
 
 	string pseudo = "joueur";
-	Personnage(pseudo, 1, 1);
+	Personnage(pseudo, 5, 5);
 
-	assert(nom == "joueur");
-	assert(posX >= 1 && posY >= 1);
+	assert(nom == pseudo);
+
+	assert(getPosX() == 1 && getPosY() == 1);
 
 	Couleur coul (31, 68, 50);
 	
