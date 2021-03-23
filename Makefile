@@ -36,11 +36,27 @@ all: ./bin/Test
 ./obj/Terrain.o: ./src/Terrain.cpp ./src/Terrain.h
 	$(CC) $(FLAGS) -c ./src/Terrain.cpp -o ./obj/Terrain.o
 
-./bin/bomberman_txt: $(CORE) $(SRCS_TXT:%.cpp=obj/%.o)
-	$(CC) $(FLAGS) $+ -o $@ $(LDFLAGS)
+# ----------------------------------------------------- #
 
+./obj/JeuModeTexte.o: ./txt/JeuModeTexte.cpp ./txt/JeuModeTexte.h
+	$(CC) $(FLAGS) -c ./txt/JeuModeTexte.cpp -o ./obj/JeuModeTexte.o
 
+./obj/winTxt.o: ./txt/winTxt.cpp ./txt/winTxt.h
+	$(CC) $(FLAGS) -c ./txt/winTxt.cpp -o ./obj/winTxt.o
 
+./obj/main_txt.o: ./txt/main_txt.cpp ./txt/main_txt.h
+	$(CC) $(FLAGS) -c ./txt/main_txt.cpp -o ./obj/main_txt.o
+
+# ----------------------------------------------------- #
+
+./bin/bomberman_txt: $(SRCS_TXT) ./obj/JeuModeTexte.o ./obj/winTxt.o ./obj/main_txt.o
+	$(CC) $(FLAGS) ./obj/JeuModeTexte.o ./obj/winTxt.o ./obj/main_txt.o -o /bin/bomberman_txt
+
+./obj/bomberman_txt.o: ./txt/main_txt.cpp ./txt/JeuModeTexte.h ./txt/winTxt.h ./txt/main_txt.h
+	$(CC) $(FLAGS) -c ./txt/main_txt.cpp -o ./obj/bomberman_txt.o
+
+#$(CORE) $(SRCS_TXT:%.cpp=obj/%.o)
+	#$(CC) $(FLAGS) $+ -o $@ $(LDFLAGS)
 
 doc:
 	doxygen -g doc/image.doxy
