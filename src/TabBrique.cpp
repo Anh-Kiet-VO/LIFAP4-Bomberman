@@ -8,12 +8,8 @@ using namespace std;
 
 TabBrique::TabBrique(){
     nbBrique = 1;
-    vector<Brique> tabBrique(nbBrique);
-}
-
-TabBrique::TabBrique(vector<Brique> tab, unsigned int n){
-    nbBrique = n;
-    tabBrique = tab;
+    vector<Brique> tabBrique;
+    tabBrique.resize(nbBrique);
 }
 
 TabBrique::~TabBrique(){
@@ -34,14 +30,14 @@ void TabBrique::setNbBrique(unsigned int nouvNbBrique){
 Brique TabBrique::getBrique(int i){
     return tabBrique[i];
 }
-/*
+
 bool TabBrique::getDetruit(unsigned int bri){
     return tabBrique[bri].detruit;
 }
 
 void TabBrique::setDetruit(unsigned int bri, bool det){
     tabBrique[bri].detruit = det;
-}*/
+}
 
 void TabBrique::testRegression(){
     cout << nbBrique <<endl;
@@ -51,9 +47,9 @@ void TabBrique::testRegression(){
     assert(getNbBrique() == 5);
 
     
-    vector<Brique> tab_br;
+    vector<TabBrique> tab_br;
     tab_br.resize(5);
-    assert(tab_br(0).getDetruit(0) == 0);
-    tab_br.setDetruit(0,false);
-    assert(tab_br.getDetruit(0) == false);
+    assert(tab_br[0].getDetruit(0) == 0);
+    tab_br[0].setDetruit(0,false);
+    assert(tab_br[0].getDetruit(0) == false);
 }

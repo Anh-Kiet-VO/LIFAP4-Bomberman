@@ -15,13 +15,8 @@ Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
 
 	nom = pnom;
 
-<<<<<<< HEAD
-	x = posX;
-	y = posY;
-=======
 	posX = x;
 	posY = y;
->>>>>>> a9933f5505ec89f51f42147a7f27fdce8c1cd9cd
 
 	vitesseX = vitesseY = 1;
 	vivant = true;

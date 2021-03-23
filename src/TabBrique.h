@@ -37,16 +37,7 @@ class TabBrique{
          * par défaut et un nombre de briques par défaut.
         */
         TabBrique();
-
-        /**
-         * @brief
-         * Constructeur de la classe: initialise un tableau
-         * et un nombre de briques.
-         @param tab : tableau dynamique
-         @param n : entier
-        */
-        TabBrique(vector<Brique> tab, unsigned int n);
-
+        
         /**
          * @brief
          * Destructeur de la classe :
