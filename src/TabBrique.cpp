@@ -45,6 +45,10 @@ void TabBrique::testRegression(){
 
     //Vérifie le bonus
     assert(bri.bonus == false);
+
+    //Vérification de la taille du tabBombe
+    tabBrique.resize(4);
+    assert(tabBrique.size() == 4);
     
     //Vérifications si la brique est détruite
     assert(bri.detruit == false);
