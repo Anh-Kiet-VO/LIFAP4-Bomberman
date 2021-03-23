@@ -1,5 +1,6 @@
 #include "winTxt.h"
 #include "JeuModeTexte.h"
+#include "../src/Jeu.h"
 
 int main ( int argc, char** argv ) {
     termClear();
