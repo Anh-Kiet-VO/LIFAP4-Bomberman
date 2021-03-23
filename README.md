@@ -11,6 +11,10 @@ Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)
 Anh-Kiet VO (p1907921 - anh-kiet.vo@etu.univ-lyon1.fr)  
 Cécilia NGUYEN (p1908025 - cecilia.nguyen@etu.univ-lyon1.fr)
 
+### Diagramme des classes
+
+[Lien vers le diagramme](https://nsm09.casimages.com/img/2021/03/23//21032309592517252817329920.png)
+
 -----------------
 
 ### Le Bomberman : 
