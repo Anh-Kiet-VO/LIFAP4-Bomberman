@@ -11,7 +11,7 @@ Personnage::Personnage() {
 }
 
 Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
-	assert(x >= 0 && y >= 0);
+	assert(x >= 1 && y >= 1);
 
 	nom = pnom;
 
@@ -82,4 +82,39 @@ void Personnage::haut(const Terrain &t) {
 
 void Personnage::bas(const Terrain &t) {
 	if (t.estPosValid(posY,posY-1)) posY--;
+}
+
+void Personnage::testRegression() {
+	setPosX(5);
+	setPosY(5);
+
+	assert(getPosX() == 5 && getPosY() == 5);
+
+	assert(vitesseX >= 1 && vitesseY >= 1);
+
+	setVitesse(5, 5);
+
+	assert(getVitesseX() == 5 && getVitesseY() == 5);
+
+	string pseudo = "joueur";
+	Personnage(pseudo, 1, 1);
+
+	assert(nom == "joueur");
+	assert(posX >= 1 && posY >= 1);
+
+	Couleur coul (31, 68, 50);
+	
+	assert(coul.getRouge() == 31);
+	assert(coul.getVert() == 68);
+	assert(coul.getBleu() == 50);
+	
+	coul.setRouge(78);
+	coul.setVert(12);
+	coul.setBleu(104);
+
+	assert(coul.getRouge() == 78);
+	assert(coul.getVert() == 12);
+	assert(coul.getBleu() == 104);
+
+	assert(vivant != false);
 }
