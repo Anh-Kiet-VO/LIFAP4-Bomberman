@@ -84,26 +84,35 @@ void Personnage::bas(const Terrain &t) {
 }
 
 void Personnage::testRegression() {
+	// Met les position X,Y à 5
 	setPosX(5);
 	setPosY(5);
 
+	// Vérifie si la position est bien à 5
 	assert(getPosX() == 5 && getPosY() == 5);
 
+	// Vérifie si il a une vitesse en X,Y
 	assert(vitesseX >= 1 && vitesseY >= 1);
 
+	// Met la vitesse X,Y à 
 	setVitesse(5, 5);
 
+	// Vérifie si la vitesse est bien à 
 	assert(getVitesseX() == 5 && getVitesseY() == 5);
 
+	// Appel au constructeur Personnage
 	string pseudo = "joueur";
 	Personnage(pseudo, 5, 5);
 
+	// vérifie si le nom du joueur est correct
 	if(pseudo.compare(nom) == 0) cout << "Erreur avec le nom";
 
+	// Vérifie si la position est bien à 
 	assert(getPosX() == 5 && getPosY() == 5);
 
 	Couleur coul (31, 68, 50);
 	
+	// Vérification des get
 	assert(coul.getRouge() == 31);
 	assert(coul.getVert() == 68);
 	assert(coul.getBleu() == 50);
@@ -112,6 +121,7 @@ void Personnage::testRegression() {
 	coul.setVert(12);
 	coul.setBleu(104);
 
+	// Vérifie des get
 	assert(coul.getRouge() == 78);
 	assert(coul.getVert() == 12);
 	assert(coul.getBleu() == 104);
