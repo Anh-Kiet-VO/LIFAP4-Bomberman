@@ -37,7 +37,8 @@ doc:
 
 clean:
 ifeq ($(OS), Windows_NT)
-	del ./obj/*.o | del ./bin/*.exe
+	del .\obj\*.o
+	del .\bin\*.exe
 else
 	rm ./obj/*.o ./bin/*.exe
 endif
