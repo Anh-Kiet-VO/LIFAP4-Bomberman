@@ -1,10 +1,11 @@
 # LIFAP4 - Bomberman
 
-## TO DO LIST
+## TO-DO LIST
 - [X] Finir diagramme des classes UML + Gantt
 - [X] Cahier des charges
+- [X] Petit problème avec le make
 - [ ] Problème des bombes sur le terrain
-- [ ] Petit problème avec le make
+- [ ] Problème taille vector (Bombe + Brique)
 
 ### Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
