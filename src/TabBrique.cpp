@@ -27,22 +27,26 @@ void TabBrique::setNbBrique(unsigned int nouvNbBrique){
     nbBrique = nouvNbBrique;
 }
 
-Brique TabBrique::getBrique(int i){
-    return tabBrique[i];
-}
-
 void TabBrique::testRegression(){
+    //Vérifie nombre de brique
     assert(getNbBrique() == 1);
+    //On set le nombre de brique à 5
     setNbBrique(5);
+    //Vérifie si le set a bien été pris en compte
     assert(getNbBrique() == 5);
 
     Brique bri;
+    //Vérification sur la postion de la brique selon le constructeur
     assert(bri.posX == 0 && bri.posY == 0);
+    //On set de nouvelles coordonnées
     bri.setPosXY(5,7);
+    //Et on les vérifie
     assert(bri.getPosX() == 5 && bri.getPosY() == 7);
 
+    //Vérifie le bonus
     assert(bri.bonus == false);
     
+    //Vérifications si la brique est détruite
     assert(bri.detruit == false);
     bri.setDetruit(true);
     assert(bri.getDetruit() == true);

@@ -58,12 +58,6 @@ class TabBrique{
 
         /**
          * @brief
-         * Accesseur d'une brique
-        */
-        Brique getBrique(int i);
-
-        /**
-         * @brief
          * Test de regression
         */
         void testRegression();
