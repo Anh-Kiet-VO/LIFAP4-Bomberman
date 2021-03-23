@@ -14,10 +14,6 @@ using namespace std;
 
 class Brique{
     private:
-        /**
-         * @brief Booléen pour indiquer si la brique contient un bonus
-        */
-        bool bonus;
 
         /**
          * @brief Indique le type de bonus de la brique
@@ -39,6 +35,11 @@ class Brique{
          * @brief Booléen pour indiquer si la brique est détruite
         */
         bool detruit;
+
+        /**
+         * @brief Booléen pour indiquer si la brique contient un bonus
+        */
+        bool bonus;
 
         /**
          * @brief Constructeur par défaut de la classe : : mise à jour de posX et posY à 0, détruit à false, typeBonus à NULL, et couleur à noir
@@ -64,6 +65,25 @@ class Brique{
          * @brief Accesseur de la position en X d'une brique
         */
         unsigned int getPosY() const;
+
+        /**
+         * @brief
+         * Accesseur de l'état d'une brique
+        */
+        bool getDetruit();
+
+        /**
+         * @brief Mutateur de l'état d'une brique
+         @param det : booléen
+        */
+        void setDetruit(bool det);
+
+        /**
+         * @brief Mutateur de la position d'une brique
+         @param x : entier non signé
+         @param y : entier non signé
+        */
+        void setPosXY(unsigned int x, unsigned int y);
 };
 
 #endif

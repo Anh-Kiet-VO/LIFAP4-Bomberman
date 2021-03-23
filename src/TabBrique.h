@@ -37,7 +37,7 @@ class TabBrique{
          * par défaut et un nombre de briques par défaut.
         */
         TabBrique();
-        
+
         /**
          * @brief
          * Destructeur de la classe :
@@ -55,18 +55,6 @@ class TabBrique{
          * Mutateur de nombre de briques
         */
         void setNbBrique(unsigned int nouvNbBrique);
-
-        /**
-         * @brief
-         * Accesseur de l'état d'une brique
-        */
-        bool getDetruit(unsigned int bri);
-
-        /**
-         * @brief
-         * Mutateur de l'état d'une brique
-        */
-        void setDetruit(unsigned int bri, bool det);
 
         /**
          * @brief
