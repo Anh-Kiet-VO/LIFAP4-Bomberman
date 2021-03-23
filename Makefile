@@ -36,6 +36,12 @@ all: ./bin/Test
 ./obj/Terrain.o: ./src/Terrain.cpp ./src/Terrain.h
 	$(CC) $(FLAGS) -c ./src/Terrain.cpp -o ./obj/Terrain.o
 
+./bin/bomberman_txt: $(CORE) $(SRCS_TXT:%.cpp=obj/%.o)
+	$(CC) $(FLAGS) $+ -o $@ $(LDFLAGS)
+
+
+
+
 doc:
 	doxygen -g doc/image.doxy
 

@@ -14,7 +14,6 @@
 #else
 #include <unistd.h>
 #include <termios.h>
-#include <unistd.h>
 #endif
 
 void termMove(int x, int y) // deplace le curseur du terminal
