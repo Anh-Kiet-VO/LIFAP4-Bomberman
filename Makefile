@@ -1,7 +1,7 @@
 CC = g++
 FLAGS = -ggdb -Wall
 
-all: ./obj/Couleur.o ./obj/Personnage.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Terrain.o ./bin/Test
+all: ./obj/Personnage.o ./obj/Terrain.o ./bin/Test
 
 ./bin/Test: ./obj/Test.o ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o
 	$(CC) $(FLAGS) ./obj/Test.o ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o -o ./bin/Test

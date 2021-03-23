@@ -25,8 +25,12 @@ void TabBombe::setNbBombe(unsigned int nouvNbBombe){
 }
 
 void TabBombe::testRegression(){
-    TabBombe bombes;
+    //Vérification getNbBombe
+    assert(getNbBombe() == 1);
 
-    //Vérification du nombre de bombes
-    assert(bombes.nbBombe == 1);
+    //Vérification de setNbBombe
+    setNbBombe(4);
+    assert(nbBombe == 4);
+
+
 }
