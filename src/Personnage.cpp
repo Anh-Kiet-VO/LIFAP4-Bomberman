@@ -1,5 +1,7 @@
 #include "Personnage.h"
 #include <cassert>
+#include <iostream>
+using namespace std;
 
 Personnage::Personnage() {
 	posX = posY = 1;
@@ -96,9 +98,9 @@ void Personnage::testRegression() {
 	string pseudo = "joueur";
 	Personnage(pseudo, 5, 5);
 
-	assert(nom == pseudo);
+	if(pseudo.compare(nom) == 0) cout << "Erreur avec le nom";
 
-	assert(getPosX() == 1 && getPosY() == 1);
+	assert(getPosX() == 5 && getPosY() == 5);
 
 	Couleur coul (31, 68, 50);
 	

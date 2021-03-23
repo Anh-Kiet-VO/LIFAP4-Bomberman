@@ -11,7 +11,7 @@ TabBombe::TabBombe(){
 }
 
 TabBombe::~TabBombe() {
-    tabBombe.~vector();
+    tabBombe.clear();
 }
 
 unsigned int TabBombe::getNbBombe() const{
@@ -25,6 +25,23 @@ void TabBombe::setNbBombe(unsigned int nouvNbBombe){
 }
 
 void TabBombe::testRegression(){
+    //BOMBE
+    Bombe une_bombe(5, 7, 1);
+
+    //Vérification des getPos et de getPortee
+    assert(une_bombe.getPosX() == 5);
+    assert(une_bombe.getPosY() == 7);
+
+    assert(une_bombe.getPortee() == 1);
+
+    //Vérification du setPortee
+    une_bombe.setPortee(3);
+    assert(une_bombe.getPortee() == 3);
+
+    //
+
+    //TABBOMBE
+
     //Vérification getNbBombe
     assert(getNbBombe() == 1);
 
