@@ -7,6 +7,7 @@
 #include <iostream>
 #include "JeuModeTexte.h"
 #include "Jeu.h"
+#include "winTxt.h"
 
 void txtAff(WinTXT & win, const Jeu & jeu){
 	const Terrain& ter = jeu.getConstTerrain();
