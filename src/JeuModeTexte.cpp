@@ -8,7 +8,7 @@
 #include "JeuModeTexte.h"
 #include "Jeu.h"
 
-void txtAff(WinTXT & win, const Jeu & jeu) {
+void txtAff(WinTXT & win, const Jeu & jeu){
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso();
 
@@ -22,13 +22,13 @@ void txtAff(WinTXT & win, const Jeu & jeu) {
 	}
 
     // Affichage du joueur 1
-	win.print(perso.getX(), perso.getY(), 'B');
+	win.print(perso.getPosX(), perso.getPosY(), 'B');
 	// Affichage du joueur 2
-	win.print(perso.getX(), perso.getY(),'P');
+	win.print(perso.getPosX(), perso.getPosY(), 'P');
 	win.draw();
 }
 
-void txtBoucle (Jeu & jeu) {
+void txtBoucle(Jeu & jeu) {
 	// Creation d'une nouvelle fenetre en mode texte
 	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
     WinTXT win (jeu.getConstTerrain().getDimX(), jeu.getConstTerrain().getDimY());

@@ -31,6 +31,4 @@ void TabBombe::testRegression(){
     //Vérification de setNbBombe
     setNbBombe(4);
     assert(nbBombe == 4);
-
-
 }
