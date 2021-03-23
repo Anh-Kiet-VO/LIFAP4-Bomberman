@@ -18,9 +18,6 @@ Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
 	x = posX;
 	y = posY;
 
-	setPosX(x);
-	setPosY(y);
-
 	vitesseX = vitesseY = 1;
 	vivant = true;
 	
