@@ -35,6 +35,7 @@ void TabBrique::testRegression(){
     assert(getNbBrique() == 1);
     setNbBrique(5);
     assert(getNbBrique() == 5);
+<<<<<<< HEAD
 
     Brique bri;
     assert(bri.posX == 0 && bri.posY == 0);
@@ -42,6 +43,8 @@ void TabBrique::testRegression(){
     assert(bri.getPosX() == 5 && bri.getPosY() == 7);
 
     assert(bri.bonus == false);
+=======
+>>>>>>> ddf4b1f99e53ee29341bdbd07b777f303e0986b8
     
     assert(bri.detruit == false);
     bri.setDetruit(true);

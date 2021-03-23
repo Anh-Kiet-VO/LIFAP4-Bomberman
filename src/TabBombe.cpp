@@ -2,6 +2,8 @@
 #include <cassert>
 #include <stdlib.h>
 #include <vector>
+#include <iostream>
+using namespace std;
 
 using namespace std;
 
@@ -25,7 +27,8 @@ void TabBombe::setNbBombe(unsigned int nouvNbBombe){
 }
 
 void TabBombe::testRegression(){
-    //BOMBE
+    ///////// BOMBE /////////
+
     Bombe une_bombe(5, 7, 1);
 
     //Vérification des getPos et de getPortee
@@ -38,9 +41,7 @@ void TabBombe::testRegression(){
     une_bombe.setPortee(3);
     assert(une_bombe.getPortee() == 3);
 
-    //
-
-    //TABBOMBE
+    ///////// TABBOMBE /////////
 
     //Vérification getNbBombe
     assert(getNbBombe() == 1);
@@ -48,4 +49,8 @@ void TabBombe::testRegression(){
     //Vérification de setNbBombe
     setNbBombe(4);
     assert(nbBombe == 4);
+
+    //Vérification de la taille du tabBombe
+    //cout << "taille max du tab: " << capacity() << endl;
+    //assert(max_size() == 1);
 }
