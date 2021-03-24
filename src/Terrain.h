@@ -47,6 +47,12 @@ class Terrain {
 	 * @brief Renvoie la hauteur du terrain Y
     */
     int getDimY() const;
+
+	/**
+	 *  @brief Enlève le clignotement du curseur
+	 * @param showFlag : booléen
+	*/
+	void ShowConsoleCursor(bool showFlag);
 };
 
 #endif

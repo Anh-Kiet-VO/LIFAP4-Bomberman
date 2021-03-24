@@ -38,7 +38,7 @@ const char terrain2[20][27] = {
 };
 
 #ifdef _WIN32
-void ShowConsoleCursor(bool showFlag)
+void Terrain::ShowConsoleCursor(bool showFlag)
 {
     HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
 
