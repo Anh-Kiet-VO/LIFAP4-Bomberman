@@ -4,6 +4,9 @@
 using namespace std;
 #include <iostream>
 
+#include <windows.h>
+
+
 const char terrain1[20][27] = {
 "##########################",
 "#  $$$$$#$$$$$#$$$$$#$$  #",
@@ -34,16 +37,31 @@ const char terrain2[20][27] = {
 "##########################"
 };
 
+#ifdef _WIN32
+void ShowConsoleCursor(bool showFlag)
+{
+    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    CONSOLE_CURSOR_INFO	cursorInfo;
+
+    GetConsoleCursorInfo(out, &cursorInfo);
+    cursorInfo.bVisible = showFlag; 
+    SetConsoleCursorInfo(out, &cursorInfo);
+}
+#endif 
 
 Terrain::Terrain() {
 	dimX = 26;
 	dimY = 20;
+	
+	ShowConsoleCursor(false);
 	for(unsigned int x = 0 ; x < dimX ; x++) {
 		for(unsigned int y = 0 ; y < dimY ; y++) {
 			ter[x][y] = terrain2[dimY-1-y][x];
 		}
 	}
 }
+
 
 bool Terrain::estPosValid(const unsigned int x, const unsigned int y) const {
 	return ( (x >= 0) && (x < dimX) && (y >= 0) && (y < dimY) && (ter[x][y] !='#') );
