@@ -77,11 +77,11 @@ void Personnage::droite(const Terrain &t) {
 }
 
 void Personnage::haut(const Terrain &t) {
-	if (t.estPosValid(posY,posY+1)) posY++;
+	if (t.estPosValid(posX,posY+1)) posY++;
 }
 
 void Personnage::bas(const Terrain &t) {
-	if (t.estPosValid(posY,posY-1)) posY--;
+	if (t.estPosValid(posX,posY-1)) posY--;
 }
 
 void Personnage::testRegression() {

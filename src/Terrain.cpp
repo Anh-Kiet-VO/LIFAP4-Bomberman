@@ -8,21 +8,6 @@ using namespace std;
 #include <windows.h>
 #endif
 
-const char terrain1[20][27] = {
-"##########################",
-"#  $$$$$#$$$$$#$$$$$#$$  #",
-"# $$$$$$$$$$$$$$$$$$$$$$ #",
-"#$$$$$$$#$$$$$#$$$$$#$$$$#",
-"#$$$$$$$$$$$$$$$$$$$$$$$$#",
-"#$$$$$$$#$$$$$#$$$$$#$$$$#",
-"#$$$$$$$$$$$$$$$$$$$$$$$$#",
-"#$$$$$$$#$$$$$#$$$$$#$$$$#",
-"#$$$$$$$$$$$$$$$$$$$$$$$$#",
-"# $$$$$$#$$$$$#$$$$$#$$$ #",
-"#  $$$$$$$$$$$$$$$$$$$$  #",
-"##########################"
-};
-
 const char terrain2[20][30] = {
 "#############################",
 "#  .....#.....#.....#.....  #",
@@ -45,7 +30,7 @@ void Terrain::ShowConsoleCursor(bool showFlag)
 
     CONSOLE_CURSOR_INFO	cursorInfo;
 
-    GetConsolelseCursorInfo(out, &cursorInfo);
+    GetConsoleCursorInfo(out, &cursorInfo);
     cursorInfo.bVisible = showFlag; 
     SetConsoleCursorInfo(out, &cursorInfo);
 }
@@ -54,9 +39,8 @@ void Terrain::ShowConsoleCursor(bool showFlag)
 Terrain::Terrain() {
 	dimX = 29;
 	dimY = 20;
-	#ifdef _WIN32
+	
 	ShowConsoleCursor(false);
-	#endif 
 	for(unsigned int x = 0 ; x < dimX ; x++) {
 		for(unsigned int y = 0 ; y < dimY ; y++) {
 			ter[x][y] = terrain2[dimY-1-y][x];
