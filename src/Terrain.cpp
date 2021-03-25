@@ -45,7 +45,7 @@ void Terrain::ShowConsoleCursor(bool showFlag)
 
     CONSOLE_CURSOR_INFO	cursorInfo;
 
-    GetConsoleCursorInfo(out, &cursorInfo);
+    GetConsolelseCursorInfo(out, &cursorInfo);
     cursorInfo.bVisible = showFlag; 
     SetConsoleCursorInfo(out, &cursorInfo);
 }
@@ -54,8 +54,9 @@ void Terrain::ShowConsoleCursor(bool showFlag)
 Terrain::Terrain() {
 	dimX = 26;
 	dimY = 20;
-	
+	#ifdef _WIN32
 	ShowConsoleCursor(false);
+	#endif 
 	for(unsigned int x = 0 ; x < dimX ; x++) {
 		for(unsigned int y = 0 ; y < dimY ; y++) {
 			ter[x][y] = terrain2[dimY-1-y][x];
