@@ -4,8 +4,9 @@
 using namespace std;
 #include <iostream>
 
+#ifdef _WIN32
 #include <windows.h>
-
+#endif
 
 const char terrain1[20][27] = {
 "##########################",
