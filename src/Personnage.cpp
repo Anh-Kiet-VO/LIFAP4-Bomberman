@@ -4,7 +4,8 @@
 using namespace std;
 
 Personnage::Personnage() {
-	posX = posY = 1;
+	posX = 1;
+	posY = 9;
 	vitesseX = vitesseY = 1;
 	vivant = true;
 	coulPerso = Couleur(0,0,0);
