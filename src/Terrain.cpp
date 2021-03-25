@@ -62,11 +62,11 @@ char Terrain::getXY(const unsigned int x, const unsigned int y) const {
 	return ter[x][y];
 }
 
-int Terrain::getDimX () const {
+int Terrain::getDimX() const {
 	return dimX;
 }
 
-int Terrain::getDimY () const {
+int Terrain::getDimY() const {
 	return dimY;
 }
 
