@@ -12,6 +12,7 @@
 void txtAff(WinTXT & win, const Jeu & jeu){
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso();
+	const Bombe& b = jeu.getConstBombe();
 
 	win.clear();
 
@@ -25,7 +26,9 @@ void txtAff(WinTXT & win, const Jeu & jeu){
     // Affichage du joueur 1
 	win.print(perso.getPosX(), perso.getPosY(), 'B');
 	// Affichage du joueur 2
-	win.print(perso.getPosX(), perso.getPosY(), 'P');
+	//win.print(perso.getPosX(), perso.getPosY(), 'P');
+
+	win.print(b.getPosX(), b.getPosY(), 'o');
 	win.draw();
 }
 
@@ -59,6 +62,9 @@ void txtBoucle(Jeu & jeu) {
 				break;	
 			case 'o':
 				jeu.actionClavier('b');
+				break;
+			case 'p':
+				jeu.actionClavier('n');
 				break;
 			case 'q':
 				ok = false;
