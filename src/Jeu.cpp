@@ -26,6 +26,9 @@ bool Jeu::actionClavier(const char touche) {
 		case 'b' :
 				perso.bas(ter);
 				break;
+		case 'p' :
+				perso.placer(ter);
+				break;
 	}
 	return false;
 }
