@@ -1,6 +1,6 @@
 #include "Jeu.h"
 
-Jeu::Jeu () : ter(), perso() {
+Jeu::Jeu () : ter(), perso(), b() {
 
 }
 
@@ -8,9 +8,13 @@ Terrain& Jeu::getTerrain() { return ter; }
 
 Personnage& Jeu::getPerso() { return perso; }
 
+Bombe& Jeu::getBombe(){ return b; }
+
 const Terrain& Jeu::getConstTerrain() const { return ter; }
 
 const Personnage& Jeu::getConstPerso() const { return perso; }
+
+const Bombe& Jeu::getConstBombe() const { return b; }
 
 bool Jeu::actionClavier(const char touche) {
 	switch(touche) {
@@ -26,8 +30,8 @@ bool Jeu::actionClavier(const char touche) {
 		case 'b' :
 				perso.bas(ter);
 				break;
-		case 'p' :
-				perso.placer(ter);
+		case 'n' :
+				perso.placer(ter, b);
 				break;
 	}
 	return false;
