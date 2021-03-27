@@ -39,6 +39,8 @@ class Terrain {
     */
     char getXY(const unsigned int x, const unsigned int y) const;
 
+	void EstExplosee(unsigned int x, unsigned int y);
+
 	void placer(unsigned int x, unsigned int y);
 
     /**

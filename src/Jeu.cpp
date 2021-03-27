@@ -1,5 +1,6 @@
 #include "Jeu.h"
-
+#include <iostream>
+using namespace std;
 Jeu::Jeu () : ter(), perso(), b() {
 
 }
@@ -31,7 +32,16 @@ bool Jeu::actionClavier(const char touche) {
 				perso.bas(ter);
 				break;
 		case 'n' :
-				ter.placer(perso.getPosX(), perso.getPosY());
+				
+				int i = b.tempsExplosion;
+				if(i > 3){
+					ter.placer(perso.getPosX(), perso.getPosY());
+					b.setPos(perso.getPosX(), perso.getPosY());
+					i--;
+					cout << i << endl;
+				}else{
+					ter.EstExplosee(b.getPosX(), b.getPosY());
+				}
 				break;
 	}
 	return false;
