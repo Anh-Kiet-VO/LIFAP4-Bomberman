@@ -15,15 +15,18 @@ class Jeu {
 	private:
 	Terrain ter;
 	Personnage perso;
+    Bombe b;
 	
 	public:
     Jeu();
 
     Terrain& getTerrain();
     Personnage& getPerso();
+    Bombe& getBombe();
 
     const Terrain& getConstTerrain() const;
     const Personnage& getConstPerso() const;
+    const Bombe& getConstBombe() const;
 
     bool actionClavier(const char touche);
 };
