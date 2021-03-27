@@ -25,6 +25,9 @@ all: ./bin/Test ./bin/mainTXT
 ./obj/Personnage.o: ./src/Personnage.cpp ./src/Personnage.h ./src/Terrain.h ./src/TabBombe.h ./src/Couleur.h
 	$(CC) $(FLAGS) -c ./src/Personnage.cpp -o ./obj/Personnage.o
 
+./obj/TabPersonnage.o: ./src/TabPersonnage.cpp ./src/TabPersonnage.h ./src/Personnage.h
+	$(CC) $(FLAGS) -c ./src/TabPersonnage.cpp -o ./obj/TabPersonnage.o
+
 ./obj/Brique.o: ./src/Brique.cpp ./src/Brique.h ./src/Couleur.h
 	$(CC) $(FLAGS) -c ./src/Brique.cpp -o ./obj/Brique.o
 
