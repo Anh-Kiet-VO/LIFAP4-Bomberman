@@ -36,6 +36,10 @@ Personnage::~Personnage() {
 	posX = posY = 0;
 }
 
+void Personnage::placer(const Terrain &t) {
+	
+}
+
 int Personnage::getPosX() const {
 	return posX;
 }
