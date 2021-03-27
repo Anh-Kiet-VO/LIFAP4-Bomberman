@@ -67,7 +67,7 @@ class Personnage {
 	/**
 	 * @brief Permet de placer une bombe
 	*/
-	void placer(const Terrain &t);
+	void placer(const Terrain &t, Bombe &b);
 
 	/**
 	 * @brief Accesseur pour la position en X

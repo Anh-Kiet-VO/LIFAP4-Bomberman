@@ -36,8 +36,8 @@ Personnage::~Personnage() {
 	posX = posY = 0;
 }
 
-void Personnage::placer(const Terrain &t) {
-	
+void Personnage::placer(const Terrain &t, Bombe &b) {
+	b.setPos(getPosX(), getPosY());
 }
 
 int Personnage::getPosX() const {
