@@ -4,6 +4,7 @@
 Bombe::Bombe() {
   posX = posY = 0;
   portee = 0;
+  tempsExplosion = 180;
 }
 
 Bombe::Bombe(unsigned int positionX, unsigned int positionY, int nouvPortee) {

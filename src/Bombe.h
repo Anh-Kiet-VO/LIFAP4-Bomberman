@@ -21,6 +21,11 @@ class Bombe {
 
     public:
     /**
+     * @brief Temps avant l'explosion de la bombe
+    */
+    unsigned int tempsExplosion;
+
+    /**
      * @brief Constructeur par défaut de la classe : initialise la position à 0 et la portée à 0
     */
     Bombe();
