@@ -35,11 +35,11 @@ Personnage::~Personnage() {
 	vitesseX = vitesseY = 0.0;
 	posX = posY = 0;
 }
-
+/*
 void Personnage::placer(const Terrain &t, Bombe &b) {
 	b.setPos(getPosX(), getPosY());
 }
-
+*/
 int Personnage::getPosX() const {
 	return posX;
 }
