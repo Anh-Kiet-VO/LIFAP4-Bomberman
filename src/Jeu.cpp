@@ -31,7 +31,7 @@ bool Jeu::actionClavier(const char touche) {
 				perso.bas(ter);
 				break;
 		case 'n' :
-				perso.placer(ter, b);
+				ter.placer(perso.getPosX(), perso.getPosY());
 				break;
 	}
 	return false;
