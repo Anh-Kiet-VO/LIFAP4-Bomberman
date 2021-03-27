@@ -8,6 +8,7 @@
 #ifndef _TERRAIN_H
 #define _TERRAIN_H
 
+
 /**
  * @brief La classe Terrain contient ses dimensions et un tab 2D de cases (une case= 1 char)
 */
@@ -37,6 +38,8 @@ class Terrain {
 	 * @param y : entier
     */
     char getXY(const unsigned int x, const unsigned int y) const;
+
+	void placer(unsigned int x, unsigned int y);
 
     /**
 	 * @brief Renvoie la largeur du terrain en X

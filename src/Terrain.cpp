@@ -49,9 +49,16 @@ Terrain::Terrain() {
 	}
 }
 
+void Terrain::placer(unsigned int x, unsigned int y) {
+	assert(x>=0);
+    assert(y>=0);
+    assert(x<dimX);
+    assert(y<dimY);
+    ter[x][y]='o';
+}
 
 bool Terrain::estPosValid(const unsigned int x, const unsigned int y) const {
-	return ( (x >= 0) && (x < dimX) && (y >= 0) && (y < dimY) && (ter[x][y] !='#') && (ter[x][y] != '.') );
+	return ( (x >= 0) && (x < dimX) && (y >= 0) && (y < dimY) && (ter[x][y] !='#') && (ter[x][y] != '.') && (ter[x][y] != 'o') );
 }
 
 char Terrain::getXY(const unsigned int x, const unsigned int y) const {
