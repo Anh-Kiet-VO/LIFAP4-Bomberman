@@ -36,10 +36,10 @@ bool Jeu::actionClavier(const char touche) {
 				break;
 	}
 	if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
-		ter.EstExplosee(perso.getPosX() + 1, perso.getPosY());
-		ter.EstExplosee(perso.getPosX() - 1, perso.getPosY());
-		ter.EstExplosee(perso.getPosX(), perso.getPosY() - 1);
-		ter.EstExplosee(perso.getPosX(), perso.getPosY() + 1);
+		ter.EstExplosee(perso.getPosX() + b.getPortee(), perso.getPosY());
+		ter.EstExplosee(perso.getPosX() - b.getPortee(), perso.getPosY());
+		ter.EstExplosee(perso.getPosX(), perso.getPosY() - b.getPortee());
+		ter.EstExplosee(perso.getPosX(), perso.getPosY() + b.getPortee());
 		return true;
 	}
 	return false;
