@@ -33,13 +33,13 @@ class TabPersonnage {
      * @brief
      * Constructeur de TabPerso
     */
-    TabPerso();
+    TabPersonnage();
 
     /**
      * @brief
      * Destructeur de TabPerso
     */
-    ~TabPerso();
+    ~TabPersonnage();
 
     /**
      * @brief

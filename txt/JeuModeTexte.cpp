@@ -12,7 +12,7 @@
 void txtAff(WinTXT & win, const Jeu & jeu){
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso();
-	const Bombe& b = jeu.getConstBombe();
+	//const Bombe& b = jeu.getConstBombe();
 
 	win.clear();
 
@@ -27,8 +27,6 @@ void txtAff(WinTXT & win, const Jeu & jeu){
 	win.print(perso.getPosX(), perso.getPosY(), 'B');
 	// Affichage du joueur 2
 	//win.print(perso.getPosX(), perso.getPosY(), 'P');
-
-	win.print(b.getPosX(), b.getPosY(), 'o');
 	win.draw();
 }
 

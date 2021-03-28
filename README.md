@@ -1,7 +1,7 @@
 # LIFAP4 - Bomberman
 
 ## TO-DO LIST
-- [ ] Problème collision avec bombe
+- [ ] Problème explosion bombe
 
 ### Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  

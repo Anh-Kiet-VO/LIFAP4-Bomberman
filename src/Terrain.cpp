@@ -56,6 +56,14 @@ void Terrain::placer(unsigned int x, unsigned int y) {
     assert(y<dimY);
     ter[x][y]='o';
 }
+/*
+bool Terrain::BombeEstPlacee(unsigned int x, unsigned int y){
+	if(ter[x][y] == 'o'){
+		return true;
+	}else{
+		return false;
+	}
+}*/
 
 void Terrain::EstExplosee(unsigned int x, unsigned int y){
 	assert(x>=0);

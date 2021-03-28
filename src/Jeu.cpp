@@ -32,17 +32,9 @@ bool Jeu::actionClavier(const char touche) {
 				perso.bas(ter);
 				break;
 		case 'n' :
-				
-				int i = b.tempsExplosion;
-				if(i > 3){
-					ter.placer(perso.getPosX(), perso.getPosY());
-					b.setPos(perso.getPosX(), perso.getPosY());
-					i--;
-					cout << i << endl;
-				}else{
-					ter.EstExplosee(b.getPosX(), b.getPosY());
-				}
+				ter.placer(perso.getPosX(), perso.getPosY());
 				break;
 	}
+	
 	return false;
 }
