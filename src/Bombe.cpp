@@ -3,8 +3,9 @@
 
 Bombe::Bombe() {
   posX = posY = 0;
-  portee = 0;
+  portee = 1;
   tempsExplosion = 4;
+  estSurLeTerrain = 0;
 }
 
 Bombe::Bombe(unsigned int positionX, unsigned int positionY, int nouvPortee) {

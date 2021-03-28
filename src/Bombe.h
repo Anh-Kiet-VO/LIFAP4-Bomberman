@@ -26,6 +26,11 @@ class Bombe {
     unsigned int tempsExplosion;
 
     /**
+     * @brief Booléen vrai si la bombe est sur le terrain
+    */
+    bool estSurLeTerrain;
+
+    /**
      * @brief Constructeur par défaut de la classe : initialise la position à 0 et la portée à 0
     */
     Bombe();
