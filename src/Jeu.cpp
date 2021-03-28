@@ -35,6 +35,12 @@ bool Jeu::actionClavier(const char touche) {
 				ter.placer(perso.getPosX(), perso.getPosY());
 				break;
 	}
-	
+	if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
+		ter.EstExplosee(perso.getPosX() + 1, perso.getPosY());
+		ter.EstExplosee(perso.getPosX() - 1, perso.getPosY());
+		ter.EstExplosee(perso.getPosX(), perso.getPosY() - 1);
+		ter.EstExplosee(perso.getPosX(), perso.getPosY() + 1);
+		return true;
+	}
 	return false;
 }

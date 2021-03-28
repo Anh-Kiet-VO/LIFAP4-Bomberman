@@ -70,7 +70,9 @@ void Terrain::EstExplosee(unsigned int x, unsigned int y){
 	assert(y>=0);
 	assert(x<dimX);
 	assert(y<dimY);
-	ter[x][y]=' ';
+	if(ter[x][y] != '#'){
+		ter[x][y]=' ';
+	}
 }
 
 bool Terrain::estPosValid(const unsigned int x, const unsigned int y) const {
