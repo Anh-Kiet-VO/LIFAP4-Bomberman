@@ -58,6 +58,8 @@ class Terrain {
 	 * @param showFlag : booléen
 	*/
 	void ShowConsoleCursor(bool showFlag);
+
+	//bool BombeEstPlacee(unsigned int x, unsigned int y);
 };
 
 #endif
