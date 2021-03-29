@@ -1,7 +1,7 @@
 #include "Jeu.h"
 #include <iostream>
 using namespace std;
-Jeu::Jeu () : ter(), perso(), b() {
+Jeu::Jeu () : ter(), perso(), b(perso.getPosX(), perso.getPosY(), 1) {
 
 }
 
@@ -21,26 +21,30 @@ bool Jeu::actionClavier(const char touche) {
 	switch(touche) {
 		case 'g' :
 				perso.gauche(ter);
+				cout<<"gauche : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 				break;
 		case 'd' :
 				perso.droite(ter);
+				cout<<"droite : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 				break;
 		case 'h' :
 				perso.haut(ter);
 				break;
 		case 'b' :
 				perso.bas(ter);
+				cout<<"bas : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 				break;
 		case 'n' :
 				ter.placer(perso.getPosX(), perso.getPosY());
+				cout<<b.getPosX() << " " <<b.getPosY() << endl;
 				break;
 	}
-	if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
+	/*if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
 		ter.EstExplosee(perso.getPosX() + b.getPortee(), perso.getPosY());
 		ter.EstExplosee(perso.getPosX() - b.getPortee(), perso.getPosY());
 		ter.EstExplosee(perso.getPosX(), perso.getPosY() - b.getPortee());
 		ter.EstExplosee(perso.getPosX(), perso.getPosY() + b.getPortee());
 		return true;
-	}
+	}*/
 	return false;
 }

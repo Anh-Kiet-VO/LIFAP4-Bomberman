@@ -2,7 +2,7 @@
 #include <cassert>
 
 Bombe::Bombe() {
-  posX = posY = 0;
+  posX = posY = 1;
   portee = 1;
   tempsExplosion = 4;
   estSurLeTerrain = 0;
