@@ -85,11 +85,11 @@ endif
 ./bin/mainSDL: ./obj/main_SDL.o ./obj/sdlJeu.o $(ALLOBJ) 
 	$(CC) $(FLAGS) $(ALLOBJ) ./obj/sdlJeu.o ./obj/main_SDL.o -o ./bin/mainSDL $(LIBS_SDL)
 
-./obj/main_SDL.o: ./sdl/main_SDL.cpp ./sdl/sdlJeu.h
-	$(CC) $(FLAGS) -c ./sdl/main_SDL.cpp -Isrc/ -o ./obj/main_SDL.o
+./obj/sdlJeu.o: ./sdl/sdlJeu.cpp ./sdl/sdlJeu.h ./src/Jeu.h
+	$(CC) $(FLAGS) -c ./sdl/sdlJeu.cpp $(LIB) -o ./obj/sdlJeu.o
 
-./obj/sdlJeu.o: ./sdl/sdlJeu.cpp ./sdl/sdlJeu.h ./src/Jeu.cpp
-	$(CC) $(FLAGS) -c ./sdl/sdlJeu.cpp -Isrc/ -o ./obj/sdlJeu.o
+./obj/main_SDL.o: ./sdl/main_SDL.cpp ./sdl/sdlJeu.h
+	$(CC) $(FLAGS) -c ./sdl/main_SDL.cpp $(LIB) -o ./obj/main_SDL.o
 
 # ----------------------------------------------------- #
 
