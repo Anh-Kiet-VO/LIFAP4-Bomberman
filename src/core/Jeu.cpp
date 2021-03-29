@@ -1,7 +1,7 @@
 #include "Jeu.h"
 #include <iostream>
 using namespace std;
-Jeu::Jeu () : ter(), perso(), b(perso.getPosX(), perso.getPosY(), 1) {
+Jeu::Jeu () : ter(), perso(), b() {
 
 }
 

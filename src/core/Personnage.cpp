@@ -4,12 +4,7 @@
 using namespace std;
 
 Personnage::Personnage() {
-<<<<<<< HEAD:src/core/Personnage.cpp
-	posX = 1;
-	posY = 1;
-=======
 	posX = posY = 1;
->>>>>>> 30886f1e76c230f84d8e019643224c791616d4a1:src/Personnage.cpp
 	vitesseX = vitesseY = 1;
 	vivant = true;
 	coulPerso = Couleur(0,0,0);
