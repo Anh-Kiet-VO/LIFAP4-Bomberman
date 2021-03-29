@@ -24,7 +24,9 @@ Organisation de l'archive :
 * /data : Assets (Images, sons, fonts...)
 * /doc : Documentation, présentation PowerPoint, diagramme des classes UML, diagramme de Gantt, cahier des charges
 * /obj : Fichiers .o
-* /src : Fichiers .cpp et .h
+* /src : Fichiers contenant le code du Bomberman
+* /src/sdl2 : FIchier contenant le code du Bomberman en sdl2
+* /src/txt : Fichier content le code du Bomberman en txt
 
 
 -----------------
