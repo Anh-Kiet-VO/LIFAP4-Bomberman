@@ -1,6 +1,6 @@
 #include <cassert>
 #include <time.h>
-#include "SDLJeu.h"
+#include "sdlJeu.h"
 #include <stdlib.h>
 
 #include <iostream>
@@ -82,7 +82,7 @@ void Image::setSurface(SDL_Surface * surf) {surface = surf;}
 
 // ============= CLASS SDLJEU =============== //
 
-SDLJeu::SDLJeu () : jeu() {
+sdlJeu::sdlJeu () : jeu() {
     // Initialisation de la SDL
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         cout << "Erreur lors de l'initialisation de la SDL : " << SDL_GetError() << endl;
@@ -161,7 +161,7 @@ SDLJeu::SDLJeu () : jeu() {
     }*/
 }
 
-SDLJeu::~SDLJeu () {
+sdlJeu::~sdlJeu () {
     if (withSound) Mix_Quit();
     TTF_CloseFont(font);
     TTF_Quit();
@@ -170,14 +170,14 @@ SDLJeu::~SDLJeu () {
     SDL_Quit();
 }
 
-void SDLeu::SDLAff () {
+void sdleu::sdlAff () {
 	//Remplir l'�cran de blanc
     SDL_SetRenderDrawColor(renderer, 230, 240, 255, 255);
     SDL_RenderClear(renderer);
 
 	int x,y;
 	const Terrain& ter = jeu.getConstTerrain();
-	const Personnage& perso = jeu.getConstPacman();
+	const Personnage& perso = jeu.getConstPersonnage();
 
     // Afficher les sprites des murs et des pastilles
 	for (x=0;x<ter.getDimX();++x)
@@ -197,7 +197,7 @@ void SDLeu::SDLAff () {
 
 }
 
-void SDLJeu::SDLBoucle () {
+void sdlJeu::sdlBoucle () {
     SDL_Event events;
 	bool quit = false;
 
@@ -242,7 +242,7 @@ void SDLJeu::SDLBoucle () {
 		}
 
 		// on affiche le jeu sur le buffer cach�
-		SDLAff();
+		sdlAff();
 
 		// on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
         SDL_RenderPresent(renderer);
