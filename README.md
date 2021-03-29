@@ -1,7 +1,9 @@
 # LIFAP4 - Bomberman
 
 ## TO-DO LIST
-- [ ] Problème explosion bombe
+- [ ] Problème chrono Bombe explosion + Bombe en lui-même
+- [ ] Bonus sur le terrain
+- [ ] Deuxième joueur
 
 ### Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
