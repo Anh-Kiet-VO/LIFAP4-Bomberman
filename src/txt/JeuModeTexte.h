@@ -1,7 +1,7 @@
 #ifndef _TXTJEU_H
 #define _TXTJEU_H
 
-#include "../src/Jeu.h"
+#include "Jeu.h"
 #include "winTxt.h"
 
 void txtBoucle(Jeu & j);
