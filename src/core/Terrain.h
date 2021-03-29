@@ -39,8 +39,18 @@ class Terrain {
     */
     char getXY(const unsigned int x, const unsigned int y) const;
 
+	/**
+	 * @brief Explose les briques aux alentours
+	 * @param x : entier
+	 * @param y : entier
+	*/
 	void EstExplosee(unsigned int x, unsigned int y);
 
+	/**
+	 * @brief Place une bombe
+	 * @param x : entier
+	 * @param y : entier
+	*/
 	void placer(unsigned int x, unsigned int y);
 
     /**
