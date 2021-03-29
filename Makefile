@@ -92,6 +92,7 @@ endif
 	$(CC) $(FLAGS) -c ./sdl/sdlJeu.cpp -Isrc/ -o ./obj/sdlJeu.o
 
 # ----------------------------------------------------- #
+
 doc:
 	doxygen -g doc/image.doxy
 
