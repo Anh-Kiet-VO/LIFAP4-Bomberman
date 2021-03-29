@@ -8,11 +8,26 @@ using namespace std;
 #include <windows.h>
 #endif
 
+<<<<<<< HEAD:src/core/Terrain.cpp
 const char terrain2[4][30] = {
 "#############################",
 "#  .....#.....#.....#.....  #",
 "# ......#.....#.....#...... #",
 "#############################"
+=======
+const char terrain2[11][16] = {
+"###############",
+"#  .........  #",
+"# #.#.#.#.#.# #",
+"#.............#",
+"#.#.#.#.#.#.#.#",
+"#.............#",
+"#.#.#.#.#.#.#.#",
+"#.............#",
+"# #.#.#.#.#.# #",
+"#  .........  #",
+"###############"
+>>>>>>> 30886f1e76c230f84d8e019643224c791616d4a1:src/Terrain.cpp
 };
 
 #ifdef _WIN32
@@ -29,8 +44,13 @@ void Terrain::ShowConsoleCursor(bool showFlag)
 #endif 
 
 Terrain::Terrain() {
+<<<<<<< HEAD:src/core/Terrain.cpp
 	dimX = 29;
 	dimY = 4;
+=======
+	dimX = 16;
+	dimY = 11;
+>>>>>>> 30886f1e76c230f84d8e019643224c791616d4a1:src/Terrain.cpp
 	#ifdef _WIN32
 	ShowConsoleCursor(false);
 	#endif 
