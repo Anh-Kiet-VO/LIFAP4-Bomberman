@@ -1,6 +1,6 @@
 #include <cassert>
 #include <time.h>
-#include "sdlJeu.h"
+#include "SDLJeu.h"
 #include <stdlib.h>
 
 #include <iostream>
@@ -80,18 +80,9 @@ SDL_Texture * Image::getTexture() const {return texture;}
 
 void Image::setSurface(SDL_Surface * surf) {surface = surf;}
 
-
-
-
-
-
-
-
-
-
 // ============= CLASS SDLJEU =============== //
 
-sdlJeu::sdlJeu () : jeu() {
+SDLJeu::SDLJeu () : jeu() {
     // Initialisation de la SDL
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         cout << "Erreur lors de l'initialisation de la SDL : " << SDL_GetError() << endl;
@@ -128,7 +119,7 @@ sdlJeu::sdlJeu () : jeu() {
 	dimy = dimy * TAILLE_SPRITE;
 
     // Creation de la fenetre
-    window = SDL_CreateWindow("Pacman", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, dimx, dimy, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    window = SDL_CreateWindow("Bomberman", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, dimx, dimy, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (window == NULL) {
         cout << "Erreur lors de la creation de la fenetre : " << SDL_GetError() << endl; 
         SDL_Quit(); 
@@ -138,10 +129,10 @@ sdlJeu::sdlJeu () : jeu() {
     renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 
     // IMAGES
-    im_pacman.loadFromFile("data/pacman.png",renderer);
+    im_perso.loadFromFile("data/perso.png",renderer);
     im_mur.loadFromFile("data/mur.png",renderer);
-    im_pastille.loadFromFile("data/pastille.png",renderer);
-    im_fantome.loadFromFile("data/fantome.png",renderer);
+    im_brique.loadFromFile("data/brique.png",renderer);
+    im_bombe.loadFromFile("data/bombe.png",renderer);
 
     // FONTS
     font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
@@ -157,7 +148,7 @@ sdlJeu::sdlJeu () : jeu() {
 	font_im.loadFromCurrentSurface(renderer);
 
     // SONS
-    if (withSound)
+    /*if (withSound)
     {
         sound = Mix_LoadWAV("data/son.wav");
         if (sound == NULL) 
@@ -167,10 +158,10 @@ sdlJeu::sdlJeu () : jeu() {
                 SDL_Quit();
                 exit(1);
         }
-    }
+    }*/
 }
 
-sdlJeu::~sdlJeu () {
+SDLJeu::~SDLJeu () {
     if (withSound) Mix_Quit();
     TTF_CloseFont(font);
     TTF_Quit();
@@ -179,15 +170,14 @@ sdlJeu::~sdlJeu () {
     SDL_Quit();
 }
 
-void sdlJeu::sdlAff () {
+void SDLeu::SDLAff () {
 	//Remplir l'�cran de blanc
     SDL_SetRenderDrawColor(renderer, 230, 240, 255, 255);
     SDL_RenderClear(renderer);
 
 	int x,y;
 	const Terrain& ter = jeu.getConstTerrain();
-	const Pacman& pac = jeu.getConstPacman();
-	const Fantome& fan = jeu.getConstFantome();
+	const Personnage& perso = jeu.getConstPacman();
 
     // Afficher les sprites des murs et des pastilles
 	for (x=0;x<ter.getDimX();++x)
@@ -195,13 +185,10 @@ void sdlJeu::sdlAff () {
 			if (ter.getXY(x,y)=='#')
 				im_mur.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
 			else if (ter.getXY(x,y)=='.')
-				im_pastille.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
+				im_brique.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
 
 	// Afficher le sprite de Pacman
-	im_pacman.draw(renderer,pac.getX()*TAILLE_SPRITE,pac.getY()*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
-
-	// Afficher le sprite du Fantome
-	im_fantome.draw(renderer,fan.getX()*TAILLE_SPRITE,fan.getY()*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
+	im_pacman.draw(renderer,perso.getX()*TAILLE_SPRITE,perso.getY()*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
@@ -210,7 +197,7 @@ void sdlJeu::sdlAff () {
 
 }
 
-void sdlJeu::sdlBoucle () {
+void SDLJeu::SDLBoucle () {
     SDL_Event events;
 	bool quit = false;
 
@@ -255,7 +242,7 @@ void sdlJeu::sdlBoucle () {
 		}
 
 		// on affiche le jeu sur le buffer cach�
-		sdlAff();
+		SDLAff();
 
 		// on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
         SDL_RenderPresent(renderer);
