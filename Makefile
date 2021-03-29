@@ -1,9 +1,9 @@
 CC = g++
 FLAGS = -ggdb -Wall
 
-ALLOBJ= ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Personnage.o ./obj/Terrain.o ./obj/Jeu.o
+ALLOBJ= ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Personnage.o ./obj/Terrain.o ./obj/Jeu.o ./obj/TabPersonnage.o
 
-CORE = ./src/Terrain.cpp ./src/Jeu.cpp ./src/Personnage.cpp ./src/TabBrique.cpp ./src/TabBombe.cpp
+CORE = ./src/Terrain.cpp ./src/Jeu.cpp ./src/Personnage.cpp ./src/TabBrique.cpp ./src/TabBombe.cpp ./src/TabPersonnage.cpp
 
 SRCS_TXT = $(CORE) txt/JeuModeTexte.cpp txt/winTxt.cpp txt/main_txt.cpp
 
