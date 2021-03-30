@@ -29,10 +29,11 @@ bool Jeu::actionClavier(const char touche) {
 				break;
 		case 'h' :
 				perso.haut(ter);
+				cout<<"bas : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 				break;
 		case 'b' :
 				perso.bas(ter);
-				cout<<"bas : " << perso.getPosX() << " " << perso.getPosY() << endl; 
+				cout<<"haut : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 				break;
 		case 'n' :
 				//ter.placer(perso.getPosX(), perso.getPosY());

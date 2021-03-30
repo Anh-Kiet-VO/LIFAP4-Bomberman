@@ -15,7 +15,6 @@
 #include <SDL2/SDL_mixer.h>
 #endif
 
-
 #include "Jeu.h"
 
 //! \brief Pour grer une image avec SDL2
