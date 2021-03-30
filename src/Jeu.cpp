@@ -32,10 +32,18 @@ bool Jeu::actionClavier(const char touche) {
 				perso.bas(ter);
 				break;
 		case 'n' :
-				ter.placer(perso.getPosX(), perso.getPosY());
+				//ter.placer(perso.getPosX(), perso.getPosY());
+				if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
+					ter.placer(perso.getPosX(), perso.getPosY());
+					ter.EstExplosee(perso.getPosX() + b.getPortee(), perso.getPosY());
+					ter.EstExplosee(perso.getPosX() - b.getPortee(), perso.getPosY());
+					ter.EstExplosee(perso.getPosX(), perso.getPosY() - b.getPortee());
+					ter.EstExplosee(perso.getPosX(), perso.getPosY() + b.getPortee());
+				}
 				break;
 	}
 	/*if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
+		//ter.placer(perso.getPosX(), perso.getPosY());
 		ter.EstExplosee(perso.getPosX() + b.getPortee(), perso.getPosY());
 		ter.EstExplosee(perso.getPosX() - b.getPortee(), perso.getPosY());
 		ter.EstExplosee(perso.getPosX(), perso.getPosY() - b.getPortee());
