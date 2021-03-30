@@ -103,14 +103,14 @@ sdlJeu::sdlJeu () : jeu() {
         exit(1);
     }
 
-    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    /*if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
     {
         cout << "SDL_mixer could not initialize! SDL_mixer Error: " << Mix_GetError() << endl;
         cout << "No sound !!!" << endl;
         //SDL_Quit();exit(1);
         withSound = false;
     }
-    else withSound = true;
+    else withSound = true;*/
 
 	int dimx, dimy;
 	dimx = jeu.getConstTerrain().getDimX();
@@ -129,22 +129,22 @@ sdlJeu::sdlJeu () : jeu() {
     renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 
     // IMAGES
-    im_perso.loadFromFile("data/perso.png",renderer);
-    im_mur.loadFromFile("data/mur.png",renderer);
-    im_brique.loadFromFile("data/brique.png",renderer);
-    im_bombe.loadFromFile("data/bombe.png",renderer);
+    //im_perso.loadFromFile("data/perso.png",renderer);
+    //im_mur.loadFromFile("data/mur.png",renderer);
+    //im_brique.loadFromFile("data/brique.png",renderer);
+    //im_bombe.loadFromFile("data/bombe.png",renderer);
 
     // FONTS
-    font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
+    /*font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
     if (font == NULL)
         font = TTF_OpenFont("../data/DejaVuSansCondensed.ttf",50);
     if (font == NULL) {
             cout << "Failed to load DejaVuSansCondensed.ttf! SDL_TTF Error: " << TTF_GetError() << endl; 
             SDL_Quit(); 
             exit(1);
-	}
+	}*/
 	font_color.r = 50;font_color.g = 50;font_color.b = 255;
-	font_im.setSurface(TTF_RenderText_Solid(font,"Pacman",font_color));
+	font_im.setSurface(TTF_RenderText_Solid(font,"Bomberman",font_color));
 	font_im.loadFromCurrentSurface(renderer);
 
     // SONS
@@ -162,7 +162,7 @@ sdlJeu::sdlJeu () : jeu() {
 }
 
 sdlJeu::~sdlJeu () {
-    if (withSound) Mix_Quit();
+    //if (withSound) Mix_Quit();
     TTF_CloseFont(font);
     TTF_Quit();
     SDL_DestroyRenderer(renderer);
@@ -170,14 +170,14 @@ sdlJeu::~sdlJeu () {
     SDL_Quit();
 }
 
-void sdleu::sdlAff () {
+void sdlJeu::sdlAff () {
 	//Remplir l'�cran de blanc
     SDL_SetRenderDrawColor(renderer, 230, 240, 255, 255);
     SDL_RenderClear(renderer);
 
 	int x,y;
 	const Terrain& ter = jeu.getConstTerrain();
-	const Personnage& perso = jeu.getConstPersonnage();
+	const Personnage& perso = jeu.getConstPerso();
 
     // Afficher les sprites des murs et des pastilles
 	for (x=0;x<ter.getDimX();++x)
@@ -188,7 +188,7 @@ void sdleu::sdlAff () {
 				im_brique.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
 
 	// Afficher le sprite de Pacman
-	im_pacman.draw(renderer,perso.getX()*TAILLE_SPRITE,perso.getY()*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
+	im_perso.draw(renderer,perso.getPosX()*TAILLE_SPRITE,perso.getPosY()*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
@@ -200,44 +200,34 @@ void sdleu::sdlAff () {
 void sdlJeu::sdlBoucle () {
     SDL_Event events;
 	bool quit = false;
-
-    Uint32 t = SDL_GetTicks(), nt;
-
 	// tant que ce n'est pas la fin ...
 	while (!quit) {
-
-        nt = SDL_GetTicks();
-        if (nt-t>500) {
-            jeu.actionsAutomatiques();
-            t = nt;
-        }
-
 		// tant qu'il y a des evenements � traiter (cette boucle n'est pas bloquante)
 		while (SDL_PollEvent(&events)) {
 			if (events.type == SDL_QUIT) quit = true;           // Si l'utilisateur a clique sur la croix de fermeture
 			else if (events.type == SDL_KEYDOWN) {              // Si une touche est enfoncee
-                bool mangePastille = false;
+                bool briqueExplosee = false;
 				switch (events.key.keysym.scancode) {
 				case SDL_SCANCODE_UP:
-					mangePastille = jeu.actionClavier('b');    // car Y inverse
+					briqueExplosee = jeu.actionClavier('b');    // car Y inverse
 					break;
 				case SDL_SCANCODE_DOWN:
-					mangePastille = jeu.actionClavier('h');     // car Y inverse
+					briqueExplosee = jeu.actionClavier('h');     // car Y inverse
 					break;
 				case SDL_SCANCODE_LEFT:
-					mangePastille = jeu.actionClavier('g');
+					briqueExplosee = jeu.actionClavier('g');
 					break;
 				case SDL_SCANCODE_RIGHT:
-					mangePastille = jeu.actionClavier('d');
+					briqueExplosee = jeu.actionClavier('d');
 					break;
                 case SDL_SCANCODE_ESCAPE:
                 case SDL_SCANCODE_Q:
                     quit = true;
                     break;
 				default: break;
-				}
-				if ((withSound) && (mangePastille))
-                    Mix_PlayChannel(-1,sound,0);
+				}/*
+				if ((withSound) && (briqueExplosee))
+                    Mix_PlayChannel(-1,sound,0);*/
 			}
 		}
 

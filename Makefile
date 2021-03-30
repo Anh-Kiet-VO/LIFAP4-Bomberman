@@ -7,7 +7,11 @@ CORE = ./src/core/Terrain.cpp ./src/core/Jeu.cpp ./src/core/Personnage.cpp ./src
 
 SRCS_TXT = $(CORE) ./src/txt/JeuModeTexte.cpp ./src/txt/winTxt.cpp ./src/txt/main_txt.cpp
 
+<<<<<<< HEAD
 LIB = -Isrc/core/
+=======
+LIB = -Isrc/
+>>>>>>> 6107eb83283d8318662aa6768201a59ed99fd652
 
 all: ./bin/Test ./bin/mainTXT ./bin/mainSDL
 
@@ -76,17 +80,28 @@ ifeq ($(OS),Windows_NT)
 			-lmingw32 -lSDL2main -lSDL2.dll -lSDL2_ttf.dll -lSDL2_image.dll -lSDL2_mixer.dll
 
 else
-	INCLUDE_DIR_SDL = -I/usr/include/SDL2
-	LIBS_SDL = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
+INCLUDE_DIR_SDL = -I/usr/include/SDL2
+LIBS_SDL = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
 endif
 
 # ----------------------------------------------------- #
 
+<<<<<<< HEAD
 ./bin/mainSDL: ./obj/main_SDL.o
 	$(CC) $(FLAGS) $(INCLUDES_DIR_SDL) $(LIBS_SDL) ./obj/main_SDL.o -o ./bin/mainSDL 
 
 ./obj/main_SDL.o: ./src/sdl2/main_SDL.cpp
 	$(CC) $(FLAGS) -c ./src/sdl2/main_SDL.cpp $(INCLUDES_DIR_SDL) -o ./obj/main_SDL.o
+=======
+./bin/mainSDL: ./obj/main_SDL.o ./obj/sdlJeu.o $(ALLOBJ) 
+	$(CC) $(FLAGS) $(ALLOBJ) ./obj/sdlJeu.o ./obj/main_SDL.o -o ./bin/mainSDL $(LIBS_SDL)
+
+./obj/main_SDL.o: ./sdl/main_SDL.cpp ./sdl/sdlJeu.h
+	$(CC) $(FLAGS) -c ./sdl/main_SDL.cpp $(LIB) -o ./obj/main_SDL.o
+
+./obj/sdlJeu.o: ./sdl/sdlJeu.h ./sdl/sdlJeu.cpp ./src/Jeu.cpp
+	$(CC) $(FLAGS) -c ./sdl/sdlJeu.cpp $(LIB) -o ./obj/sdlJeu.o
+>>>>>>> 6107eb83283d8318662aa6768201a59ed99fd652
 
 ./obj/sdlJeu.o: ./src/sdl2/sdlJeu.h ./src/sdl2/sdlJeu.cpp ./src/core/Jeu.cpp
 	$(CC) $(FLAGS) -c ./src/sdl2/sdlJeu.cpp $(INCLUDES_DIR_SDL) $(CORE) -o ./obj/sdlJeu.o
