@@ -35,10 +35,6 @@ bool Jeu::actionClavier(const char touche) {
 				cout<<"bas : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 				break;
 		case 'n' :
-<<<<<<< HEAD:src/core/Jeu.cpp
-				ter.placer(perso.getPosX(), perso.getPosY());
-				cout<<b.getPosX() << " " <<b.getPosY() << endl;
-=======
 				//ter.placer(perso.getPosX(), perso.getPosY());
 				if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
 					ter.placer(perso.getPosX(), perso.getPosY());
@@ -47,7 +43,6 @@ bool Jeu::actionClavier(const char touche) {
 					ter.EstExplosee(perso.getPosX(), perso.getPosY() - b.getPortee());
 					ter.EstExplosee(perso.getPosX(), perso.getPosY() + b.getPortee());
 				}
->>>>>>> 6107eb83283d8318662aa6768201a59ed99fd652:src/Jeu.cpp
 				break;
 	}
 	/*if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){

@@ -7,7 +7,7 @@
 #include <SDL2/SDL_mixer.h>
 
 
-#include "../src/Jeu.h"
+#include "Jeu.h"
 
 //! \brief Pour grer une image avec SDL2
 class Image {
