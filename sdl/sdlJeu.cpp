@@ -103,14 +103,14 @@ sdlJeu::sdlJeu () : jeu() {
         exit(1);
     }
 
-    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    /*if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
     {
         cout << "SDL_mixer could not initialize! SDL_mixer Error: " << Mix_GetError() << endl;
         cout << "No sound !!!" << endl;
         //SDL_Quit();exit(1);
         withSound = false;
     }
-    else withSound = true;
+    else withSound = true;*/
 
 	int dimx, dimy;
 	dimx = jeu.getConstTerrain().getDimX();
@@ -129,20 +129,20 @@ sdlJeu::sdlJeu () : jeu() {
     renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 
     // IMAGES
-    im_perso.loadFromFile("data/perso.png",renderer);
-    im_mur.loadFromFile("data/mur.png",renderer);
-    im_brique.loadFromFile("data/brique.png",renderer);
-    im_bombe.loadFromFile("data/bombe.png",renderer);
+    //im_perso.loadFromFile("data/perso.png",renderer);
+    //im_mur.loadFromFile("data/mur.png",renderer);
+    //im_brique.loadFromFile("data/brique.png",renderer);
+    //im_bombe.loadFromFile("data/bombe.png",renderer);
 
     // FONTS
-    font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
+    /*font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
     if (font == NULL)
         font = TTF_OpenFont("../data/DejaVuSansCondensed.ttf",50);
     if (font == NULL) {
             cout << "Failed to load DejaVuSansCondensed.ttf! SDL_TTF Error: " << TTF_GetError() << endl; 
             SDL_Quit(); 
             exit(1);
-	}
+	}*/
 	font_color.r = 50;font_color.g = 50;font_color.b = 255;
 	font_im.setSurface(TTF_RenderText_Solid(font,"Bomberman",font_color));
 	font_im.loadFromCurrentSurface(renderer);

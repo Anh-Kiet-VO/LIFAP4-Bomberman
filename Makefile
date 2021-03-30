@@ -76,8 +76,8 @@ ifeq ($(OS),Windows_NT)
 			-lmingw32 -lSDL2main -lSDL2.dll -lSDL2_ttf.dll -lSDL2_image.dll -lSDL2_mixer.dll
 
 else
-	INCLUDE_DIR_SDL = -I/usr/include/SDL2
-	LIBS_SDL = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
+INCLUDE_DIR_SDL = -I/usr/include/SDL2
+LIBS_SDL = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
 endif
 
 # ----------------------------------------------------- #
@@ -85,11 +85,11 @@ endif
 ./bin/mainSDL: ./obj/main_SDL.o ./obj/sdlJeu.o $(ALLOBJ) 
 	$(CC) $(FLAGS) $(ALLOBJ) ./obj/sdlJeu.o ./obj/main_SDL.o -o ./bin/mainSDL $(LIBS_SDL)
 
-./obj/sdlJeu.o: ./sdl/sdlJeu.cpp ./sdl/sdlJeu.h ./src/Jeu.h
-	$(CC) $(FLAGS) -c ./sdl/sdlJeu.cpp $(LIB) -o ./obj/sdlJeu.o
-
 ./obj/main_SDL.o: ./sdl/main_SDL.cpp ./sdl/sdlJeu.h
 	$(CC) $(FLAGS) -c ./sdl/main_SDL.cpp $(LIB) -o ./obj/main_SDL.o
+
+./obj/sdlJeu.o: ./sdl/sdlJeu.h ./sdl/sdlJeu.cpp ./src/Jeu.cpp
+	$(CC) $(FLAGS) -c ./sdl/sdlJeu.cpp $(LIB) -o ./obj/sdlJeu.o
 
 # ----------------------------------------------------- #
 
