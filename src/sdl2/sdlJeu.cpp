@@ -129,10 +129,11 @@ sdlJeu::sdlJeu () : jeu() {
     renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 
     // IMAGES
-    //im_perso.loadFromFile("data/perso.png",renderer);
-    //im_mur.loadFromFile("data/mur.png",renderer);
-    //im_brique.loadFromFile("data/brique.png",renderer);
-    //im_bombe.loadFromFile("data/bombe.png",renderer);
+    im_perso.loadFromFile("data/perso.png",renderer);
+    im_mur.loadFromFile("data/mur.png",renderer);
+    im_brique.loadFromFile("data/brique.png",renderer);
+    im_bombe.loadFromFile("data/bombe.png",renderer);
+    im_ter.loadFromFile("data/terrain.png",renderer);
 
     // FONTS
     /*font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
@@ -143,9 +144,9 @@ sdlJeu::sdlJeu () : jeu() {
             SDL_Quit(); 
             exit(1);
 	}*/
-	font_color.r = 50;font_color.g = 50;font_color.b = 255;
+	/*font_color.r = 50;font_color.g = 50;font_color.b = 255;
 	font_im.setSurface(TTF_RenderText_Solid(font,"Bomberman",font_color));
-	font_im.loadFromCurrentSurface(renderer);
+	font_im.loadFromCurrentSurface(renderer);*/
 
     // SONS
     /*if (withSound)
@@ -163,8 +164,8 @@ sdlJeu::sdlJeu () : jeu() {
 
 sdlJeu::~sdlJeu () {
     //if (withSound) Mix_Quit();
-    TTF_CloseFont(font);
-    TTF_Quit();
+    //TTF_CloseFont(font);
+    //TTF_Quit();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
@@ -178,6 +179,14 @@ void sdlJeu::sdlAff () {
 	int x,y;
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso();
+
+    // Afficher le sprite du sol
+    for (x = 0 ; x < ter.getDimX() ; ++x){
+        for (y = 0 ; y < ter.getDimY() ; ++y){
+            im_ter.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
+        }
+    }
+
 
     // Afficher les sprites des murs et des pastilles
 	for (x=0;x<ter.getDimX();++x)

@@ -36,7 +36,7 @@ void Terrain::ShowConsoleCursor(bool showFlag)
 #endif 
 
 Terrain::Terrain() {
-	dimX = 16;
+	dimX = 15;
 	dimY = 11;
 	#ifdef _WIN32
 	ShowConsoleCursor(false);

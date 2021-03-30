@@ -56,16 +56,15 @@ private :
     Image im_brique;
     Image im_bombe;
     Image im_mur;
+    Image im_ter;
 
     bool souris;
     bool touche;
 public :
-
     sdlJeu ();
     ~sdlJeu ();
     void sdlBoucle ();
     void sdlAff ();
-
 };
 
 #endif
