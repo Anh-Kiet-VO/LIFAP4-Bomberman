@@ -9,6 +9,24 @@ SRCS_TXT = $(CORE) ./src/txt/JeuModeTexte.cpp ./src/txt/winTxt.cpp ./src/txt/mai
 
 LIB = -Isrc/core/
 
+ifeq ($(OS), Windows_NT)
+	INCLUDE_DIR_SDL = -Iextern/SDL2_mingw-cb20/SDL2-2.0.12/x86_64-w64-mingw32/include/SDL2/ \
+			-Iextern/SDL2_mingw-cb20/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include/SDL2/ \
+			-Iextern/SDL2_mingw-cb20/SDL2_image-2.0.5/x86_64-w64-mingw32/include/SDL2/ \
+			-Iextern/SDL2_mingw-cb20/SDL2_mixer-2.0.4/x86_64-w64-mingw32/include/SDL2/
+
+	LIBS_SDL = -Lextern \
+			-Lextern/SDL2_mingw-cb20/SDL2-2.0.12/x86_64-w64-mingw32/lib \
+			-Lextern/SDL2_mingw-cb20/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib \
+			-Lextern/SDL2_mingw-cb20/SDL2_image-2.0.5/x86_64-w64-mingw32/lib \
+			-Lextern/SDL2_mingw-cb20/SDL2_mixer-2.0.4/x86_64-w64-mingw32/lib \
+			-lmingw32 -lSDL2main -lSDL2.dll -lSDL2_ttf.dll -lSDL2_image.dll -lSDL2_mixer.dll
+
+else
+INCLUDE_DIR_SDL = -I/usr/include/SDL2
+LIBS_SDL = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
+endif
+
 all: ./bin/Test ./bin/mainTXT ./bin/mainSDL
 
 ./bin/Test: ./obj/Test.o ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Personnage.o ./obj/Terrain.o ./obj/TabPersonnage.o
@@ -62,34 +80,15 @@ all: ./bin/Test ./bin/mainTXT ./bin/mainSDL
 
 # ----------------------------------------------------- #
 
-ifeq ($(OS),Windows_NT)
-	INCLUDE_DIR_SDL = -Iextern/SDL2_mingw-cb20/SDL2-2.0.12/x86_64-w64-mingw32/include/SDL2 \
-			-Iextern/SDL2_mingw-cb20/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include/SDL2 \
-			-Iextern/SDL2_mingw-cb20/SDL2_image-2.0.5/x86_64-w64-mingw32/include/SDL2 \
-			-Iextern/SDL2_mingw-cb20/SDL2_mixer-2.0.4/x86_64-w64-mingw32/include/SDL2
-
-	LIBS_SDL = -Lextern \
-			-Lextern/SDL2_mingw-cb20/SDL2-2.0.12/x86_64-w64-mingw32/lib \
-			-Lextern/SDL2_mingw-cb20/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib \
-			-Lextern/SDL2_mingw-cb20/SDL2_image-2.0.5/x86_64-w64-mingw32/lib \
-			-Lextern/SDL2_mingw-cb20/SDL2_mixer-2.0.4/x86_64-w64-mingw32/lib \
-			-lmingw32 -lSDL2main -lSDL2.dll -lSDL2_ttf.dll -lSDL2_image.dll -lSDL2_mixer.dll
-
-else
-INCLUDE_DIR_SDL = -I/usr/include/SDL2
-LIBS_SDL = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer
-endif
-
-# ----------------------------------------------------- #
-
 ./bin/mainSDL: ./obj/main_SDL.o $(ALLOBJ) ./obj/sdlJeu.o
 	$(CC) $(FLAGS) $(ALLOBJ) ./obj/sdlJeu.o ./obj/main_SDL.o -o ./bin/mainSDL $(LIBS_SDL)
 
-./obj/main_SDL.o: ./src/sdl2/main_SDL.cpp ./src/sdl2/sdlJeu.h
-	$(CC) $(FLAGS) -c ./src/sdl2/main_SDL.cpp $(INCLUDES_DIR_SDL) $(LIB) -o ./obj/main_SDL.o
-
 ./obj/sdlJeu.o: ./src/sdl2/sdlJeu.h ./src/sdl2/sdlJeu.cpp ./src/core/Jeu.cpp
-	$(CC) $(FLAGS) -c ./src/sdl2/sdlJeu.cpp $(INCLUDES_DIR_SDL) $(LIB) -o ./obj/sdlJeu.o
+	$(CC) $(FLAGS) -c ./src/sdl2/sdlJeu.cpp $(INCLUDE_DIR_SDL) $(LIB) -o ./obj/sdlJeu.o
+
+./obj/main_SDL.o: ./src/sdl2/main_SDL.cpp ./src/sdl2/sdlJeu.h
+	$(CC) $(FLAGS) -c ./src/sdl2/main_SDL.cpp $(INCLUDE_DIR_SDL) $(LIB) -o ./obj/main_SDL.o
+
 # ----------------------------------------------------- #
 
 doc:
