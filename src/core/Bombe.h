@@ -7,6 +7,9 @@
 #ifndef BOMBE_H
 #define BOMBE_H
 
+#include <chrono>
+
+
 class Bombe {
     private:
     /**
