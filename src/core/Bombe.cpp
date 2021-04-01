@@ -4,7 +4,7 @@
 Bombe::Bombe() {
   posX = posY = 1;
   portee = 1;
-  tempsExplosion = 4;
+  tempsExplosion = 2;
   estSurLeTerrain = 0;
 }
 
