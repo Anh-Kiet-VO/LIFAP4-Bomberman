@@ -39,19 +39,22 @@ bool Jeu::actionClavier(const char touche) {
 				break;
 		case 'n' :
 				//ter.placer(perso.getPosX(), perso.getPosY());
-				
 				if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
 					//on place la bombe aux coordonnées du perso
 					ter.placer(perso.getPosX(), perso.getPosY());	
 					//update des positions de la bombe
 					b.setPos(perso.getPosX(), perso.getPosY());
-					//explosion en fonction de la position de la bombe
-					ter.EstExplosee(b.getPosX() + b.getPortee(), b.getPosY());
-					ter.EstExplosee(b.getPosX() - b.getPortee(), b.getPosY());
-					ter.EstExplosee(b.getPosX(), b.getPosY() - b.getPortee());
-					ter.EstExplosee(b.getPosX(), b.getPosY() + b.getPortee());
-					cout << "position bombe x " << b.getPosX() << endl;
-					cout << "position bombe y " << b.getPosY() << endl;
+					/*cout << b.tempsExplosion << endl;
+					b.tempsExplosion--;
+					if(b.tempsExplosion < 1){*/
+						//explosion en fonction de la position de la bombe
+						ter.EstExplosee(b.getPosX() + b.getPortee(), b.getPosY());
+						ter.EstExplosee(b.getPosX() - b.getPortee(), b.getPosY());
+						ter.EstExplosee(b.getPosX(), b.getPosY() - b.getPortee());
+						ter.EstExplosee(b.getPosX(), b.getPosY() + b.getPortee());
+						cout << "position bombe x " << b.getPosX() << endl;
+						cout << "position bombe y " << b.getPosY() << endl;
+					//}
 				}
 				break;
 	}
