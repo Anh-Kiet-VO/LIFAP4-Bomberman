@@ -179,6 +179,7 @@ void sdlJeu::sdlAff () {
 	int x,y;
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso();
+    const Bombe& b = jeu.getConstBombe();
 
     // Afficher le sprite du sol
     for (x = 0 ; x < ter.getDimX() ; ++x){
