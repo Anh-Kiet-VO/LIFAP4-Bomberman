@@ -126,14 +126,14 @@ sdlJeu::sdlJeu () : jeu() {
         exit(1);
     }
 
-    renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     // IMAGES
-    im_perso.loadFromFile("data/perso.png",renderer);
-    im_mur.loadFromFile("data/mur.png",renderer);
-    im_brique.loadFromFile("data/brique.png",renderer);
-    im_bombe.loadFromFile("data/bombe.png",renderer);
-    im_ter.loadFromFile("data/terrain.png",renderer);
+    im_perso.loadFromFile("data/perso.png", renderer);
+    im_mur.loadFromFile("data/mur.png", renderer);
+    im_brique.loadFromFile("data/brique.png", renderer);
+    im_bombe.loadFromFile("data/bombe.png", renderer);
+    im_ter.loadFromFile("data/terrain.png", renderer);
 
     // FONTS
     /*font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
@@ -182,28 +182,28 @@ void sdlJeu::sdlAff () {
     const Bombe& b = jeu.getConstBombe();
 
     // Afficher le sprite du sol
-    for (x = 0 ; x < ter.getDimX() ; ++x){
-        for (y = 0 ; y < ter.getDimY() ; ++y){
-            im_ter.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
+    for (x = 0 ; x < ter.getDimX() ; ++x) {
+        for (y = 0 ; y < ter.getDimY() ; ++y) {
+            im_ter.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
         }
     }
 
 
     // Afficher les sprites des murs et des pastilles
-	for (x=0;x<ter.getDimX();++x)
-		for (y=0;y<ter.getDimY();++y)
-			if (ter.getXY(x,y)=='#')
-				im_mur.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
-			else if (ter.getXY(x,y)=='.')
-				im_brique.draw(renderer,x*TAILLE_SPRITE,y*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
+	for (x=0 ; x < ter.getDimX() ; ++x)
+		for (y=0 ; y < ter.getDimY() ; ++y)
+			if (ter.getXY(x,y) == '#')
+				im_mur.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+			else if (ter.getXY(x,y) == '.')
+				im_brique.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
 
 	// Afficher le sprite de Pacman
-	im_perso.draw(renderer,perso.getPosX()*TAILLE_SPRITE,perso.getPosY()*TAILLE_SPRITE,TAILLE_SPRITE,TAILLE_SPRITE);
+	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
-    positionTitre.x = 270;positionTitre.y = 49;positionTitre.w = 100;positionTitre.h = 30;
-    SDL_RenderCopy(renderer,font_im.getTexture(),NULL,&positionTitre);
+    positionTitre.x = 270; positionTitre.y = 49; positionTitre.w = 100; positionTitre.h = 30;
+    SDL_RenderCopy(renderer, font_im.getTexture(), NULL, &positionTitre);
 
 }
 
