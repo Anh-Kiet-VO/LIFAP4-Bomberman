@@ -1,9 +1,10 @@
 # LIFAP4 - Bomberman
 
 ## TO-DO LIST
-- [ ] Problème chrono Bombe explosion + Bombe en lui-même
+- [ ] Problème chrono Bombe explosion + limitation de pose de Bombe
 - [ ] Bonus sur le terrain
-- [ ] Deuxième joueur
+- [ ] Problème deuxième joueur affichage
+- [ ] Condition de victoire 
 
 ### Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
