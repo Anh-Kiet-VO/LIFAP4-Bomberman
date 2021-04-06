@@ -12,10 +12,8 @@ Personnage::Personnage() {
 	TabBombe bombes;
 }
 
-Personnage::Personnage(string &pnom, unsigned int x, unsigned int y) {
+Personnage::Personnage(unsigned int x, unsigned int y) {
 	assert(x >= 1 && y >= 1);
-
-	nom = pnom;
 
 	posX = x;
 	posY = y;
@@ -105,11 +103,7 @@ void Personnage::testRegression() {
 	assert(getVitesseX() == 5 && getVitesseY() == 5);
 
 	// Appel au constructeur Personnage
-	string pseudo = "joueur";
-	Personnage(pseudo, 5, 5);
-
-	// vérifie si le nom du joueur est correct
-	if(pseudo.compare(nom) == 0) cout << "Erreur avec le nom";
+	Personnage(5, 5);
 
 	// Vérifie si la position est bien à 
 	assert(getPosX() == 5 && getPosY() == 5);
