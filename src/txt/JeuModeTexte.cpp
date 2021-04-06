@@ -11,7 +11,8 @@
 
 void txtAff(WinTXT & win, const Jeu & jeu){
 	const Terrain& ter = jeu.getConstTerrain();
-	const Personnage& perso = jeu.getConstPerso();
+	const Personnage& perso = jeu.getConstPerso(0);
+	const Personnage& in_perso = jeu.getConstPerso(1);
 	//const Bombe& b = jeu.getConstBombe();
 
 	win.clear();
@@ -26,7 +27,7 @@ void txtAff(WinTXT & win, const Jeu & jeu){
     // Affichage du joueur 1
 	win.print(perso.getPosX(), perso.getPosY(), 'B');
 	// Affichage du joueur 2
-	//win.print(perso.getPosX(), perso.getPosY(), 'P');
+	win.print(in_perso.getPosX(), in_perso.getPosY(), 'P');
 	win.draw();
 }
 
@@ -64,9 +65,25 @@ void txtBoucle(Jeu & jeu) {
 			case 'p':
 				jeu.actionClavier('n');
 				break;
-			case 'q':
+			case 'c':
 				ok = false;
 				break;
+		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            case 's':
+                jeu.actionClavier('v');    // car Y inverse
+                break;
+            case 'z':
+	            jeu.actionClavier('j');     // car Y inverse
+                break;
+            case 'q':
+                jeu.actionClavier('f');
+                break;
+            case 'd':
+                jeu.actionClavier('c');
+                break;
+            case 'a':
+                jeu.actionClavier('u');
+                break;
 		}
 	} while (ok);
 }
