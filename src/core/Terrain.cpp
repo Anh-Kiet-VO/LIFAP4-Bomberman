@@ -94,4 +94,3 @@ int Terrain::getDimX() const {
 int Terrain::getDimY() const {
 	return dimY;
 }
-

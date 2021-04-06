@@ -8,18 +8,24 @@
 #ifndef _TERRAIN_H
 #define _TERRAIN_H
 
+#include "TabBrique.h"
 
 /**
  * @brief La classe Terrain contient ses dimensions et un tab 2D de cases (une case= 1 char)
 */
 
 class Terrain {
+
 	private:
+	
 	unsigned int dimX;
 	unsigned int dimY;
 	char ter[100][100];
 
 	public:
+
+	TabBrique bri;
+
 	/**
 	 * @brief Le constructeur remplit dimX et dimY et les cases du tableau ter avec un terrain par défaut
 	*/
