@@ -52,6 +52,7 @@ private :
     bool withSound;
 
     Image im_perso;
+    Image im_in_perso;
     Image im_brique;
     Image im_bombe;
     Image im_mur;

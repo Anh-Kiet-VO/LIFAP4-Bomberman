@@ -130,6 +130,7 @@ sdlJeu::sdlJeu () : jeu() {
 
     // IMAGES
     im_perso.loadFromFile("data/perso.png", renderer);
+    im_in_perso.loadFromFile("data/perso.png", renderer);
     im_mur.loadFromFile("data/mur.png", renderer);
     im_brique.loadFromFile("data/brique.png", renderer);
     im_bombe.loadFromFile("data/bombe.png", renderer);
@@ -178,7 +179,8 @@ void sdlJeu::sdlAff () {
 
 	int x,y;
 	const Terrain& ter = jeu.getConstTerrain();
-	const Personnage& perso = jeu.getConstPerso();
+	const Personnage& perso = jeu.getConstPerso(0);
+    const Personnage& in_perso = jeu.getConstPerso(1);
     const Bombe& b = jeu.getConstBombe();
 
     // Afficher le sprite du sol
@@ -197,8 +199,9 @@ void sdlJeu::sdlAff () {
 			else if (ter.getXY(x,y) == '.')
 				im_brique.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
 
-	// Afficher le sprite de Pacman
+	// Afficher le sprite des perso
 	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
@@ -209,45 +212,62 @@ void sdlJeu::sdlAff () {
 
 void sdlJeu::sdlBoucle () {
     SDL_Event events;
-	bool quit = false;
-	// tant que ce n'est pas la fin ...
-	while (!quit) {
-		// tant qu'il y a des evenements � traiter (cette boucle n'est pas bloquante)
-		while (SDL_PollEvent(&events)) {
-			if (events.type == SDL_QUIT) quit = true;           // Si l'utilisateur a clique sur la croix de fermeture
-			else if (events.type == SDL_KEYDOWN) {              // Si une touche est enfoncee
+    bool quit = false;
+    // tant que ce n'est pas la fin ...
+    while (!quit) {
+        // tant qu'il y a des evenements � traiter (cette boucle n'est pas bloquante)
+
+        while (SDL_PollEvent(&events)) {
+            if (events.type == SDL_QUIT) quit = true;           // Si l'utilisateur a clique sur la croix de fermeture
+            else if (events.type == SDL_KEYDOWN) {              // Si une touche est enfoncee
                 bool briqueExplosee = false;
-				switch (events.key.keysym.sym) {
-				case SDLK_o:
-					briqueExplosee = jeu.actionClavier('b');    // car Y inverse
-					break;
-				case SDLK_l:
-					briqueExplosee = jeu.actionClavier('h');     // car Y inverse
-					break;
-				case SDLK_k:
-					briqueExplosee = jeu.actionClavier('g');
-					break;
-				case SDLK_m:
-					briqueExplosee = jeu.actionClavier('d');
-					break;
+                switch (events.key.keysym.sym) {
+                case SDLK_o:
+                    briqueExplosee = jeu.actionClavier('b');    // car Y inverse
+                    break;
+                case SDLK_l:
+                    briqueExplosee = jeu.actionClavier('h');     // car Y inverse
+                    break;
+                case SDLK_k:
+                    briqueExplosee = jeu.actionClavier('g');
+                    break;
+                case SDLK_m:
+                    briqueExplosee = jeu.actionClavier('d');
+                    break;
                 case SDLK_p:
-					briqueExplosee = jeu.actionClavier('n');
-					break;
+                    briqueExplosee = jeu.actionClavier('n');
+                    break;
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                case SDLK_DOWN:
+                    briqueExplosee = jeu.actionClavier('v');    // car Y inverse
+                    break;
+                case SDLK_UP:
+                    briqueExplosee = jeu.actionClavier('j');     // car Y inverse
+                    break;
+                case SDLK_LEFT:
+                    briqueExplosee = jeu.actionClavier('f');
+                    break;
+                case SDLK_RIGHT:
+                    briqueExplosee = jeu.actionClavier('c');
+                    break;
+                case SDLK_KP_ENTER:
+                    briqueExplosee = jeu.actionClavier('u');
+                    break;
                 case SDLK_ESCAPE:
                 case SDLK_q:
                     quit = true;
                     break;
-				default: break;
-				}/*
-				if ((withSound) && (briqueExplosee))
+                default: break;
+                }/*
+                if ((withSound) && (briqueExplosee))
                     Mix_PlayChannel(-1,sound,0);*/
-			}
-		}
+            }
+        }
 
-		// on affiche le jeu sur le buffer cach�
-		sdlAff();
+        // on affiche le jeu sur le buffer cach�
+        sdlAff();
 
-		// on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
+        // on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
         SDL_RenderPresent(renderer);
-	}
+    }
 }
