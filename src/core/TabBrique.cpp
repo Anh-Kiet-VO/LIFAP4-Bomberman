@@ -7,7 +7,7 @@
 using namespace std;
 
 TabBrique::TabBrique(){
-    nbBrique = 1;
+    nbBrique = 81;
     vector<Brique> tabBrique;
     tabBrique.resize(nbBrique);
 }
