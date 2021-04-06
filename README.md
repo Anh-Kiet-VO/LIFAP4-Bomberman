@@ -5,6 +5,7 @@
 - [ ] Bonus sur le terrain
 - [ ] Problème deuxième joueur affichage
 - [ ] Condition de victoire 
+- [ ] Commenter les fonctions
 
 ### Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
