@@ -3,14 +3,14 @@ FLAGS = -ggdb -Wall
 
 ALLOBJ= ./obj/Couleur.o ./obj/Brique.o ./obj/TabBrique.o ./obj/Bombe.o ./obj/TabBombe.o ./obj/Personnage.o ./obj/Terrain.o ./obj/Jeu.o
 
-CORE = ./src/core/Terrain.cpp ./src/core/Jeu.cpp ./src/core/Personnage.cpp ./src/core/TabBrique.cpp ./src/core/TabBombe.cpp
+CORE = ./src/core/Terrain.cpp ./src/core/Jeu.cpp ./src/core/Couleur.cpp ./src/core/Personnage.cpp ./src/core/TabPersonnage.cpp ./src/core/Brique.cpp ./src/core/TabBrique.cpp ./src/core/Bombe.cpp ./src/core/TabBombe.cpp
 
 SRCS_TXT = $(CORE) ./src/txt/JeuModeTexte.cpp ./src/txt/winTxt.cpp ./src/txt/main_txt.cpp
 
-LIB = -Isrc/core/
+LIB = -Isrc -Isrc/core -Isrc/sdl2 -Itxt
 
 ifeq ($(OS), Windows_NT)
-	INCLUDE_DIR_SDL = -Iextern/SDL2_mingw-cb20/SDL2-2.0.12/x86_64-w64-mingw32/include/SDL2/ \
+	INCLUDE_DIR_SDL = 	-Iextern/SDL2_mingw-cb20/SDL2-2.0.12/x86_64-w64-mingw32/include/SDL2/ \
 			-Iextern/SDL2_mingw-cb20/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include/SDL2/ \
 			-Iextern/SDL2_mingw-cb20/SDL2_image-2.0.5/x86_64-w64-mingw32/include/SDL2/ \
 			-Iextern/SDL2_mingw-cb20/SDL2_mixer-2.0.4/x86_64-w64-mingw32/include/SDL2/
