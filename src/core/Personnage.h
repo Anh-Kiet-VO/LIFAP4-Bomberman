@@ -53,11 +53,10 @@ class Personnage {
 
 	/**
 	 * @brief Création du personnage de l'utilisateur
-	 * @param pnom : chaîne de caractère
 	 * @param x : entier
 	 * @param y : entier
 	*/
-	Personnage(string &pnom, unsigned int x, unsigned int y);
+	Personnage(unsigned int x, unsigned int y);
 
 	/**
 	 * @brief Destruction du personnage de l'utilisateur
