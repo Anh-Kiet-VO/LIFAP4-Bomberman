@@ -3,8 +3,8 @@
 ## TO-DO LIST
 - [ ] Problème chrono Bombe explosion + limitation de pose de Bombe
 - [ ] Bonus sur le terrain
-- [ ] Problème deuxième joueur affichage
-- [X] Condition de victoire 
+- [X] Problème deuxième joueur affichage
+- [ ] Condition de victoire 
 - [ ] Commenter les fonctions
 
 ### Étudiants :
