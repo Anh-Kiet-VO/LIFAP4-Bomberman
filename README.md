@@ -4,7 +4,7 @@
 - [ ] Problème chrono Bombe explosion + limitation de pose de Bombe
 - [ ] Bonus sur le terrain
 - [ ] Problème deuxième joueur affichage
-- [ ] Condition de victoire 
+- [o] Condition de victoire 
 - [ ] Commenter les fonctions
 
 ### Étudiants :
