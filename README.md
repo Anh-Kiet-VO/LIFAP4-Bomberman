@@ -26,28 +26,39 @@ Le Bomberman est disponible en version console (TXT) mais elle est aussi disponi
 Organisation de l'archive :  
 * /bin : Fichiers executable
 * /data : Assets (Images, sons, fonts...)
-* /doc : Documentation, présentation PowerPoint, diagramme des classes UML, diagramme de Gantt, cahier des charges
+* /doc : Documentation, présentation PowerPoint, diagramme des classes UML, diagramme de Gantt, cahier des charges...
 * /obj : Fichiers .o
 * /src : Fichiers contenant le code du Bomberman
-* /src/sdl2 : FIchier contenant le code du Bomberman en sdl2
-* /src/txt : Fichier content le code du Bomberman en txt
+* /src/sdl2 : FIchier contenant le code du Bomberman en SDL2
+* /src/txt : Fichier content le code du Bomberman en TXT
 
 
 -----------------
 
 ### Compilation :
 
-Afin de pouvoir compiler le programme, il faut utiliser le Makefile.  
+Afin de pouvoir compiler le programme, il faut utiliser le Makefile :
 
-_A COMPLETER_
+```
+make
+```
 
 
 -----------------
 
 ### Exécution :
 
-_A COMPLETER_
+Pour éxecuter le Bomberman en version TXT :
 
+```
+./bin/mainTXT
+```
+
+Pour éxecuter le Bomberman en version SDL :
+
+```
+./bin/mainSDL
+```
 -----------------
 
 ### Documentation :
