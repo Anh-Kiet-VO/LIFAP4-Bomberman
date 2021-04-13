@@ -17,7 +17,7 @@
 
 #include "Jeu.h"
 
-//! \brief Pour grer une image avec SDL2
+//! \brief Pour gérer une image avec SDL2
 class Image {
 
 private:

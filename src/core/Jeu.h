@@ -13,22 +13,53 @@
 class Jeu {
 	private:
 
-    
+    /**
+     * @brief terrain
+    */
 	Terrain ter;
+
+    /**
+     * @brief personnage1
+    */
     Personnage perso;
+
+    /**
+     * @brief personnage2
+    */
     Personnage in_perso;
+
+    /**
+     * @brief bombe pour personnage1
+    */
     Bombe b1;
+
+    /**
+     * @brief bombe pour personnage2
+    */
     Bombe b2;
 	
 	public:
 
     /**
-     * @brief Mutateur : modifie la position de la bombe
+     * @brief constructeur par défaut de la classe jeu
     */
     Jeu();
 
+    /**
+     * @brief accesseur : permet d'accéder au terrain
+    */
     Terrain& getTerrain();
+
+    /**
+     * @brief accesseur : permet d'accéder à un personnage
+     * @param i : entier
+    */
     Personnage& getPerso(int i);
+
+    /**
+     * @brief accesseur : permet d'accéder à une bombe
+     * @param j : entier
+    */
     Bombe& getBombe(int j);
 
     /**
