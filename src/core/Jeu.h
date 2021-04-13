@@ -37,6 +37,8 @@ class Jeu {
      * @brief bombe pour personnage2
     */
     Bombe b2;
+
+    TabBrique bri;
 	
 	public:
 

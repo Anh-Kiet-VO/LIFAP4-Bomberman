@@ -83,6 +83,7 @@ void Jeu::PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b){
 }
 
 bool Jeu::actionClavier(const char touche) {
+	//int briq = ter.bri.getNbBrique();
 	switch(touche) {
 		case 'g' :
 				perso.gauche(ter);
@@ -106,12 +107,19 @@ bool Jeu::actionClavier(const char touche) {
 		//si compteur arrivé à 0 on lance explosion	
 
 				cout << "kaboom" << endl;
-				PlaceEtExplose(perso, ter, b1);
 				
-						
-				cout << "nombre brique : " << ter.bri.getNbBrique() << endl;
-				//ter.bri.setNbBrique(ter.bri.getNbBrique()--);
-				cout << ter.bri.getNbBrique() << endl;
+				PlaceEtExplose(perso, ter, b1);
+				/*if(ter.getXY(b1.getPosX() + 2, b1.getPosY()) == '.' && ter.getXY(b1.getPosX() + 2, b1.getPosY()) != ' '){
+					briq--;
+					ter.bri.setNbBrique(briq);
+					cout << "nombre brique : " << ter.bri.getNbBrique() << endl;
+				}
+				
+				
+				if(ter.bri.getNbBrique() == 0){
+					cout << "gagné" << endl;
+					ter.bri.setNbBrique(0);
+				}*/
 				break;
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		case 'f' :
