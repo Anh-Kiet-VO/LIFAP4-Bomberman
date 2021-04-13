@@ -29,15 +29,15 @@ Sous TXT, les briques sont représenté par un ``.`` et les murs par des ``#``. 
 ### 🕹️ Utilisation :
 Que ce soit en mode TXT ou SDL2, les touches sont les mêmes, la seule différence est bien-sûr l'affichage. Le jeu est fait pour être utilisé sur un clavier AZERTY.
 ```
-+---------------------------+----------------------------+---------------------------+---------------------------+
-|   Touches du Joueur 1     |     Touches du Joueur 2    |    Touches du Joueur 3    |    Touches du Joueur 4    |
-+---------------------------+----------------------------+---------------------------+---------------------------+
-| O 👉 Se déplacer en haut  | ↑ 👉 Se déplacer en haut  | Z 👉 Se déplacer en haut  | G 👉 Se déplacer en haut  |
-| K 👉 Se déplacer à gauche | ← 👉 Se déplacer à gauche | Q 👉 Se déplacer à gauche | C 👉 Se déplacer à gauche |
-| L 👉 Se déplacer en bas   | ↓ 👉 Se déplacer en bas   | S 👉 Se déplacer en bas   | V 👉 Se déplacer en bas   |
-| M 👉 Se déplacer à droite | → 👉 Se déplacer à droite  | D 👉 Se déplacer à droite | D 👉 Se déplacer à droite |
-| P 👉 Poser une bombe      | ENTER 👉 Poser une bombe   | SPACE 👉 Poser une bombe  | N 👉 Poser une bombe      |
-+---------------------------+----------------------------+---------------------------+---------------------------+
++---------------------------+----------------------------+
+|   Touches du Joueur 1     |     Touches du Joueur 2    |
++---------------------------+----------------------------+
+| O 👉 Se déplacer en haut  | ↑ 👉 Se déplacer en haut  |
+| K 👉 Se déplacer à gauche | ← 👉 Se déplacer à gauche |
+| L 👉 Se déplacer en bas   | ↓ 👉 Se déplacer en bas   |
+| M 👉 Se déplacer à droite | → 👉 Se déplacer à droite |
+| P 👉 Poser une bombe      | ENTER 👉 Poser une bombe  |
++---------------------------+----------------------------+
 ```
 
 
