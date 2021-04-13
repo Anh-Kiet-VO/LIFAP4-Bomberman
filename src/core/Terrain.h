@@ -13,9 +13,7 @@
 /**
  * @brief La classe Terrain contient ses dimensions et un tab 2D de cases (une case= 1 char)
 */
-
 class Terrain {
-
 	private:
 	
 	/**
@@ -34,59 +32,58 @@ class Terrain {
 	char ter[100][100];
 
 	public:
+		TabBrique bri;
 
-	TabBrique bri;
+		/**
+		 * @brief Le constructeur remplit dimX et dimY et les cases du tableau ter avec un terrain par défaut
+		*/
+		Terrain();
 
-	/**
-	 * @brief Le constructeur remplit dimX et dimY et les cases du tableau ter avec un terrain par défaut
-	*/
-	Terrain();
+		/**
+		 * @brief Booléen qui renvoie vrai si on peut positionner le personnage en X,Y
+		 * @param x : entier
+		 * @param y : entier
+		*/
+		bool estPosValid(const unsigned int x, const unsigned int y) const;
 
-	/**
-	 * @brief Booléen qui renvoie vrai si on peut positionner le personnage en X,Y
-	 * @param x : entier
-	 * @param y : entier
-	*/
-	bool estPosValid(const unsigned int x, const unsigned int y) const;
+		/**
+		 * @brief Renvoie le type d'objet se trouvant en X,Y
+		 * @param x : entier
+		 * @param y : entier
+		*/
+		char getXY(const unsigned int x, const unsigned int y) const;
 
-    /**
-	 * @brief Renvoie le type d'objet se trouvant en X,Y
-	 * @param x : entier
-	 * @param y : entier
-    */
-    char getXY(const unsigned int x, const unsigned int y) const;
+		/**
+		 * @brief Explose les briques aux alentours
+		 * @param x : entier
+		 * @param y : entier
+		*/
+		void EstExplosee(unsigned int x, unsigned int y);
 
-	/**
-	 * @brief Explose les briques aux alentours
-	 * @param x : entier
-	 * @param y : entier
-	*/
-	void EstExplosee(unsigned int x, unsigned int y);
+		/**
+		 * @brief Place une bombe
+		 * @param x : entier
+		 * @param y : entier
+		*/
+		void placer(unsigned int x, unsigned int y);
 
-	/**
-	 * @brief Place une bombe
-	 * @param x : entier
-	 * @param y : entier
-	*/
-	void placer(unsigned int x, unsigned int y);
+		/**
+		 * @brief Renvoie la largeur du terrain en X
+		*/
+		int getDimX() const;
 
-    /**
-	 * @brief Renvoie la largeur du terrain en X
-    */
-    int getDimX() const;
+		/**
+		 * @brief Renvoie la hauteur du terrain Y
+		*/
+		int getDimY() const;
 
-    /**
-	 * @brief Renvoie la hauteur du terrain Y
-    */
-    int getDimY() const;
+		/**
+		 * @brief Enlève le clignotement du curseur
+		 * @param showFlag : booléen
+		*/
+		void ShowConsoleCursor(bool showFlag);
 
-	/**
-	 *  @brief Enlève le clignotement du curseur
-	 * @param showFlag : booléen
-	*/
-	void ShowConsoleCursor(bool showFlag);
-
-	//bool BombeEstPlacee(unsigned int x, unsigned int y);
+		//bool BombeEstPlacee(unsigned int x, unsigned int y);
 };
 
 #endif
