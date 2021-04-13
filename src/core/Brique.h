@@ -30,7 +30,6 @@ class Brique{
     */
     unsigned int posX, posY;
         
-<<<<<<< HEAD
         /**
          * @brief Booléen pour indiquer si la brique est détruite
         */
@@ -84,61 +83,6 @@ class Brique{
          @param y : entier non signé
         */
         void setPosXY(unsigned int x, unsigned int y);
-=======
-    /**
-     * @brief Booléen pour indiquer si la brique est détruite
-    */
-    bool detruit;
-
-    /**
-     * @brief Booléen pour indiquer si la brique contient un bonus
-    */
-    bool bonus;
-
-    /**
-     * @brief Constructeur par défaut de la classe : : mise à jour de posX et posY à 0, détruit à false, typeBonus à NULL, et couleur à noir
-    */
-    Brique();
-
-    /**
-     * @brief Constructeur de la classe : initialise sa position, si il a un bonus, son type de bonus et sa couleur
-     * @param x : entier non signé
-     * @param y : entier non signé
-     * @param det : booléen
-     * @param typeBon : chaîne de caractères
-     * @param c : Couleur
-    */
-    Brique(unsigned int x, unsigned int y, bool det, string typeBon, Couleur c);
-
-    /**
-     * @brief Accesseur de la position en X d'une brique
-    */
-    unsigned int getPosX() const;
-
-    /**
-     * @brief Accesseur de la position en X d'une brique
-    */
-    unsigned int getPosY() const;
-
-    /**
-     * @brief
-     * Accesseur de l'état d'une brique
-    */
-    bool getDetruit();
-
-    /**
-     * @brief Mutateur de l'état d'une brique
-     * @param det : booléen
-    */
-    void setDetruit(bool det);
-
-    /**
-     * @brief Mutateur de la position d'une brique
-     * @param x : entier non signé
-     * @param y : entier non signé
-    */
-    void setPosXY(unsigned int x, unsigned int y);
->>>>>>> b7d378eebb16236a2dc874f62ff405350280a6cb
 };
 
 #endif
