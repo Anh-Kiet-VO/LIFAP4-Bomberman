@@ -133,7 +133,8 @@ sdlJeu::sdlJeu () : jeu() {
     im_in_perso.loadFromFile("data/perso.png", renderer);
     im_mur.loadFromFile("data/mur.png", renderer);
     im_brique.loadFromFile("data/brique.png", renderer);
-    im_bombe.loadFromFile("data/bombe.png", renderer);
+    im_b1.loadFromFile("data/bombe.png", renderer);
+    im_b2.loadFromFile("data/bombe.png", renderer);
     im_ter.loadFromFile("data/terrain.png", renderer);
 
     // FONTS
@@ -181,7 +182,8 @@ void sdlJeu::sdlAff () {
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso(0);
     const Personnage& in_perso = jeu.getConstPerso(1);
-    const Bombe& b = jeu.getConstBombe();
+    const Bombe& b1 = jeu.getConstBombe(0);
+    const Bombe& b2 = jeu.getConstBombe(1);
 
     // Afficher le sprite du sol
     for (x = 0 ; x < ter.getDimX() ; ++x) {

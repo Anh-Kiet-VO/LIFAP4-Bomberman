@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <chrono>
 using namespace std;
-Jeu::Jeu () : ter(), perso(), in_perso(13,9), b() {
+Jeu::Jeu () : ter(), perso(), in_perso(13,9), b1(), b2() {
 }
 
 Terrain& Jeu::getTerrain() { return ter; }
@@ -17,7 +17,14 @@ Personnage& Jeu::getPerso(int i) {
 	}
 }
 
-Bombe& Jeu::getBombe(){ return b; }
+Bombe& Jeu::getBombe(int j){ 
+	if( j == 0){
+		return b1; 
+	}
+	if( j == 1){
+		return b2;
+	}
+}
 
 const Terrain& Jeu::getConstTerrain() const { return ter; }
 
@@ -30,7 +37,14 @@ const Personnage& Jeu::getConstPerso(int i) const {
 	}
 }
 
-const Bombe& Jeu::getConstBombe() const { return b; }
+const Bombe& Jeu::getConstBombe(int j) const { 
+	if( j == 0){
+		return b1; 
+	}
+	if( j == 1){
+		return b2;
+	}
+}
 /*
 void Jeu::PlacerBombe(Personnage& perso, Terrain& ter, Bombe& b){
 	if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
@@ -52,12 +66,12 @@ void Jeu::ExploserBombe(Personnage& perso, Terrain& ter, Bombe& b){ //nom perso
 	}
 }*/
 
-void Jeu::PlaceEtExplose(Personnage& perso, Terrain& ter, Bombe& b){
-	if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
+void Jeu::PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b){
+	if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
         //on place la bombe aux coordonnées du perso
-        ter.placer(perso.getPosX(), perso.getPosY());    
+        ter.placer(po.getPosX(), po.getPosY());    
 	    //update des positions de la bombe
-	    b.setPos(perso.getPosX(), perso.getPosY());
+	    b.setPos(po.getPosX(), po.getPosY());
         //explosion en fonction de la position de la bombe
         ter.EstExplosee(b.getPosX() + b.getPortee(), b.getPosY());
         ter.EstExplosee(b.getPosX() - b.getPortee(), b.getPosY());
@@ -101,7 +115,7 @@ bool Jeu::actionClavier(const char touche) {
 					end = chrono::system_clock::now(); 
 				}*/
 				cout << "kaboom" << endl;
-				PlaceEtExplose(perso, ter, b);
+				PlaceEtExplose(perso, ter, b1);
 						
 				cout << "nombre brique : " << ter.bri.getNbBrique() << endl;
 				//ter.bri.setNbBrique(ter.bri.getNbBrique()--);
@@ -126,6 +140,7 @@ bool Jeu::actionClavier(const char touche) {
 				break;
 		case 'u' :
 				cout<<"On place une bombe haha...";
+				PlaceEtExplose(in_perso, ter, b2);
 				break;
 	}
 	/*if((ter.getXY(perso[1].getPosX(),perso[1].getPosY())=='.' || ter.getXY(perso[1].getPosX(),perso[1].getPosY())==' ')){

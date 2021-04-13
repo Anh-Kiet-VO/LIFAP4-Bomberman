@@ -15,18 +15,19 @@ class Jeu {
 	Terrain ter;
     Personnage perso;
     Personnage in_perso;
-    Bombe b;
+    Bombe b1;
+    Bombe b2;
 	
 	public:
     Jeu();
 
     Terrain& getTerrain();
     Personnage& getPerso(int i);
-    Bombe& getBombe();
+    Bombe& getBombe(int j);
 
     const Terrain& getConstTerrain() const;
     const Personnage& getConstPerso(int i) const;
-    const Bombe& getConstBombe() const;
+    const Bombe& getConstBombe(int j) const;
 
     void ExploserBombe(Personnage& po, Terrain& ter, Bombe& b);
 

@@ -54,7 +54,8 @@ private :
     Image im_perso;
     Image im_in_perso;
     Image im_brique;
-    Image im_bombe;
+    Image im_b1;
+    Image im_b2;
     Image im_mur;
     Image im_ter;
 
