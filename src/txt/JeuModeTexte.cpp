@@ -36,6 +36,8 @@ void txtBoucle(Jeu & jeu) {
 	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
     WinTXT win (jeu.getConstTerrain().getDimX(), jeu.getConstTerrain().getDimY());
 
+	
+
 	bool ok = true;
 	int c;
 
@@ -47,7 +49,6 @@ void txtBoucle(Jeu & jeu) {
 		#else
 		usleep(100000);
         #endif // WIN32
-
 		c = win.getCh();
 		switch (c) {
 			case 'k':

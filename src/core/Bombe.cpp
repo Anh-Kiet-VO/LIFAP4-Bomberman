@@ -1,5 +1,6 @@
 #include "Bombe.h"
 #include <cassert>
+#include <chrono>
 
 Bombe::Bombe() {
   posX = posY = 1;
@@ -39,4 +40,13 @@ int Bombe::getPortee() const {
 
 void Bombe::setPortee(int p) {
   portee = p;
+}
+
+void Bombe::CompteurExplo(){
+  auto start = std::chrono::system_clock::now();
+	auto end = std::chrono::system_clock::now();
+	while(std::chrono::duration_cast<std::chrono::seconds>(end - start).count() < 2.0){
+		//diff entre 2 now /seconde/ms maj j et end -> now
+		end = std::chrono::system_clock::now(); 
+	}
 }

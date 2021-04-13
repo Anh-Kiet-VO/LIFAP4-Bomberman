@@ -105,17 +105,9 @@ bool Jeu::actionClavier(const char touche) {
 		//30Hertz/tt seconde on verif etat boucle principale
 		//si compteur arrivé à 0 on lance explosion	
 
-				//ter.placer(perso.getPosX(), perso.getPosY());
-		
-				//PlacerBombe(perso, ter, b);
-				//auto start = chrono::system_clock::now();
-				//auto end = chrono::system_clock::now();
-				/*while(chrono::duration_cast<chrono::seconds>(end - start).count() < 2.0){
-					//diff entre 2 now /seconde/ms maj j et end -> now
-					end = chrono::system_clock::now(); 
-				}*/
 				cout << "kaboom" << endl;
 				PlaceEtExplose(perso, ter, b1);
+				
 						
 				cout << "nombre brique : " << ter.bri.getNbBrique() << endl;
 				//ter.bri.setNbBrique(ter.bri.getNbBrique()--);

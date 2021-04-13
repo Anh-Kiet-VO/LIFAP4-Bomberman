@@ -73,6 +73,8 @@ class Bombe {
      * @param p : int
     */
     void setPortee(int p);
+
+    void CompteurExplo(); 
 };
 
 #endif
