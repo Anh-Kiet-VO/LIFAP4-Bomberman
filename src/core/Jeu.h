@@ -13,33 +13,33 @@
 class Jeu {
 	private:
 
-    /**
-     * @brief terrain
-    */
-	Terrain ter;
+        /**
+         * @brief terrain
+        */
+        Terrain ter;
 
-    /**
-     * @brief personnage1
-    */
-    Personnage perso;
+        /**
+         * @brief personnage1
+        */
+        Personnage perso;
 
-    /**
-     * @brief personnage2
-    */
-    Personnage in_perso;
+        /**
+         * @brief personnage2
+        */
+        Personnage in_perso;
 
-    /**
-     * @brief bombe pour personnage1
-    */
-    Bombe b1;
+        /**
+         * @brief bombe pour personnage1
+        */
+        Bombe b1;
 
-    /**
-     * @brief bombe pour personnage2
-    */
-    Bombe b2;
+        /**
+         * @brief bombe pour personnage2
+        */
+        Bombe b2;
 
-    TabBrique bri;
-	
+        TabBrique bri;
+        
 	public:
 
         /**
@@ -81,10 +81,11 @@ class Jeu {
         */
         const Bombe& getConstBombe(int j) const;
 
-        
-        /*void ExploserBombe(Personnage& po, Terrain& ter, Bombe& b);
+        void UpdatePosBombe(Personnage& po, Terrain& ter, Bombe& b);
 
-        void PlacerBombe(Personnage& po, Terrain& ter, Bombe& b);*/
+        void ExploserBombe(Personnage& po, Terrain& ter, Bombe& b);
+
+        void PlacerBombe(Personnage& po, Terrain& ter, Bombe& b);
 
         /**
          * @brief Permet de placer et de faire exploser les briques autour d'une bombe

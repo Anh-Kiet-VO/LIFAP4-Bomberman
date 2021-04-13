@@ -45,27 +45,29 @@ const Bombe& Jeu::getConstBombe(int j) const {
 		return b2;
 	}
 }
-/*
-void Jeu::PlacerBombe(Personnage& perso, Terrain& ter, Bombe& b){
-	if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
+
+void Jeu::PlacerBombe(Personnage& po, Terrain& ter, Bombe& b){
 		//on place la bombe aux coordonnées du perso
-		ter.placer(perso.getPosX(), perso.getPosY());	
-		//update des positions de la bombe
-		b.setPos(perso.getPosX(), perso.getPosY());
-	}
+		ter.placer(po.getPosX(), po.getPosY());	
 }
 
-void Jeu::ExploserBombe(Personnage& perso, Terrain& ter, Bombe& b){ //nom perso
-	if((ter.getXY(perso.getPosX(),perso.getPosY())=='.' || ter.getXY(perso.getPosX(),perso.getPosY())==' ')){
+void Jeu::UpdatePosBombe(Personnage& po, Terrain& ter, Bombe& b){
+	//update des positions de la bombe
+	b.setPos(po.getPosX(), po.getPosY());
+}
+
+void Jeu::ExploserBombe(Personnage& po, Terrain& ter, Bombe& b){ 
+	//if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
 		ter.EstExplosee(b.getPosX() + b.getPortee(), b.getPosY());
 		ter.EstExplosee(b.getPosX() - b.getPortee(), b.getPosY());
 		ter.EstExplosee(b.getPosX(), b.getPosY() - b.getPortee());
 		ter.EstExplosee(b.getPosX(), b.getPosY() + b.getPortee());
 		cout << "position bombe x " << b.getPosX() << endl;
 		cout << "position bombe y " << b.getPosY() << endl;
-	}
-}*/
+	//}
+}
 
+/*
 void Jeu::PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b){
 	if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
         //on place la bombe aux coordonnées du perso
@@ -80,7 +82,7 @@ void Jeu::PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b){
         cout << "position bombe x " << b.getPosX() << endl;
         cout << "position bombe y " << b.getPosY() << endl;
 	}
-}
+}*/
 
 bool Jeu::actionClavier(const char touche) {
 	//int briq = ter.bri.getNbBrique();
@@ -107,8 +109,11 @@ bool Jeu::actionClavier(const char touche) {
 		//si compteur arrivé à 0 on lance explosion	
 
 				cout << "kaboom" << endl;
-				
-				PlaceEtExplose(perso, ter, b1);
+				PlacerBombe(perso, ter, b1);
+				UpdatePosBombe(perso, ter, b1);
+				//PlaceEtExplose(perso, ter, b1);
+				//PlacerBombe(perso, ter, b1);
+				//ExploserBombe(perso, ter, b1);
 				/*if(ter.getXY(b1.getPosX() + 2, b1.getPosY()) == '.' && ter.getXY(b1.getPosX() + 2, b1.getPosY()) != ' '){
 					briq--;
 					ter.bri.setNbBrique(briq);
@@ -140,7 +145,7 @@ bool Jeu::actionClavier(const char touche) {
 				break;
 		case 'u' :
 				cout<<"On place une bombe haha...";
-				PlaceEtExplose(in_perso, ter, b2);
+				//PlaceEtExplose(in_perso, ter, b2);
 				break;
 	}
 	/*if((ter.getXY(perso[1].getPosX(),perso[1].getPosY())=='.' || ter.getXY(perso[1].getPosX(),perso[1].getPosY())==' ')){
