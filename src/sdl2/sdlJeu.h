@@ -21,7 +21,6 @@
 class Image {
 
 private:
-
     SDL_Surface * surface;
     SDL_Texture * texture;
     bool has_changed;
@@ -38,7 +37,6 @@ public:
 class sdlJeu {
 
 private :
-
 	Jeu jeu;
 
     SDL_Window * window;
@@ -61,6 +59,7 @@ private :
 
     bool souris;
     bool touche;
+    
 public :
     sdlJeu ();
     ~sdlJeu ();

@@ -17,7 +17,6 @@ using namespace std;
 
 class TabBrique{
     private:
-
         /**
          * @brief
          * Tableau de taille variable de brique
