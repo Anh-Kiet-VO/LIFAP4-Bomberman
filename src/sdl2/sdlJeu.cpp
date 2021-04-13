@@ -2,6 +2,8 @@
 #include <time.h>
 #include "sdlJeu.h"
 #include <stdlib.h>
+#include <chrono>
+
 
 #include <iostream>
 using namespace std;
@@ -204,6 +206,8 @@ void sdlJeu::sdlAff () {
 	// Afficher le sprite des perso
 	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    //im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    //im_b2.draw(renderer, b2.getPosX() * TAILLE_SPRITE, b2.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
@@ -216,50 +220,56 @@ void sdlJeu::sdlBoucle () {
     SDL_Event events;
     bool quit = false;
     // tant que ce n'est pas la fin ...
+    auto t0 = chrono::system_clock::now();
     while (!quit) {
         // tant qu'il y a des evenements � traiter (cette boucle n'est pas bloquante)
+        auto t1 = chrono::system_clock::now();
+        jeu.getBombe(0).setTempsExplo((t1 - t0).count());
+        if(jeu.getBombe(0).getTempsExplo() < 2){
+            jeu.ExploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
+        }
 
         while (SDL_PollEvent(&events)) {
             if (events.type == SDL_QUIT) quit = true;           // Si l'utilisateur a clique sur la croix de fermeture
             else if (events.type == SDL_KEYDOWN) {              // Si une touche est enfoncee
                 bool briqueExplosee = false;
                 switch (events.key.keysym.sym) {
-                case SDLK_o:
-                    briqueExplosee = jeu.actionClavier('b');    // car Y inverse
-                    break;
-                case SDLK_l:
-                    briqueExplosee = jeu.actionClavier('h');     // car Y inverse
-                    break;
-                case SDLK_k:
-                    briqueExplosee = jeu.actionClavier('g');
-                    break;
-                case SDLK_m:
-                    briqueExplosee = jeu.actionClavier('d');
-                    break;
-                case SDLK_p:
-                    briqueExplosee = jeu.actionClavier('n');
-                    break;
+                    case SDLK_o:
+                        briqueExplosee = jeu.actionClavier('b');    // car Y inverse
+                        break;
+                    case SDLK_l:
+                        briqueExplosee = jeu.actionClavier('h');     // car Y inverse
+                        break;
+                    case SDLK_k:
+                        briqueExplosee = jeu.actionClavier('g');
+                        break;
+                    case SDLK_m:
+                        briqueExplosee = jeu.actionClavier('d');
+                        break;
+                    case SDLK_p:
+                        briqueExplosee = jeu.actionClavier('n');
+                        break;
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                case SDLK_DOWN:
-                    briqueExplosee = jeu.actionClavier('v');    // car Y inverse
-                    break;
-                case SDLK_UP:
-                    briqueExplosee = jeu.actionClavier('j');     // car Y inverse
-                    break;
-                case SDLK_LEFT:
-                    briqueExplosee = jeu.actionClavier('f');
-                    break;
-                case SDLK_RIGHT:
-                    briqueExplosee = jeu.actionClavier('c');
-                    break;
-                case SDLK_KP_ENTER:
-                    briqueExplosee = jeu.actionClavier('u');
-                    break;
-                case SDLK_ESCAPE:
-                case SDLK_q:
-                    quit = true;
-                    break;
-                default: break;
+                    case SDLK_DOWN:
+                        briqueExplosee = jeu.actionClavier('v');    // car Y inverse
+                        break;
+                    case SDLK_UP:
+                        briqueExplosee = jeu.actionClavier('j');     // car Y inverse
+                        break;
+                    case SDLK_LEFT:
+                        briqueExplosee = jeu.actionClavier('f');
+                        break;
+                    case SDLK_RIGHT:
+                        briqueExplosee = jeu.actionClavier('c');
+                        break;
+                    case SDLK_KP_ENTER:
+                        briqueExplosee = jeu.actionClavier('u');
+                        break;
+                    case SDLK_ESCAPE:
+                    case SDLK_q:
+                        quit = true;
+                        break;
+                    default: break;
                 }/*
                 if ((withSound) && (briqueExplosee))
                     Mix_PlayChannel(-1,sound,0);*/
