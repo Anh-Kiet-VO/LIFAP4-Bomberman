@@ -74,6 +74,10 @@ class Bombe {
         */
         void setPortee(int p);
 
+        int getTempsExplo();
+
+        void setTempsExplo(int t);
+
         void CompteurExplo(); 
 };
 

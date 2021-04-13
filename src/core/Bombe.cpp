@@ -5,7 +5,7 @@
 Bombe::Bombe() {
   posX = posY = 1;
   portee = 1;
-  tempsExplosion = 2;
+  tempsExplosion = 0;
   estSurLeTerrain = 0;
 }
 
@@ -40,6 +40,14 @@ int Bombe::getPortee() const {
 
 void Bombe::setPortee(int p) {
   portee = p;
+}
+
+int Bombe::getTempsExplo(){
+  return tempsExplosion;
+}
+
+void Bombe::setTempsExplo(int t){
+  tempsExplosion = t;
 }
 
 void Bombe::CompteurExplo(){
