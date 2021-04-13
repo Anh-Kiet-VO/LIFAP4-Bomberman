@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <chrono>
 using namespace std;
-Jeu::Jeu () : ter(), perso(), in_perso(13,9), b1(), b2() {
+Jeu::Jeu () : ter(), perso(), in_perso(13,9), b1(), b2(), bom() {
 }
 
 Terrain& Jeu::getTerrain() { return ter; }
@@ -108,12 +108,12 @@ bool Jeu::actionClavier(const char touche) {
 		//30Hertz/tt seconde on verif etat boucle principale
 		//si compteur arrivé à 0 on lance explosion	
 
-				cout << "kaboom" << endl;
 				PlacerBombe(perso, ter, b1);
 				UpdatePosBombe(perso, ter, b1);
+								
 				//PlaceEtExplose(perso, ter, b1);
 				//PlacerBombe(perso, ter, b1);
-				//ExploserBombe(perso, ter, b1);
+				ExploserBombe(perso, ter, b1); //METTRE EN COMME QUAND SDL
 				/*if(ter.getXY(b1.getPosX() + 2, b1.getPosY()) == '.' && ter.getXY(b1.getPosX() + 2, b1.getPosY()) != ' '){
 					briq--;
 					ter.bri.setNbBrique(briq);
