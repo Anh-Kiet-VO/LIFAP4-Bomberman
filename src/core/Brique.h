@@ -15,15 +15,15 @@ using namespace std;
 class Brique{
     private:
 
-        /**
-         * @brief Indique le type de bonus de la brique
-        */
-        string typeBonus;
+      /**
+       * @brief Indique le type de bonus de la brique
+      */
+      string typeBonus;
 
-        /**
-         * @brief Couleur de la brique
-        */
-        Couleur coulBrique;
+      /**
+       * @brief Couleur de la brique
+      */
+      Couleur coulBrique;
 
     public:
         /**
