@@ -113,7 +113,7 @@ bool Jeu::actionClavier(const char touche) {
 								
 				//PlaceEtExplose(perso, ter, b1);
 				//PlacerBombe(perso, ter, b1);
-				ExploserBombe(perso, ter, b1); //METTRE EN COMME QUAND SDL
+				//ExploserBombe(perso, ter, b1); //METTRE EN COMME QUAND SDL
 				/*if(ter.getXY(b1.getPosX() + 2, b1.getPosY()) == '.' && ter.getXY(b1.getPosX() + 2, b1.getPosY()) != ' '){
 					briq--;
 					ter.bri.setNbBrique(briq);
