@@ -70,6 +70,11 @@ class Personnage {
 	void placer(const Terrain &t, Bombe &b);
 */
 	/**
+	 * @brief Accesseur pour la vie du personnage
+	*/
+	bool getVivant() const;
+
+	/**
 	 * @brief Accesseur pour la position en X
 	*/
 	int getPosX() const;

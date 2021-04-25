@@ -37,6 +37,11 @@ void Personnage::placer(const Terrain &t, Bombe &b) {
 	b.setPos(getPosX(), getPosY());
 }
 */
+
+bool Personnage::getVivant() const {
+	return vivant;
+}
+
 int Personnage::getPosX() const {
 	return posX;
 }
@@ -124,5 +129,5 @@ void Personnage::testRegression() {
 	assert(coul.getVert() == 12);
 	assert(coul.getBleu() == 104);
 
-	assert(vivant != false);
+	assert(getVivant() != false);
 }
