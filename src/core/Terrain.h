@@ -16,22 +16,25 @@
 class Terrain {
 	private:
 	
-	/**
-	 * @brief dimension du terrain en x
-	*/
-	unsigned int dimX;
+		/**
+		 * @brief dimension du terrain en x
+		*/
+		unsigned int dimX;
 
-	/**
-	 * @brief dimension du terrain en y
-	*/
-	unsigned int dimY;
+		/**
+		 * @brief dimension du terrain en y
+		*/
+		unsigned int dimY;
 
-	/**
-	 * @brief dimension du terrain en x et en y
-	*/
-	char ter[100][100];
+		/**
+		 * @brief dimension du terrain en x et en y
+		*/
+		char ter[100][100];
 
 	public:
+		/**
+		 * @brief tableau de brique
+		*/
 		TabBrique bri;
 
 		/**

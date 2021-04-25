@@ -13,7 +13,7 @@
 using namespace std;
 
 class TabPersonnage {
-    private:
+  private:
     /**
       * @brief
       * Tableau de taille variable de bombes
@@ -26,7 +26,7 @@ class TabPersonnage {
     */
     unsigned int nbPerso;
 
-    public:
+  public:
     /**
      * @brief
      * Constructeur de TabPerso
