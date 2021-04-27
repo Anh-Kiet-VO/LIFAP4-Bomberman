@@ -147,7 +147,8 @@ bool Jeu::actionClavier(const char touche) {
 				cout<<"perso2 haut : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
 				break;
 		case 'u' :
-				cout<<"On place une bombe haha...";
+				placerBombe(in_perso, ter, b2);
+				updatePosBombe(in_perso, ter, b2);
 				//PlaceEtExplose(in_perso, ter, b2);
 				break;
 	}

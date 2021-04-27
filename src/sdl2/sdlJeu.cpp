@@ -153,17 +153,17 @@ sdlJeu::sdlJeu () : jeu() {
 	font_im.loadFromCurrentSurface(renderer);*/
 
     // SONS
-    /*if (withSound)
+    if (withSound)
     {
-        sound = Mix_LoadWAV("data/son.wav");
+        sound = Mix_LoadWAV("../data/explosion.wav");
         if (sound == NULL) 
-            sound = Mix_LoadWAV("../data/son.wav");
+            sound = Mix_LoadWAV("../data/explosion.wav");
         if (sound == NULL) {
                 cout << "Failed to load son.wav! SDL_mixer Error: " << Mix_GetError() << endl; 
                 SDL_Quit();
                 exit(1);
         }
-    }*/
+    }
 }
 
 sdlJeu::~sdlJeu () {
@@ -207,7 +207,7 @@ void sdlJeu::sdlAff () {
 	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
-    //im_b2.draw(renderer, b2.getPosX() * TAILLE_SPRITE, b2.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    im_b2.draw(renderer, b2.getPosX() * TAILLE_SPRITE, b2.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
@@ -231,6 +231,13 @@ void sdlJeu::sdlBoucle () {
             cout << "boom" << endl;
         }
 
+        jeu.getBombe(1).setTempsExplo((t1 - t0).count());
+        if(jeu.getBombe(1).getTempsExplo() < 1){
+            jeu.exploserBombe(jeu.getPerso(1), jeu.getTerrain(), jeu.getBombe(1));
+            jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(1));
+            cout << "boom2" << endl;
+        }
+
         while (SDL_PollEvent(&events)) {
             if (events.type == SDL_QUIT) quit = true;           // Si l'utilisateur a clique sur la croix de fermeture
             else if (events.type == SDL_KEYDOWN) {              // Si une touche est enfoncee
@@ -251,6 +258,8 @@ void sdlJeu::sdlBoucle () {
                     case SDLK_p:
                         briqueExplosee = jeu.actionClavier('n');
                         t0 = t1;
+                        Mix_PlayChannel(-1,sound,0);
+                        
                         //im_b1.draw(renderer, jeu.b1.getPosX() * TAILLE_SPRITE, jeu.b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
                         break;
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -268,6 +277,7 @@ void sdlJeu::sdlBoucle () {
                         break;
                     case SDLK_KP_ENTER:
                         briqueExplosee = jeu.actionClavier('u');
+                        t0 = t1;
                         break;
                     case SDLK_ESCAPE:
                     case SDLK_q:
@@ -275,16 +285,11 @@ void sdlJeu::sdlBoucle () {
                         break;
                     default: break;
                     
-                }/*
-                if ((withSound) && (briqueExplosee))
-                    Mix_PlayChannel(-1,sound,0);*/
-                
+                }               
             }
         }
-        
         // on affiche le jeu sur le buffer cach�
         sdlAff();
-
         // on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
         SDL_RenderPresent(renderer);
     }
