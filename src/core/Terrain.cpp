@@ -23,7 +23,7 @@ const char terrain2[11][16] = {
 };
 
 #ifdef _WIN32
-void Terrain::ShowConsoleCursor(bool showFlag)
+void Terrain::showConsoleCursor(bool showFlag)
 {
     HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -39,7 +39,7 @@ Terrain::Terrain() {
 	dimX = 15;
 	dimY = 11;
 	#ifdef _WIN32
-	ShowConsoleCursor(false);
+	showConsoleCursor(false);
 	#endif 
 	for(unsigned int x = 0 ; x < dimX ; x++) {
 		for(unsigned int y = 0 ; y < dimY ; y++) {
