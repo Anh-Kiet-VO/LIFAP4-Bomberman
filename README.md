@@ -3,9 +3,8 @@
 ## TO-DO LIST
 - [ ] Problème chrono Bombe explosion + limitation de pose de Bombe
 - [ ] Bonus sur le terrain
-- [X] Problème deuxième joueur affichage
 - [ ] Condition de victoire 
-- [X] Commenter les fonctions
+- [ ] Diapo explication détaillé + MaJ CdC
 
 ## 🎓 Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
