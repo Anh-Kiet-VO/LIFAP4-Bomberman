@@ -206,8 +206,8 @@ void sdlJeu::sdlAff () {
 	// Afficher le sprite des perso
 	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
-    
-    //im_b2.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    //im_b2.draw(renderer, b2.getPosX() * TAILLE_SPRITE, b2.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
@@ -225,8 +225,9 @@ void sdlJeu::sdlBoucle () {
         // tant qu'il y a des evenements � traiter (cette boucle n'est pas bloquante)
         auto t1 = chrono::system_clock::now();
         jeu.getBombe(0).setTempsExplo((t1 - t0).count());
-        if(jeu.getBombe(0).getTempsExplo() < 2){
+        if(jeu.getBombe(0).getTempsExplo() < 1){
             jeu.exploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
+            cout << "boom" << endl;
         }
 
         while (SDL_PollEvent(&events)) {
@@ -248,6 +249,7 @@ void sdlJeu::sdlBoucle () {
                         break;
                     case SDLK_p:
                         briqueExplosee = jeu.actionClavier('n');
+                        t0 = t1;
                         //im_b1.draw(renderer, jeu.b1.getPosX() * TAILLE_SPRITE, jeu.b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
                         break;
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -271,12 +273,14 @@ void sdlJeu::sdlBoucle () {
                         quit = true;
                         break;
                     default: break;
+                    
                 }/*
                 if ((withSound) && (briqueExplosee))
                     Mix_PlayChannel(-1,sound,0);*/
+                
             }
         }
-
+        
         // on affiche le jeu sur le buffer cach�
         sdlAff();
 
