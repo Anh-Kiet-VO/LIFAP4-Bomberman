@@ -14,7 +14,7 @@ Cécilia NGUYEN (p1908025 - cecilia.nguyen@etu.univ-lyon1.fr)
 
 ## Diagramme des classes
 
-[Lien vers le diagramme](https://i.imgur.com/MBjGyDM.jpg)
+[Lien vers le diagramme](https://cdn.discordapp.com/attachments/801202140022308924/836506397801054228/unknown.png)
 
 -----------------
 
