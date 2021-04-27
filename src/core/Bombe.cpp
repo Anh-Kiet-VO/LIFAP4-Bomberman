@@ -6,7 +6,7 @@ Bombe::Bombe() {
   posX = posY = 1;
   portee = 1;
   tempsExplosion = 0;
-  estSurLeTerrain = 0;
+  estSurLeTerrain = true;
 }
 
 Bombe::Bombe(unsigned int positionX, unsigned int positionY, int nouvPortee) {

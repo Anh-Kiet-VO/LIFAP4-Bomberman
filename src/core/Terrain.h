@@ -55,6 +55,13 @@ class Terrain {
 		 * @param y : entier
 		*/
 		char getXY(const unsigned int x, const unsigned int y) const;
+		
+		/**
+		 * @brief supprime une bombe sur le terrain
+		 * @param x : entier
+		 * @param y : entier
+		*/
+		void bombeEstExplosee(unsigned int x, unsigned int y);
 
 		/**
 		 * @brief Explose les briques aux alentours

@@ -64,18 +64,28 @@ bool Terrain::BombeEstPlacee(unsigned int x, unsigned int y){
 	}
 }*/
 
+void Terrain::bombeEstExplosee(unsigned int x, unsigned int y){
+	assert(x>=0);
+	assert(y>=0);
+	assert(x<dimX);
+	assert(y<dimY);
+	if(ter[x][y] == 'o'){
+		ter[x][y] = ' ';
+	}
+}
+
 void Terrain::estExplosee(unsigned int x, unsigned int y){
 	assert(x>=0);
 	assert(y>=0);
 	assert(x<dimX);
 	assert(y<dimY);
 	if(ter[x][y] != '#'){
-		ter[x][y]=' ';
+		ter[x][y] = ' ';
 	}
 }
 
 bool Terrain::estPosValid(const unsigned int x, const unsigned int y) const {
-	return ( (x >= 0) && (x < dimX) && (y >= 0) && (y < dimY) && (ter[x][y] !='#') && (ter[x][y] != '.') && (ter[x][y] != 'o') );
+	return ( (x >= 0) && (x < dimX) && (y >= 0) && (y < dimY) && (ter[x][y] != '#') && (ter[x][y] != '.') && (ter[x][y] != 'o') );
 }
 
 char Terrain::getXY(const unsigned int x, const unsigned int y) const {

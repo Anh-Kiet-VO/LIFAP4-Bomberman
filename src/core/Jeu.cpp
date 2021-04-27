@@ -47,8 +47,8 @@ const Bombe& Jeu::getConstBombe(int j) const {
 }
 
 void Jeu::placerBombe(Personnage& po, Terrain& ter, Bombe& b){
-		//on place la bombe aux coordonnées du perso
-		ter.placer(po.getPosX(), po.getPosY());	
+	//on place la bombe aux coordonnées du perso
+	ter.placer(po.getPosX(), po.getPosY());	
 }
 
 void Jeu::updatePosBombe(Personnage& po, Terrain& ter, Bombe& b){
@@ -58,13 +58,17 @@ void Jeu::updatePosBombe(Personnage& po, Terrain& ter, Bombe& b){
 
 void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b){ 
 	//if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
-		ter.estExplosee(b.getPosX() + b.getPortee(), b.getPosY());
-		ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
-		ter.estExplosee(b.getPosX(), b.getPosY() - b.getPortee());
-		ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
-		cout << "position bombe x " << b.getPosX() << endl;
-		cout << "position bombe y " << b.getPosY() << endl;
+	ter.estExplosee(b.getPosX() + b.getPortee(), b.getPosY());
+	ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
+	ter.estExplosee(b.getPosX(), b.getPosY() - b.getPortee());
+	ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
+	cout << "position bombe x " << b.getPosX() << endl;
+	cout << "position bombe y " << b.getPosY() << endl;
 	//}
+}
+
+void Jeu::supprimerBombe(Terrain& ter, Bombe& b){
+	ter.bombeEstExplosee(b.getPosX(), b.getPosY());	
 }
 
 /*
@@ -85,7 +89,6 @@ void Jeu::PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b){
 }*/
 
 bool Jeu::actionClavier(const char touche) {
-	//int briq = ter.bri.getNbBrique();
 	switch(touche) {
 		case 'g' :
 				perso.gauche(ter);
