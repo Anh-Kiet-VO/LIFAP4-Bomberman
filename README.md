@@ -3,9 +3,8 @@
 ## TO-DO LIST
 - [ ] Problème chrono Bombe explosion + limitation de pose de Bombe
 - [ ] Bonus sur le terrain
-- [X] Problème deuxième joueur affichage
 - [ ] Condition de victoire 
-- [X] Commenter les fonctions
+- [ ] Diapo explication détaillé + MaJ CdC
 
 ## 🎓 Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
@@ -14,7 +13,7 @@ Cécilia NGUYEN (p1908025 - cecilia.nguyen@etu.univ-lyon1.fr)
 
 ## Diagramme des classes
 
-[Lien vers le diagramme](https://nsm09.casimages.com/img/2021/03/23//21032309592517252817329920.png)
+[Lien vers le diagramme](https://cdn.discordapp.com/attachments/801202140022308924/836507443416137738/unknown.png)
 
 -----------------
 
