@@ -42,6 +42,10 @@ bool Personnage::getVivant() const {
 	return vivant;
 }
 
+void Personnage::setVivant(bool vie) {
+	vivant = vie;
+}
+
 int Personnage::getPosX() const {
 	return posX;
 }

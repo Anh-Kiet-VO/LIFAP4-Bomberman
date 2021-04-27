@@ -75,6 +75,11 @@ class Personnage {
 		 * @brief Accesseur pour la vie du personnage
 		*/
 		bool getVivant() const;
+		
+		/**
+		 * @brief Mutateur pour la vie du personnage
+		*/
+		void setVivant(bool vie);
 
 		/**
 		 * @brief Accesseur pour la position en X
