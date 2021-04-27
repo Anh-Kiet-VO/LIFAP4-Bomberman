@@ -88,7 +88,7 @@ class Bombe {
     /**
      * @brief Fonction qui définit un compteur
     */
-    void CompteurExplo(); 
+    void compteurExplo(); 
 };
 
 #endif

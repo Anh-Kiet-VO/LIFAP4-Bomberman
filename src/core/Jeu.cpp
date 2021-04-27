@@ -46,22 +46,22 @@ const Bombe& Jeu::getConstBombe(int j) const {
 	}
 }
 
-void Jeu::PlacerBombe(Personnage& po, Terrain& ter, Bombe& b){
+void Jeu::placerBombe(Personnage& po, Terrain& ter, Bombe& b){
 		//on place la bombe aux coordonnées du perso
 		ter.placer(po.getPosX(), po.getPosY());	
 }
 
-void Jeu::UpdatePosBombe(Personnage& po, Terrain& ter, Bombe& b){
+void Jeu::updatePosBombe(Personnage& po, Terrain& ter, Bombe& b){
 	//update des positions de la bombe
 	b.setPos(po.getPosX(), po.getPosY());
 }
 
-void Jeu::ExploserBombe(Personnage& po, Terrain& ter, Bombe& b){ 
+void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b){ 
 	//if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
-		ter.EstExplosee(b.getPosX() + b.getPortee(), b.getPosY());
-		ter.EstExplosee(b.getPosX() - b.getPortee(), b.getPosY());
-		ter.EstExplosee(b.getPosX(), b.getPosY() - b.getPortee());
-		ter.EstExplosee(b.getPosX(), b.getPosY() + b.getPortee());
+		ter.estExplosee(b.getPosX() + b.getPortee(), b.getPosY());
+		ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
+		ter.estExplosee(b.getPosX(), b.getPosY() - b.getPortee());
+		ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
 		cout << "position bombe x " << b.getPosX() << endl;
 		cout << "position bombe y " << b.getPosY() << endl;
 	//}
@@ -108,8 +108,8 @@ bool Jeu::actionClavier(const char touche) {
 		//30Hertz/tt seconde on verif etat boucle principale
 		//si compteur arrivé à 0 on lance explosion	
 
-				PlacerBombe(perso, ter, b1);
-				UpdatePosBombe(perso, ter, b1);
+				placerBombe(perso, ter, b1);
+				updatePosBombe(perso, ter, b1);
 								
 				//PlaceEtExplose(perso, ter, b1);
 				//PlacerBombe(perso, ter, b1);

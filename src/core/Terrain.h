@@ -61,7 +61,7 @@ class Terrain {
 		 * @param x : entier
 		 * @param y : entier
 		*/
-		void EstExplosee(unsigned int x, unsigned int y);
+		void estExplosee(unsigned int x, unsigned int y);
 
 		/**
 		 * @brief Place une bombe
@@ -84,9 +84,7 @@ class Terrain {
 		 * @brief Enlève le clignotement du curseur
 		 * @param showFlag : booléen
 		*/
-		void ShowConsoleCursor(bool showFlag);
-
-		//bool BombeEstPlacee(unsigned int x, unsigned int y);
+		void showConsoleCursor(bool showFlag);
 };
 
 #endif

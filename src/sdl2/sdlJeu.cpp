@@ -226,7 +226,7 @@ void sdlJeu::sdlBoucle () {
         auto t1 = chrono::system_clock::now();
         jeu.getBombe(0).setTempsExplo((t1 - t0).count());
         if(jeu.getBombe(0).getTempsExplo() < 2){
-            jeu.ExploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
+            jeu.exploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
         }
 
         while (SDL_PollEvent(&events)) {

@@ -64,7 +64,7 @@ bool Terrain::BombeEstPlacee(unsigned int x, unsigned int y){
 	}
 }*/
 
-void Terrain::EstExplosee(unsigned int x, unsigned int y){
+void Terrain::estExplosee(unsigned int x, unsigned int y){
 	assert(x>=0);
 	assert(y>=0);
 	assert(x<dimX);

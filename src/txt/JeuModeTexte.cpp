@@ -13,7 +13,6 @@ void txtAff(WinTXT & win, const Jeu & jeu){
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso(0);
 	const Personnage& in_perso = jeu.getConstPerso(1);
-	//const Bombe& b = jeu.getConstBombe();
 
 	win.clear();
 

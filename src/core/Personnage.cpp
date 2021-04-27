@@ -27,7 +27,6 @@ Personnage::Personnage(unsigned int x, unsigned int y) {
 }
 
 Personnage::~Personnage() {
-	nom = "";
 	vivant = false;
 	vitesseX = vitesseY = 0.0;
 	posX = posY = 0;

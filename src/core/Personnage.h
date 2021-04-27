@@ -16,10 +16,6 @@ using namespace std;
 
 class Personnage {
 	private:
-		/**
-		 * @brief Nom du joueur
-		*/
-		string nom;
 
 		/**
 		 * @brief Couleur R,V,B du personnage
@@ -65,10 +61,6 @@ class Personnage {
 
 		/**
 		 * @brief Permet de placer une bombe
-		*/
-
-		/*
-			void placer(const Terrain &t, Bombe &b);
 		*/
 	
 		/**

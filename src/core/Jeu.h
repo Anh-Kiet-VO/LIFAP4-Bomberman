@@ -95,7 +95,7 @@ class Jeu {
          * @param ter : terrain
          * @param b : bombe
         */
-        void UpdatePosBombe(Personnage& po, Terrain& ter, Bombe& b);
+        void updatePosBombe(Personnage& po, Terrain& ter, Bombe& b);
 
         /**
          * @brief Fonction qui permet l'explosion d'une bombe
@@ -103,7 +103,7 @@ class Jeu {
          * @param ter : terrain
          * @param b : bombe
         */
-        void ExploserBombe(Personnage& po, Terrain& ter, Bombe& b);
+        void exploserBombe(Personnage& po, Terrain& ter, Bombe& b);
 
         /**
          * @brief Fonction qui permet de placer une bombe sur le terrain en fonction des positions d'un personnage
@@ -111,7 +111,7 @@ class Jeu {
          * @param ter : terrain
          * @param b : bombe
         */
-        void PlacerBombe(Personnage& po, Terrain& ter, Bombe& b);
+        void placerBombe(Personnage& po, Terrain& ter, Bombe& b);
 
         /**
          * @brief Permet de placer et de faire exploser les briques autour d'une bombe
@@ -120,7 +120,7 @@ class Jeu {
          * @param ter : terrain
          * @param b : bombe
         */
-        void PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b);
+        void placeEtExplose(Personnage& po, Terrain& ter, Bombe& b);
 
         /**
          * @brief Permet de réaliser une action en appuyant sur une touche du clavier
