@@ -1,9 +1,9 @@
 # LIFAP4 - Bomberman
 
 ## TO-DO LIST
-- [ ] Problème chrono Bombe explosion + limitation de pose de Bombe
+- [ ] Problème chrono Bombe explosion (Version TXT) + limitation de pose de Bombe
 - [ ] Bonus sur le terrain
-- [ ] Condition de victoire 
+- [ ] Condition de victoire
 - [ ] Diapo explication détaillé + MaJ CdC
 
 ## 🎓 Étudiants :
