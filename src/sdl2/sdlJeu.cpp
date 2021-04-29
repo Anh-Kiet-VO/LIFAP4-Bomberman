@@ -271,25 +271,25 @@ void sdlJeu::sdlBoucle () {
                         //im_b1.draw(renderer, jeu.b1.getPosX() * TAILLE_SPRITE, jeu.b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
                         break;
                     // Commandes du 2e joueur
-                    case SDLK_DOWN:
+                    case SDLK_s:
                         briqueExplosee = jeu.actionClavier('v');    // car Y inverse
                         break;
-                    case SDLK_UP:
+                    case SDLK_z:
                         briqueExplosee = jeu.actionClavier('j');     // car Y inverse
                         break;
-                    case SDLK_LEFT:
+                    case SDLK_q:
                         briqueExplosee = jeu.actionClavier('f');
                         break;
-                    case SDLK_RIGHT:
+                    case SDLK_d:
                         briqueExplosee = jeu.actionClavier('c');
                         break;
-                    case SDLK_KP_ENTER:
+                    case SDLK_a:
                         briqueExplosee = jeu.actionClavier('u');
                         t0 = t1;
                         Mix_PlayChannel(-1,soundBombe,0);
                         break;
                     case SDLK_ESCAPE:
-                    case SDLK_q:
+                    case SDLK_n:
                         quit = true;
                         break;
                     default: break;
