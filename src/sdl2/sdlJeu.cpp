@@ -289,7 +289,6 @@ void sdlJeu::sdlBoucle () {
                         Mix_PlayChannel(-1,soundBombe,0);
                         break;
                     case SDLK_ESCAPE:
-                    case SDLK_n:
                         quit = true;
                         break;
                     default: break;
