@@ -26,7 +26,8 @@ Sur un terrain rempli de briques, vous incarnez un personnage qui peut poser des
 Sous TXT, les briques sont représenté par un ``.`` et les murs par des ``#``. Tandis que sous SDL2, les objets sont représenté par des images.
 
 ### 🕹️ Utilisation :
-Que ce soit en mode TXT ou SDL2, les touches sont les mêmes, la seule différence est bien-sûr l'affichage. Le jeu est fait pour être utilisé sur un clavier AZERTY.
+Que ce soit en mode TXT ou SDL2, les touches sont les mêmes, la seule différence est bien-sûr l'affichage. Le jeu est fait pour être utilisé sur un clavier AZERTY!
+Pour quitter le jeu, vous pouvez appuyer sur la touche ECHAP.
 ```
 +---------------------------+----------------------------+
 |   Touches du Joueur 1     |     Touches du Joueur 2    |
