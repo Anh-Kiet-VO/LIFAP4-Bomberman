@@ -46,7 +46,8 @@ class sdlJeu {
         Image font_im;
         SDL_Color font_color;
 
-        Mix_Chunk * sound;
+        Mix_Chunk * soundBombe;
+        Mix_Chunk * soundBackground;
         bool withSound;
 
         Image im_perso;

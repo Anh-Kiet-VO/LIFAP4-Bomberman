@@ -105,14 +105,14 @@ sdlJeu::sdlJeu () : jeu() {
         exit(1);
     }
 
-    /*if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
     {
         cout << "SDL_mixer could not initialize! SDL_mixer Error: " << Mix_GetError() << endl;
         cout << "No sound !!!" << endl;
         //SDL_Quit();exit(1);
         withSound = false;
     }
-    else withSound = true;*/
+    else withSound = true;
 
 	int dimx, dimy;
 	dimx = jeu.getConstTerrain().getDimX();
@@ -155,11 +155,15 @@ sdlJeu::sdlJeu () : jeu() {
     // SONS
     if (withSound)
     {
-        sound = Mix_LoadWAV("../data/explosion.wav");
-        if (sound == NULL) 
-            sound = Mix_LoadWAV("../data/explosion.wav");
-        if (sound == NULL) {
-                cout << "Failed to load son.wav! SDL_mixer Error: " << Mix_GetError() << endl; 
+        soundBombe = Mix_LoadWAV("data/placerBombe.wav");
+        soundBackground = Mix_LoadWAV("data/background.wav");
+        Mix_VolumeChunk(soundBackground, MIX_MAX_VOLUME/4);
+        if (soundBombe == NULL || soundBackground == NULL) {
+            soundBombe = Mix_LoadWAV("../data/placerBombe.wav");
+            soundBackground = Mix_LoadWAV("../data/background.wav");
+        }
+        if (soundBombe == NULL || soundBackground == NULL) {
+                cout << "Failed to load wav! SDL_mixer Error: " << Mix_GetError() << endl; 
                 SDL_Quit();
                 exit(1);
         }
@@ -258,8 +262,7 @@ void sdlJeu::sdlBoucle () {
                     case SDLK_p:
                         briqueExplosee = jeu.actionClavier('n');
                         t0 = t1;
-                        Mix_PlayChannel(-1,sound,0);
-                        
+                        Mix_PlayChannel(-1,soundBombe,0);
                         //im_b1.draw(renderer, jeu.b1.getPosX() * TAILLE_SPRITE, jeu.b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
                         break;
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -278,17 +281,18 @@ void sdlJeu::sdlBoucle () {
                     case SDLK_KP_ENTER:
                         briqueExplosee = jeu.actionClavier('u');
                         t0 = t1;
+                        Mix_PlayChannel(-1,soundBombe,0);
                         break;
                     case SDLK_ESCAPE:
                     case SDLK_q:
                         quit = true;
                         break;
                     default: break;
-                    
-                }               
+                }
             }
+            Mix_PlayChannel(-1,soundBackground,0);
         }
-        // on affiche le jeu sur le buffer cach�
+        // on affiche le jeu sur le buffer caché
         sdlAff();
         // on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
         SDL_RenderPresent(renderer);
