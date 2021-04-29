@@ -62,10 +62,10 @@ class sdlJeu {
         bool touche;
         
     public :
-        sdlJeu ();
-        ~sdlJeu ();
-        void sdlBoucle ();
-        void sdlAff ();
+        sdlJeu();
+        ~sdlJeu();
+        void sdlBoucle();
+        void sdlAff();
 };
 
 #endif

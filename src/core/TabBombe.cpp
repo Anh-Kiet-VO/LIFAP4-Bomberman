@@ -16,17 +16,17 @@ TabBombe::~TabBombe() {
     tabBombe.clear();
 }
 
-unsigned int TabBombe::getNbBombe() const{
+unsigned int TabBombe::getNbBombe() const {
     assert(nbBombe > 0);
     return nbBombe;
 }
 
-void TabBombe::setNbBombe(unsigned int nouvNbBombe){
+void TabBombe::setNbBombe(unsigned int nouvNbBombe) {
     assert(nouvNbBombe > 0);
     nbBombe = nouvNbBombe;
 }
 
-void TabBombe::testRegression(){
+void TabBombe::testRegression() {
     ///////// BOMBE /////////
 
     Bombe une_bombe(5, 7, 1);

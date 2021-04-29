@@ -64,7 +64,7 @@ bool Terrain::BombeEstPlacee(unsigned int x, unsigned int y){
 	}
 }*/
 
-void Terrain::bombeEstExplosee(unsigned int x, unsigned int y){
+void Terrain::bombeEstExplosee(unsigned int x, unsigned int y) {
 	assert(x>=0);
 	assert(y>=0);
 	assert(x<dimX);
@@ -74,12 +74,12 @@ void Terrain::bombeEstExplosee(unsigned int x, unsigned int y){
 	}
 }
 
-void Terrain::estExplosee(unsigned int x, unsigned int y){
+void Terrain::estExplosee(unsigned int x, unsigned int y) {
 	assert(x>=0);
 	assert(y>=0);
 	assert(x<dimX);
 	assert(y<dimY);
-	if(ter[x][y] != '#'){
+	if(ter[x][y] != '#') {
 		ter[x][y] = ' ';
 	}
 }

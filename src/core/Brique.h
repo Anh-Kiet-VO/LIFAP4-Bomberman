@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Brique{
+class Brique {
   private:
     /**
      * @brief Indique le type de bonus de la brique

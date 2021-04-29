@@ -17,7 +17,7 @@ Personnage& Jeu::getPerso(int i) {
 	}
 }
 
-Bombe& Jeu::getBombe(int j){ 
+Bombe& Jeu::getBombe(int j) { 
 	if( j == 0){
 		return b1; 
 	}
@@ -29,10 +29,10 @@ Bombe& Jeu::getBombe(int j){
 const Terrain& Jeu::getConstTerrain() const { return ter; }
 
 const Personnage& Jeu::getConstPerso(int i) const { 
-	if( i == 0){
+	if( i == 0) {
 		return perso; 
 	}
-	if( i == 1){
+	if( i == 1) {
 		return in_perso;
 	}
 }
@@ -46,17 +46,17 @@ const Bombe& Jeu::getConstBombe(int j) const {
 	}
 }
 
-void Jeu::placerBombe(Personnage& po, Terrain& ter, Bombe& b){
+void Jeu::placerBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	//on place la bombe aux coordonnées du perso
 	ter.placer(po.getPosX(), po.getPosY());	
 }
 
-void Jeu::updatePosBombe(Personnage& po, Terrain& ter, Bombe& b){
+void Jeu::updatePosBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	//update des positions de la bombe
 	b.setPos(po.getPosX(), po.getPosY());
 }
 
-void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b){ 
+void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) { 
 	//if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
 	ter.estExplosee(b.getPosX() + b.getPortee(), b.getPosY());
 	ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
@@ -67,7 +67,7 @@ void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b){
 	//}
 }
 
-void Jeu::supprimerBombe(Terrain& ter, Bombe& b){
+void Jeu::supprimerBombe(Terrain& ter, Bombe& b) {
 	ter.bombeEstExplosee(b.getPosX(), b.getPosY());	
 }
 
@@ -90,6 +90,7 @@ void Jeu::PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b){
 
 bool Jeu::actionClavier(const char touche) {
 	switch(touche) {
+		// Commandes du 1er joueur
 		case 'g' :
 				perso.gauche(ter);
 				cout<<"gauche : " << perso.getPosX() << " " << perso.getPosY() << endl; 
@@ -129,7 +130,7 @@ bool Jeu::actionClavier(const char touche) {
 					ter.bri.setNbBrique(0);
 				}*/
 				break;
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		// Commandes du 2e joueurs
 		case 'f' :
 				in_perso.gauche(ter);
 				cout<<"perso2 gauche : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 

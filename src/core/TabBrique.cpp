@@ -6,28 +6,28 @@
 #include <iostream>
 using namespace std;
 
-TabBrique::TabBrique(){
+TabBrique::TabBrique() {
     nbBrique = 1;
     vector<Brique> tabBrique;
     tabBrique.resize(nbBrique);
 }
 
-TabBrique::~TabBrique(){
+TabBrique::~TabBrique() {
     nbBrique = 0;
     tabBrique.clear();
 }
 
-unsigned int TabBrique::getNbBrique(){
+unsigned int TabBrique::getNbBrique() {
     assert(nbBrique >= 0);
     return nbBrique;
 }
 
-void TabBrique::setNbBrique(unsigned int nouvNbBrique){
+void TabBrique::setNbBrique(unsigned int nouvNbBrique) {
     assert(nouvNbBrique >= 0);
     nbBrique = nouvNbBrique;
 }
 
-void TabBrique::testRegression(){
+void TabBrique::testRegression() {
     //Vérifie nombre de brique
     assert(getNbBrique() == 1);
     //On set le nombre de brique à 5
