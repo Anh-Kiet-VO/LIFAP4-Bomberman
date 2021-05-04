@@ -214,8 +214,13 @@ void sdlJeu::sdlAff () {
 	// Afficher le sprite des perso
 	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
-    im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
-    im_b2.draw(renderer, b2.getPosX() * TAILLE_SPRITE, b2.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    if(b1.estSurLeTerrain == true) {
+        im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    }
+    if(b2.estSurLeTerrain == true) {
+        im_b2.draw(renderer, b2.getPosX() * TAILLE_SPRITE, b2.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    }
+    
 
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
@@ -237,6 +242,7 @@ void sdlJeu::sdlBoucle () {
             jeu.exploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
             jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(0));
             cout << "boom" << endl;
+            
         }
 
         jeu.getBombe(1).setTempsExplo((t1 - t0).count());

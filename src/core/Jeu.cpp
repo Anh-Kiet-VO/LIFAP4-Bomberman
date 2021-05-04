@@ -48,7 +48,8 @@ const Bombe& Jeu::getConstBombe(int j) const {
 
 void Jeu::placerBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	//on place la bombe aux coordonnées du perso
-	ter.placer(po.getPosX(), po.getPosY());	
+	ter.placer(po.getPosX(), po.getPosY());
+	b.estSurLeTerrain = true;
 }
 
 void Jeu::updatePosBombe(Personnage& po, Terrain& ter, Bombe& b) {
@@ -64,6 +65,7 @@ void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
 	cout << "position bombe x " << b.getPosX() << endl;
 	cout << "position bombe y " << b.getPosY() << endl;
+	b.estSurLeTerrain = false;
 	//}
 }
 
