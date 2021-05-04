@@ -32,11 +32,11 @@ Pour quitter le jeu, vous pouvez appuyer sur la touche ECHAP.
 +---------------------------+----------------------------+
 |   Touches du Joueur 1     |     Touches du Joueur 2    |
 +---------------------------+----------------------------+
-| O 👉 Se déplacer en haut  | Z 👉 Se déplacer en haut  |
-| K 👉 Se déplacer à gauche | Q 👉 Se déplacer à gauche |
-| L 👉 Se déplacer en bas   | S 👉 Se déplacer en bas   |
-| M 👉 Se déplacer à droite | D 👉 Se déplacer à droite |
-| P 👉 Poser une bombe      | A 👉 Poser une bombe      |
+| Z 👉 Se déplacer en haut  | O 👉 Se déplacer en haut  |
+| Q 👉 Se déplacer à gauche | K 👉 Se déplacer à gauche |
+| S 👉 Se déplacer en bas   | L 👉 Se déplacer en bas   |
+| D 👉 Se déplacer à droite | M 👉 Se déplacer à droite |
+| A 👉 Poser une bombe      | P 👉 Poser une bombe      |
 +---------------------------+----------------------------+
 ```
 
