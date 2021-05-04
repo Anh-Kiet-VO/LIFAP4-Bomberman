@@ -1,9 +1,9 @@
 # LIFAP4 - Bomberman
 
 ## TO-DO LIST
-- [ ] Problème chrono Bombe explosion + limitation de pose de Bombe
+- [ ] Problème chrono Bombe explosion (Version TXT) + limitation de pose de Bombe
 - [ ] Bonus sur le terrain
-- [ ] Condition de victoire 
+- [ ] Condition de victoire
 - [ ] Diapo explication détaillé + MaJ CdC
 
 ## 🎓 Étudiants :
@@ -26,16 +26,17 @@ Sur un terrain rempli de briques, vous incarnez un personnage qui peut poser des
 Sous TXT, les briques sont représenté par un ``.`` et les murs par des ``#``. Tandis que sous SDL2, les objets sont représenté par des images.
 
 ### 🕹️ Utilisation :
-Que ce soit en mode TXT ou SDL2, les touches sont les mêmes, la seule différence est bien-sûr l'affichage. Le jeu est fait pour être utilisé sur un clavier AZERTY.
+Que ce soit en mode TXT ou SDL2, les touches sont les mêmes, la seule différence est bien-sûr l'affichage. Le jeu est fait pour être utilisé sur un clavier AZERTY!
+Pour quitter le jeu, vous pouvez appuyer sur la touche ECHAP.
 ```
 +---------------------------+----------------------------+
 |   Touches du Joueur 1     |     Touches du Joueur 2    |
 +---------------------------+----------------------------+
-| O 👉 Se déplacer en haut  | ↑ 👉 Se déplacer en haut  |
-| K 👉 Se déplacer à gauche | ← 👉 Se déplacer à gauche |
-| L 👉 Se déplacer en bas   | ↓ 👉 Se déplacer en bas   |
-| M 👉 Se déplacer à droite | → 👉 Se déplacer à droite |
-| P 👉 Poser une bombe      | ENTER 👉 Poser une bombe  |
+| O 👉 Se déplacer en haut  | Z 👉 Se déplacer en haut  |
+| K 👉 Se déplacer à gauche | Q 👉 Se déplacer à gauche |
+| L 👉 Se déplacer en bas   | S 👉 Se déplacer en bas   |
+| M 👉 Se déplacer à droite | D 👉 Se déplacer à droite |
+| P 👉 Poser une bombe      | A 👉 Poser une bombe      |
 +---------------------------+----------------------------+
 ```
 

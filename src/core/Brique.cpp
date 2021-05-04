@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-Brique::Brique(){
+Brique::Brique() {
     posX = posY = 0;
     bonus = false;
     typeBonus = "NULL";
@@ -13,7 +13,7 @@ Brique::Brique(){
     detruit = false;
 }
 
-Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur c){
+Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur c) {
     assert(x >= 0 && y >= 0);
     posX = x;
     posY = y;
@@ -22,24 +22,24 @@ Brique::Brique(unsigned int x,unsigned int y, bool det, string typeBon, Couleur 
     coulBrique = c;
 }
 
-unsigned int Brique::getPosX() const{
+unsigned int Brique::getPosX() const {
     return posX;
 }
 
-unsigned int Brique::getPosY() const{
+unsigned int Brique::getPosY() const {
     return posY;
 }
 
-void Brique::setPosXY(unsigned int x, unsigned int y){
+void Brique::setPosXY(unsigned int x, unsigned int y) {
     assert(x > 0 && y > 0);
     posX = x;
     posY = y;
 }
 
-bool Brique::getDetruit(){
+bool Brique::getDetruit() {
     return detruit;
 }
 
-void Brique::setDetruit(bool det){
+void Brique::setDetruit(bool det) {
     detruit = det;
 }

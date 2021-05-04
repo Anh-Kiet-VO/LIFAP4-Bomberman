@@ -6,10 +6,9 @@
 
 #include <iostream>
 #include "JeuModeTexte.h"
-//#include "../src/Jeu.h"
-//#include "winTxt.h"
 
-void txtAff(WinTXT & win, const Jeu & jeu){
+
+void txtAff(WinTXT & win, const Jeu & jeu) {
 	const Terrain& ter = jeu.getConstTerrain();
 	const Personnage& perso = jeu.getConstPerso(0);
 	const Personnage& in_perso = jeu.getConstPerso(1);
@@ -35,8 +34,6 @@ void txtBoucle(Jeu & jeu) {
 	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
     WinTXT win (jeu.getConstTerrain().getDimX(), jeu.getConstTerrain().getDimY());
 
-	
-
 	bool ok = true;
 	int c;
 	auto t0 = chrono::system_clock::now();
@@ -56,6 +53,7 @@ void txtBoucle(Jeu & jeu) {
         #endif // WIN32
 		c = win.getCh();
 		switch (c) {
+			// Commandes du 1er joueur
 			case 'k':
 				jeu.actionClavier('g');
 				break;
@@ -75,7 +73,7 @@ void txtBoucle(Jeu & jeu) {
 			case 'c':
 				ok = false;
 				break;
-		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		// Commandes du 2e joueur
             case 's':
                 jeu.actionClavier('v');    // car Y inverse
                 break;

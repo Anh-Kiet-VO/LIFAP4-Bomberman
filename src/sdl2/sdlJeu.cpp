@@ -105,14 +105,14 @@ sdlJeu::sdlJeu () : jeu() {
         exit(1);
     }
 
-    /*if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
     {
         cout << "SDL_mixer could not initialize! SDL_mixer Error: " << Mix_GetError() << endl;
         cout << "No sound !!!" << endl;
         //SDL_Quit();exit(1);
         withSound = false;
     }
-    else withSound = true;*/
+    else withSound = true;
 
 	int dimx, dimy;
 	dimx = jeu.getConstTerrain().getDimX();
@@ -155,11 +155,15 @@ sdlJeu::sdlJeu () : jeu() {
     // SONS
     if (withSound)
     {
-        sound = Mix_LoadWAV("../data/explosion.wav");
-        if (sound == NULL) 
-            sound = Mix_LoadWAV("../data/explosion.wav");
-        if (sound == NULL) {
-                cout << "Failed to load son.wav! SDL_mixer Error: " << Mix_GetError() << endl; 
+        soundBombe = Mix_LoadWAV("data/placerBombe.wav");
+        soundBackground = Mix_LoadWAV("data/background.wav");
+        Mix_VolumeChunk(soundBackground, MIX_MAX_VOLUME/4);
+        if (soundBombe == NULL || soundBackground == NULL) {
+            soundBombe = Mix_LoadWAV("../data/placerBombe.wav");
+            soundBackground = Mix_LoadWAV("../data/background.wav");
+        }
+        if (soundBombe == NULL || soundBackground == NULL) {
+                cout << "Failed to load wav! SDL_mixer Error: " << Mix_GetError() << endl; 
                 SDL_Quit();
                 exit(1);
         }
@@ -176,7 +180,7 @@ sdlJeu::~sdlJeu () {
 }
 
 void sdlJeu::sdlAff () {
-	//Remplir l'�cran de blanc
+	//Remplir l'écran de blanc
     SDL_SetRenderDrawColor(renderer, 230, 240, 255, 255);
     SDL_RenderClear(renderer);
 
@@ -194,14 +198,18 @@ void sdlJeu::sdlAff () {
         }
     }
 
-
     // Afficher les sprites des murs et des pastilles
-	for (x=0 ; x < ter.getDimX() ; ++x)
-		for (y=0 ; y < ter.getDimY() ; ++y)
-			if (ter.getXY(x,y) == '#')
-				im_mur.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
-			else if (ter.getXY(x,y) == '.')
-				im_brique.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+	for (x=0 ; x < ter.getDimX() ; ++x) {
+        for (y=0 ; y < ter.getDimY() ; ++y) {
+            if (ter.getXY(x,y) == '#') {
+                im_mur.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+            }	
+			else if (ter.getXY(x,y) == '.') {
+                im_brique.draw(renderer, x * TAILLE_SPRITE, y * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+            }
+        }	
+    }
+		
 
 	// Afficher le sprite des perso
 	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
@@ -219,10 +227,10 @@ void sdlJeu::sdlAff () {
 void sdlJeu::sdlBoucle () {
     SDL_Event events;
     bool quit = false;
-    // tant que ce n'est pas la fin ...
+    // tant que ce n'est pas la fin...
     auto t0 = chrono::system_clock::now();
     while (!quit) {
-        // tant qu'il y a des evenements � traiter (cette boucle n'est pas bloquante)
+        // tant qu'il y a des evenements à traiter (cette boucle n'est pas bloquante)
         auto t1 = chrono::system_clock::now();
         jeu.getBombe(0).setTempsExplo((t1 - t0).count());
         if(jeu.getBombe(0).getTempsExplo() < 1){
@@ -243,6 +251,7 @@ void sdlJeu::sdlBoucle () {
             else if (events.type == SDL_KEYDOWN) {              // Si une touche est enfoncee
                 bool briqueExplosee = false;
                 switch (events.key.keysym.sym) {
+                    // Commandes du 1er joueur
                     case SDLK_o:
                         briqueExplosee = jeu.actionClavier('b');    // car Y inverse
                         break;
@@ -258,39 +267,38 @@ void sdlJeu::sdlBoucle () {
                     case SDLK_p:
                         briqueExplosee = jeu.actionClavier('n');
                         t0 = t1;
-                        Mix_PlayChannel(-1,sound,0);
-                        
+                        Mix_PlayChannel(-1,soundBombe,0);
                         //im_b1.draw(renderer, jeu.b1.getPosX() * TAILLE_SPRITE, jeu.b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
                         break;
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2e JOUEUR ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    case SDLK_DOWN:
+                    // Commandes du 2e joueur
+                    case SDLK_s:
                         briqueExplosee = jeu.actionClavier('v');    // car Y inverse
                         break;
-                    case SDLK_UP:
+                    case SDLK_z:
                         briqueExplosee = jeu.actionClavier('j');     // car Y inverse
                         break;
-                    case SDLK_LEFT:
+                    case SDLK_q:
                         briqueExplosee = jeu.actionClavier('f');
                         break;
-                    case SDLK_RIGHT:
+                    case SDLK_d:
                         briqueExplosee = jeu.actionClavier('c');
                         break;
-                    case SDLK_KP_ENTER:
+                    case SDLK_a:
                         briqueExplosee = jeu.actionClavier('u');
                         t0 = t1;
+                        Mix_PlayChannel(-1,soundBombe,0);
                         break;
                     case SDLK_ESCAPE:
-                    case SDLK_q:
                         quit = true;
                         break;
                     default: break;
-                    
-                }               
+                }
             }
+            Mix_PlayChannel(-1,soundBackground,0);
         }
-        // on affiche le jeu sur le buffer cach�
+        // On affiche le jeu sur le buffer caché
         sdlAff();
-        // on permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
+        // On permute les deux buffers (cette fonction ne doit se faire qu'une seule fois dans la boucle)
         SDL_RenderPresent(renderer);
     }
 }
