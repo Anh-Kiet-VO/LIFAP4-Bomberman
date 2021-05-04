@@ -229,6 +229,7 @@ void sdlJeu::sdlBoucle () {
     bool quit = false;
     // tant que ce n'est pas la fin...
     auto t0 = chrono::system_clock::now();
+    auto t2 = chrono::system_clock::now();
     while (!quit) {
         // tant qu'il y a des evenements à traiter (cette boucle n'est pas bloquante)
         auto t1 = chrono::system_clock::now();
@@ -239,7 +240,8 @@ void sdlJeu::sdlBoucle () {
             cout << "boom" << endl;
         }
 
-        jeu.getBombe(1).setTempsExplo((t1 - t0).count());
+        auto t3 = chrono::system_clock::now();
+        jeu.getBombe(1).setTempsExplo((t3 - t2).count());
         if(jeu.getBombe(1).getTempsExplo() < 1){
             jeu.exploserBombe(jeu.getPerso(1), jeu.getTerrain(), jeu.getBombe(1));
             jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(1));
@@ -285,7 +287,7 @@ void sdlJeu::sdlBoucle () {
                         break;
                     case SDLK_a:
                         briqueExplosee = jeu.actionClavier('u');
-                        t0 = t1;
+                        t2 = t3;
                         Mix_PlayChannel(-1,soundBombe,0);
                         break;
                     case SDLK_ESCAPE:

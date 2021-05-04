@@ -84,6 +84,16 @@ void Terrain::estExplosee(unsigned int x, unsigned int y) {
 	}
 }
 
+void Terrain::estTuee(unsigned int x, unsigned int y) {
+	assert(x>=0);
+	assert(y>=0);
+	assert(x<dimX);
+	assert(y<dimY);
+	if(ter[x + 1][y] == 'B' || ter[x - 1][y] == 'B' || ter[x][y + 1] == 'B' || ter[x][y - 1] == 'B') {
+		ter[x][y] = ' ';
+	}
+}
+
 bool Terrain::estPosValid(const unsigned int x, const unsigned int y) const {
 	return ( (x >= 0) && (x < dimX) && (y >= 0) && (y < dimY) && (ter[x][y] != '#') && (ter[x][y] != '.') && (ter[x][y] != 'o') );
 }

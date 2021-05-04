@@ -37,6 +37,7 @@ void txtBoucle(Jeu & jeu) {
 	bool ok = true;
 	int c;
 	auto t0 = chrono::system_clock::now();
+	auto t2 = chrono::system_clock::now();
 	do {
 	    txtAff(win,jeu);
 		auto t1 = chrono::system_clock::now();
@@ -46,6 +47,15 @@ void txtBoucle(Jeu & jeu) {
             jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(0));
             cout << "boom" << endl;
         }
+
+		auto t3 = chrono::system_clock::now();
+        jeu.getBombe(1).setTempsExplo((t3 - t2).count());
+        if(jeu.getBombe(1).getTempsExplo() < 1){
+            jeu.exploserBombe(jeu.getPerso(1), jeu.getTerrain(), jeu.getBombe(1));
+            jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(1));
+            cout << "boom2" << endl;
+        }
+
         #ifdef _WIN32
         Sleep(100);
 		#else
@@ -88,6 +98,7 @@ void txtBoucle(Jeu & jeu) {
                 break;
             case 'a':
                 jeu.actionClavier('u');
+				t2 = t3;
                 break;
 		}
 	} while (ok);

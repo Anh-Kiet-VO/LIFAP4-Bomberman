@@ -71,6 +71,13 @@ class Terrain {
 		void estExplosee(unsigned int x, unsigned int y);
 
 		/**
+		 * @brief Tue un personnage au alentours
+		 * @param x : entier
+		 * @param y : entier
+		*/
+		void estTuee(unsigned int x, unsigned int y);
+
+		/**
 		 * @brief Place une bombe
 		 * @param x : entier
 		 * @param y : entier

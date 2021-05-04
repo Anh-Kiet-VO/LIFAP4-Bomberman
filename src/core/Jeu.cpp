@@ -57,14 +57,12 @@ void Jeu::updatePosBombe(Personnage& po, Terrain& ter, Bombe& b) {
 }
 
 void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) { 
-	//if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
 	ter.estExplosee(b.getPosX() + b.getPortee(), b.getPosY());
 	ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
 	ter.estExplosee(b.getPosX(), b.getPosY() - b.getPortee());
 	ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
 	cout << "position bombe x " << b.getPosX() << endl;
 	cout << "position bombe y " << b.getPosY() << endl;
-	//}
 }
 
 void Jeu::supprimerBombe(Terrain& ter, Bombe& b) {
@@ -153,13 +151,5 @@ bool Jeu::actionClavier(const char touche) {
 				//PlaceEtExplose(in_perso, ter, b2);
 				break;
 	}
-	/*if((ter.getXY(perso[1].getPosX(),perso[1].getPosY())=='.' || ter.getXY(perso[1].getPosX(),perso[1].getPosY())==' ')){
-		//ter.placer(perso[1].getPosX(), perso[1].getPosY());
-		ter.EstExplosee(perso[1].getPosX() + b.getPortee(), perso[1].getPosY());
-		ter.EstExplosee(perso[1].getPosX() - b.getPortee(), perso[1].getPosY());
-		ter.EstExplosee(perso[1].getPosX(), perso[1].getPosY() - b.getPortee());
-		ter.EstExplosee(perso[1].getPosX(), perso[1].getPosY() + b.getPortee());
-		return true;
-	}*/
 	return false;
 }
