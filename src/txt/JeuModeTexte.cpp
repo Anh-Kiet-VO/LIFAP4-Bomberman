@@ -44,7 +44,7 @@ void txtBoucle(Jeu & jeu) {
         jeu.getBombe(0).setTempsExplo((t1 - t0).count());
         if(jeu.getBombe(0).getTempsExplo() < 1){
             jeu.exploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
-            jeu.tuerPerso(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(1));
+            //jeu.tuerPerso(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(1));
 			cout << "boom" << endl;
         }
 
@@ -52,7 +52,7 @@ void txtBoucle(Jeu & jeu) {
         jeu.getBombe(1).setTempsExplo((t3 - t2).count());
         if(jeu.getBombe(1).getTempsExplo() < 1){
             jeu.exploserBombe(jeu.getPerso(1), jeu.getTerrain(), jeu.getBombe(1));
-			jeu.tuerPerso(jeu.getPerso(1), jeu.getTerrain(), jeu.getBombe(1));
+			//jeu.tuerPerso(jeu.getPerso(1), jeu.getTerrain(), jeu.getBombe(1));
             cout << "boom2" << endl;
         }
 

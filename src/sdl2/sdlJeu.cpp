@@ -139,19 +139,6 @@ sdlJeu::sdlJeu () : jeu() {
     im_b2.loadFromFile("data/bombe.png", renderer);
     im_ter.loadFromFile("data/terrain.png", renderer);
 
-    // FONTS
-    /*font = TTF_OpenFont("data/DejaVuSansCondensed.ttf",50);
-    if (font == NULL)
-        font = TTF_OpenFont("../data/DejaVuSansCondensed.ttf",50);
-    if (font == NULL) {
-            cout << "Failed to load DejaVuSansCondensed.ttf! SDL_TTF Error: " << TTF_GetError() << endl; 
-            SDL_Quit(); 
-            exit(1);
-	}*/
-	/*font_color.r = 50;font_color.g = 50;font_color.b = 255;
-	font_im.setSurface(TTF_RenderText_Solid(font,"Bomberman",font_color));
-	font_im.loadFromCurrentSurface(renderer);*/
-
     // SONS
     if (withSound)
     {
@@ -171,9 +158,6 @@ sdlJeu::sdlJeu () : jeu() {
 }
 
 sdlJeu::~sdlJeu () {
-    //if (withSound) Mix_Quit();
-    //TTF_CloseFont(font);
-    //TTF_Quit();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
@@ -210,8 +194,12 @@ void sdlJeu::sdlAff () {
     }
 		
 	// Afficher le sprite des perso
-    im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
-    im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    if(perso.vivant == true){
+        im_in_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    }
+    if(in_perso.vivant == true){
+        im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    }
     if(b1.estSurLeTerrain == true) {
         im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     }

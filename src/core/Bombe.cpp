@@ -54,7 +54,6 @@ void Bombe::compteurExplo() {
   auto debut = std::chrono::system_clock::now();
 	auto fin = std::chrono::system_clock::now();
 	while(std::chrono::duration_cast<std::chrono::seconds>(fin - debut).count() < 2.0){
-		//diff entre 2 now /seconde/ms maj j et end -> now
 		fin = std::chrono::system_clock::now(); 
 	}
 }
