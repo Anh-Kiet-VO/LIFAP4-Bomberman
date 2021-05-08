@@ -210,12 +210,13 @@ void sdlJeu::sdlAff () {
         }	
     }
 		
-
 	// Afficher le sprite des perso
     if(perso.vivant == true) {
         im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     }
-    im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    if(in_perso.vivant == true) {
+        im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    }
     if(b1.estSurLeTerrain == true) {
         im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     }
@@ -223,7 +224,6 @@ void sdlJeu::sdlAff () {
         im_b2.draw(renderer, b2.getPosX() * TAILLE_SPRITE, b2.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     }
     
-
     // Ecrire un titre par dessus
     SDL_Rect positionTitre;
     positionTitre.x = 270; positionTitre.y = 49; positionTitre.w = 100; positionTitre.h = 30;

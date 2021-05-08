@@ -81,7 +81,7 @@ void Terrain::estTuee(unsigned int x, unsigned int y) {
 	assert(y>=0);
 	assert(x<dimX);
 	assert(y<dimY);
-	if(ter[x + 1][y] == 'B' || ter[x - 1][y] == 'B' || ter[x][y + 1] == 'B' || ter[x][y - 1] == 'B') {
+	if(ter[x + 1][y] == 'P' || ter[x - 1][y] == 'P' || ter[x][y + 1] == 'P' || ter[x][y - 1] == 'P') {
 		ter[x][y] = ' ';
 	}
 }
