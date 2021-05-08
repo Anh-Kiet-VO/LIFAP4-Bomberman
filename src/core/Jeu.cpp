@@ -62,8 +62,6 @@ void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
 	ter.estExplosee(b.getPosX(), b.getPosY() - b.getPortee());
 	ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
-	cout << "position bombe x " << b.getPosX() << endl;
-	cout << "position bombe y " << b.getPosY() << endl;
 	ter.bombeEstExplosee(b.getPosX(), b.getPosY());	
 	b.estSurLeTerrain = false;				
 }
