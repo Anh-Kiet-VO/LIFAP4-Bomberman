@@ -9,7 +9,6 @@
 
 #include <chrono>
 
-
 class Bombe {
   private:
     /**

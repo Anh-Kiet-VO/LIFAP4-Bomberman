@@ -17,8 +17,8 @@
 
 #include "Jeu.h"
 
-//! \brief Pour gérer une image avec SDL2
-class Image {
+//! \brief Pour gérer le Bomberman avec SDL2
+class Bomberman {
 
     private:
         SDL_Surface * surface;
@@ -26,7 +26,7 @@ class Image {
         bool has_changed;
 
     public:
-        Image () ;
+        Bomberman () ;
         void loadFromFile (const char* filename, SDL_Renderer * renderer);
         void loadFromCurrentSurface (SDL_Renderer * renderer);
         void draw (SDL_Renderer * renderer, int x, int y, int w=-1, int h=-1);
@@ -43,20 +43,20 @@ class sdlJeu {
         SDL_Renderer * renderer;
 
         TTF_Font * font;
-        Image font_im;
+        Bomberman font_im;
         SDL_Color font_color;
 
         Mix_Chunk * soundBombe;
         Mix_Chunk * soundBackground;
         bool withSound;
 
-        Image im_perso;
-        Image im_in_perso;
-        Image im_brique;
-        Image im_b1;
-        Image im_b2;
-        Image im_mur;
-        Image im_ter;
+        Bomberman im_perso;
+        Bomberman im_in_perso;
+        Bomberman im_brique;
+        Bomberman im_b1;
+        Bomberman im_b2;
+        Bomberman im_mur;
+        Bomberman im_ter;
 
         bool souris;
         bool touche;

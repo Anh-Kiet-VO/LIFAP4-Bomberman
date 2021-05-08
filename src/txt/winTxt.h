@@ -1,7 +1,7 @@
 #ifndef WINTXT_H
 #define WINTXT_H
 
-//! \brief une fentre texte est un tableau 2D de caractres
+//! \brief une fenêtre texte est un tableau 2D de caractres
 class WinTXT {
     private:
         int dimx;       //!< \brief largeur
