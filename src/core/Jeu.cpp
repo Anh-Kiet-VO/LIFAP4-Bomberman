@@ -62,75 +62,62 @@ void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
 	ter.estExplosee(b.getPosX(), b.getPosY() - b.getPortee());
 	ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
+	ter.bombeEstExplosee(b.getPosX(), b.getPosY());	
 	b.estSurLeTerrain = false;
 }
 
-void Jeu::supprimerBombe(Terrain& ter, Bombe& b) {
-	ter.bombeEstExplosee(b.getPosX(), b.getPosY());	
+void Jeu::tuerPerso(Personnage& po, Terrain& ter, Bombe& b) {
+	/*ter.estTuee(po.getPosX() + b.getPortee(), po.getPosY());
+	ter.estTuee(po.getPosX() - b.getPortee(), po.getPosY());
+	ter.estTuee(po.getPosX(), po.getPosY() + b.getPortee());
+	ter.estTuee(po.getPosX(), po.getPosY() - b.getPortee());
+	cout << "mort" << endl;*/
 }
-
-/*
-void Jeu::PlaceEtExplose(Personnage& po, Terrain& ter, Bombe& b){
-	if((ter.getXY(po.getPosX(),po.getPosY())=='.' || ter.getXY(po.getPosX(),po.getPosY())==' ')){
-        //on place la bombe aux coordonnées du perso
-        ter.placer(po.getPosX(), po.getPosY());    
-	    //update des positions de la bombe
-	    b.setPos(po.getPosX(), po.getPosY());
-        //explosion en fonction de la position de la bombe
-        ter.EstExplosee(b.getPosX() + b.getPortee(), b.getPosY());
-        ter.EstExplosee(b.getPosX() - b.getPortee(), b.getPosY());
-        ter.EstExplosee(b.getPosX(), b.getPosY() - b.getPortee());
-        ter.EstExplosee(b.getPosX(), b.getPosY() + b.getPortee());
-        cout << "position bombe x " << b.getPosX() << endl;
-        cout << "position bombe y " << b.getPosY() << endl;
-	}
-}*/
 
 bool Jeu::actionClavier(const char touche) {
 	switch(touche) {
 		// Commandes du 1er joueur
 		case 'g' :
-				perso.gauche(ter);
-				cout<<"gauche : " << perso.getPosX() << " " << perso.getPosY() << endl; 
-				break;
+			perso.gauche(ter);
+			cout<<"gauche : " << perso.getPosX() << " " << perso.getPosY() << endl; 
+			break;
 		case 'd' :
-				perso.droite(ter);
-				cout<<"droite : " << perso.getPosX() << " " << perso.getPosY() << endl; 
-				break;
+			perso.droite(ter);
+			cout<<"droite : " << perso.getPosX() << " " << perso.getPosY() << endl; 
+			break;
 		case 'h' :
-				perso.haut(ter);
-				cout<<"bas : " << perso.getPosX() << " " << perso.getPosY() << endl; 
-				break;
+			perso.haut(ter);
+			cout<<"bas : " << perso.getPosX() << " " << perso.getPosY() << endl; 
+			break;
 		case 'b' :
-				perso.bas(ter);
-				cout<<"haut : " << perso.getPosX() << " " << perso.getPosY() << endl; 
-				break;
+			perso.bas(ter);
+			cout<<"haut : " << perso.getPosX() << " " << perso.getPosY() << endl; 
+			break;
 		case 'n' :
-				placerBombe(perso, ter, b1);
-				updatePosBombe(perso, ter, b1);
-				break;
+			placerBombe(perso, ter, b1);
+			updatePosBombe(perso, ter, b1);
+			break;
 		// Commandes du 2e joueurs
 		case 'f' :
-				in_perso.gauche(ter);
-				cout<<"perso2 gauche : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
-				break;
+			in_perso.gauche(ter);
+			cout<<"perso2 gauche : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
+			break;
 		case 'c' :
-				in_perso.droite(ter);
-				cout<<"perso2 droite : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
-				break;
+			in_perso.droite(ter);
+			cout<<"perso2 droite : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
+			break;
 		case 'v' :
-				in_perso.haut(ter);
-				cout<<"perso2 bas : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
-				break;
+			in_perso.haut(ter);
+			cout<<"perso2 bas : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
+			break;
 		case 'j' :
-				in_perso.bas(ter);
-				cout<<"perso2 haut : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
-				break;
+			in_perso.bas(ter);
+			cout<<"perso2 haut : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
+			break;
 		case 'u' :
-				placerBombe(in_perso, ter, b2);
-				updatePosBombe(in_perso, ter, b2);
-				//PlaceEtExplose(in_perso, ter, b2);
-				break;
+			placerBombe(in_perso, ter, b2);
+			updatePosBombe(in_perso, ter, b2);
+			break;
 	}
 	return false;
 }
