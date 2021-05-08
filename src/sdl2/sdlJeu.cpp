@@ -16,13 +16,13 @@ float temps () {
 
 // ============= CLASS IMAGE =============== //
 
-Image::Image () {
+Bomberman::Bomberman () {
     surface = NULL;
     texture = NULL;
     has_changed = false;
 }
 
-void Image::loadFromFile (const char* filename, SDL_Renderer * renderer) {
+void Bomberman::loadFromFile (const char* filename, SDL_Renderer * renderer) {
     surface = IMG_Load(filename);
     if (surface == NULL) {
         string nfn = string("../") + filename;
@@ -51,7 +51,7 @@ void Image::loadFromFile (const char* filename, SDL_Renderer * renderer) {
     }
 }
 
-void Image::loadFromCurrentSurface (SDL_Renderer * renderer) {
+void Bomberman::loadFromCurrentSurface (SDL_Renderer * renderer) {
     texture = SDL_CreateTextureFromSurface(renderer,surface);
     if (texture == NULL) {
         cout << "Error: problem to create the texture from surface " << endl;
@@ -60,7 +60,7 @@ void Image::loadFromCurrentSurface (SDL_Renderer * renderer) {
     }
 }
 
-void Image::draw (SDL_Renderer * renderer, int x, int y, int w, int h) {
+void Bomberman::draw (SDL_Renderer * renderer, int x, int y, int w, int h) {
     int ok;
     SDL_Rect r;
     r.x = x;
@@ -78,9 +78,9 @@ void Image::draw (SDL_Renderer * renderer, int x, int y, int w, int h) {
     assert(ok == 0);
 }
 
-SDL_Texture * Image::getTexture() const {return texture;}
+SDL_Texture * Bomberman::getTexture() const {return texture;}
 
-void Image::setSurface(SDL_Surface * surf) {surface = surf;}
+void Bomberman::setSurface(SDL_Surface * surf) {surface = surf;}
 
 // ============= CLASS SDLJEU =============== //
 
