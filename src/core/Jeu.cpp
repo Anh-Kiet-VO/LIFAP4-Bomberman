@@ -62,10 +62,7 @@ void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	ter.estExplosee(b.getPosX() - b.getPortee(), b.getPosY());
 	ter.estExplosee(b.getPosX(), b.getPosY() - b.getPortee());
 	ter.estExplosee(b.getPosX(), b.getPosY() + b.getPortee());
-	cout << "position bombe x " << b.getPosX() << endl;
-	cout << "position bombe y " << b.getPosY() << endl;
 	b.estSurLeTerrain = false;
-	//}
 }
 
 void Jeu::supprimerBombe(Terrain& ter, Bombe& b) {
@@ -109,27 +106,8 @@ bool Jeu::actionClavier(const char touche) {
 				cout<<"haut : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 				break;
 		case 'n' :
-		//stock start d'une bombe, p initialise start, et on laise prog retourner son main
-		//30Hertz/tt seconde on verif etat boucle principale
-		//si compteur arrivé à 0 on lance explosion	
-
 				placerBombe(perso, ter, b1);
 				updatePosBombe(perso, ter, b1);
-								
-				//PlaceEtExplose(perso, ter, b1);
-				//PlacerBombe(perso, ter, b1);
-				//ExploserBombe(perso, ter, b1); //METTRE EN COMME QUAND SDL
-				/*if(ter.getXY(b1.getPosX() + 2, b1.getPosY()) == '.' && ter.getXY(b1.getPosX() + 2, b1.getPosY()) != ' '){
-					briq--;
-					ter.bri.setNbBrique(briq);
-					cout << "nombre brique : " << ter.bri.getNbBrique() << endl;
-				}
-				
-				
-				if(ter.bri.getNbBrique() == 0){
-					cout << "gagné" << endl;
-					ter.bri.setNbBrique(0);
-				}*/
 				break;
 		// Commandes du 2e joueurs
 		case 'f' :

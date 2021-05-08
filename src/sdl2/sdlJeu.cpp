@@ -232,17 +232,14 @@ void sdlJeu::sdlAff () {
 void sdlJeu::sdlBoucle () {
     SDL_Event events;
     bool quit = false;
-    // tant que ce n'est pas la fin...
     auto t0 = chrono::system_clock::now();
     auto t2 = chrono::system_clock::now();
     while (!quit) {
-        // tant qu'il y a des evenements à traiter (cette boucle n'est pas bloquante)
         auto t1 = chrono::system_clock::now();
         jeu.getBombe(0).setTempsExplo((t1 - t0).count());
         if(jeu.getBombe(0).getTempsExplo() < 1){
             jeu.exploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
             jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(0));
-            cout << "boom" << endl;
             
         }
 
