@@ -212,7 +212,9 @@ void sdlJeu::sdlAff () {
 		
 
 	// Afficher le sprite des perso
-	im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    if(perso.vivant == true) {
+        im_perso.draw(renderer, perso.getPosX() * TAILLE_SPRITE, perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
+    }
     im_in_perso.draw(renderer, in_perso.getPosX() * TAILLE_SPRITE, in_perso.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
     if(b1.estSurLeTerrain == true) {
         im_b1.draw(renderer, b1.getPosX() * TAILLE_SPRITE, b1.getPosY() * TAILLE_SPRITE, TAILLE_SPRITE, TAILLE_SPRITE);
@@ -241,7 +243,7 @@ void sdlJeu::sdlBoucle () {
         jeu.getBombe(0).setTempsExplo((t1 - t0).count());
         if(jeu.getBombe(0).getTempsExplo() < 1){
             jeu.exploserBombe(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(0));
-            jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(0));
+            //jeu.tuerPerso(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(1));
             cout << "boom" << endl;
             
         }
@@ -250,7 +252,7 @@ void sdlJeu::sdlBoucle () {
         jeu.getBombe(1).setTempsExplo((t3 - t2).count());
         if(jeu.getBombe(1).getTempsExplo() < 1){
             jeu.exploserBombe(jeu.getPerso(1), jeu.getTerrain(), jeu.getBombe(1));
-            jeu.supprimerBombe(jeu.getTerrain(), jeu.getBombe(1));
+            jeu.tuerPerso(jeu.getPerso(0), jeu.getTerrain(), jeu.getBombe(1));
             cout << "boom2" << endl;
         }
 

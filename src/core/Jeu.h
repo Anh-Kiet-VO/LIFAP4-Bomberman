@@ -90,13 +90,6 @@ class Jeu {
         const Bombe& getConstBombe(int j) const;
 
         /**
-         * @brief Fonction qui supprime la bombe du terrain
-         * @param ter : terrain
-         * @param b : bombe
-        */
-        void supprimerBombe(Terrain& ter, Bombe& b);
-
-        /**
          * @brief Fonction qui met à jour les positions de la bombe sur le terrain en fonction du personnage
          * @param po : personnage
          * @param ter : terrain
@@ -122,12 +115,19 @@ class Jeu {
 
         /**
          * @brief Permet de placer et de faire exploser les briques autour d'une bombe
-         * @param j : entier
          * @param po : personnage
          * @param ter : terrain
          * @param b : bombe
         */
         void placeEtExplose(Personnage& po, Terrain& ter, Bombe& b);
+
+        /**
+         * @brief Permet de placer et de faire exploser les briques autour d'une bombe
+         * @param po : personnage
+         * @param ter : terrain
+         * @param b : bombe
+        */
+        void tuerPerso(Personnage& po, Terrain& ter, Bombe& b);
 
         /**
          * @brief Permet de réaliser une action en appuyant sur une touche du clavier

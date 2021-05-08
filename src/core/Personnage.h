@@ -23,16 +23,17 @@ class Personnage {
 		Couleur coulPerso;
 
 		/**
-		 * @brief Booléen pour savoir si le joueur est en vie
-		*/
-		bool vivant;
-
-		/**
 		 * @brief Vitesse en X et Y du personnage
 		*/
 		float vitesseX, vitesseY;
 
 	public:
+
+		/**
+		 * @brief Booléen pour savoir si le joueur est en vie
+		*/
+		bool vivant;
+
 		/**
 		 * @brief Position en X et Y du personnage
 		*/
