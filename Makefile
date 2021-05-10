@@ -99,5 +99,5 @@ ifeq ($(OS), Windows_NT)
 	del .\obj\*.o
 	del .\bin\*.exe
 else
-	rm ./obj/*.o ./bin/*.exe
+	rm ./obj/*.o ./bin/*
 endif
