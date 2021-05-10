@@ -21,7 +21,7 @@ Sous TXT, les briques sont représenté par un ``.`` et les murs par des ``#``. 
 
 ### 🕹️ Utilisation :
 Que ce soit en mode TXT ou SDL2, les touches sont les mêmes, la seule différence est bien-sûr l'affichage. Le jeu est fait pour être utilisé sur un clavier AZERTY!
-Pour quitter le jeu, vous pouvez appuyer sur la touche ECHAP.
+Pour quitter le jeu sous SDL, appuyez sur ECHAP. Et pour la version TXT, appuyez sur C.
 ```
 +---------------------------+----------------------------+
 |   Touches du Joueur 1     |     Touches du Joueur 2    |
