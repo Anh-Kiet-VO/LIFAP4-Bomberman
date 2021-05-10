@@ -98,7 +98,6 @@ bool Jeu::actionClavier(const char touche) {
 		case 'n' :
 			placerBombe(perso, ter, b1);
 			updatePosBombe(perso, ter, b1);
-
 			break;
 		// Commandes du 2e joueurs
 		case 'f' :

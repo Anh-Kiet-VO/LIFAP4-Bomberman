@@ -251,8 +251,10 @@ void sdlJeu::sdlBoucle () {
                         briqueExplosee = jeu.actionClavier('d');
                         break;
                     case SDLK_p:
-                        briqueExplosee = jeu.actionClavier('n');
-                        t0 = t1;
+                        if(!jeu.getBombe(0).estSurLeTerrain) {
+                            briqueExplosee = jeu.actionClavier('n');
+                            t0 = t1;
+                        }
                         break;
                     // Commandes du 2e joueur
                     case SDLK_s:
@@ -268,8 +270,10 @@ void sdlJeu::sdlBoucle () {
                         briqueExplosee = jeu.actionClavier('c');
                         break;
                     case SDLK_a:
-                        briqueExplosee = jeu.actionClavier('u');
-                        t2 = t3;
+                        if(!jeu.getBombe(1).estSurLeTerrain) {
+                            briqueExplosee = jeu.actionClavier('u');
+                            t2 = t3;
+                        }
                         break;
                     case SDLK_ESCAPE:
                         quit = true;
