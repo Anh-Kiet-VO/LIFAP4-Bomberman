@@ -46,7 +46,6 @@ class sdlJeu {
         Bomberman font_im;
         SDL_Color font_color;
 
-        Mix_Chunk * soundBombe;
         Mix_Chunk * soundBackground;
         bool withSound;
 

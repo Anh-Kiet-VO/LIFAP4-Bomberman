@@ -65,15 +65,16 @@ void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) {
 	ter.bombeEstExplosee(b.getPosX(), b.getPosY());	
 	b.estSurLeTerrain = false;				
 }
-/*
+
 void Jeu::tuerPerso(Personnage& po, Terrain& ter, Bombe& b) {
-	ter.estTuee(po.getPosX() + b.getPortee(), po.getPosY());
-	ter.estTuee(po.getPosX() - b.getPortee(), po.getPosY());
-	ter.estTuee(po.getPosX(), po.getPosY() + b.getPortee());
-	ter.estTuee(po.getPosX(), po.getPosY() - b.getPortee());
+	ter.estTuee(b.getPosX() + b.getPortee(), b.getPosY());
+	ter.estTuee(b.getPosX(), b.getPosY());
+	ter.estTuee(b.getPosX() - b.getPortee(), b.getPosY());
+	ter.estTuee(b.getPosX(), b.getPosY() + b.getPortee());
+	ter.estTuee(b.getPosX(), b.getPosY() - b.getPortee());
 	po.vivant = false;
 	cout << "mort" << endl;
-}*/
+}
 
 bool Jeu::actionClavier(const char touche) {
 	switch(touche) {
@@ -97,6 +98,7 @@ bool Jeu::actionClavier(const char touche) {
 		case 'n' :
 			placerBombe(perso, ter, b1);
 			updatePosBombe(perso, ter, b1);
+
 			break;
 		// Commandes du 2e joueurs
 		case 'f' :

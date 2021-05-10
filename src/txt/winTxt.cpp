@@ -78,7 +78,6 @@ WinTXT::WinTXT (int dx, int dy) {
     win = new char[dimx*dimy];
     clear();
     termInit();
-    delete win;
 }
 
 void WinTXT::clear (char c) {

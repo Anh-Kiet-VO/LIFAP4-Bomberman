@@ -142,24 +142,24 @@ sdlJeu::sdlJeu () : jeu() {
     // SONS
     if (withSound)
     {
-        soundBombe = Mix_LoadWAV("data/placerBombe.wav");
         soundBackground = Mix_LoadWAV("data/background.wav");
         Mix_VolumeChunk(soundBackground, MIX_MAX_VOLUME/4);
-        if (soundBombe == NULL || soundBackground == NULL) {
-            soundBombe = Mix_LoadWAV("../data/placerBombe.wav");
+        if (soundBackground == NULL) {
             soundBackground = Mix_LoadWAV("../data/background.wav");
         }
-        if (soundBombe == NULL || soundBackground == NULL) {
-                cout << "Failed to load wav! SDL_mixer Error: " << Mix_GetError() << endl; 
-                SDL_Quit();
-                exit(1);
+        if (soundBackground == NULL) {
+            cout << "Failed to load wav! SDL_mixer Error: " << Mix_GetError() << endl; 
+            SDL_Quit();
+            exit(1);
         }
     }
 }
 
 sdlJeu::~sdlJeu () {
+    if (withSound) Mix_Quit();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    //Mix_CloseAudio();
     SDL_Quit();
 }
 
@@ -253,7 +253,6 @@ void sdlJeu::sdlBoucle () {
                     case SDLK_p:
                         briqueExplosee = jeu.actionClavier('n');
                         t0 = t1;
-                        Mix_PlayChannel(-1,soundBombe,0);
                         break;
                     // Commandes du 2e joueur
                     case SDLK_s:
@@ -271,7 +270,6 @@ void sdlJeu::sdlBoucle () {
                     case SDLK_a:
                         briqueExplosee = jeu.actionClavier('u');
                         t2 = t3;
-                        Mix_PlayChannel(-1,soundBombe,0);
                         break;
                     case SDLK_ESCAPE:
                         quit = true;
