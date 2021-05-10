@@ -56,6 +56,7 @@ class sdlJeu {
         Bomberman im_b2;
         Bomberman im_mur;
         Bomberman im_ter;
+        Bomberman im_perdu;
 
         bool souris;
         bool touche;

@@ -67,13 +67,14 @@ void Jeu::exploserBombe(Personnage& po, Terrain& ter, Bombe& b) {
 }
 
 void Jeu::tuerPerso(Personnage& po, Terrain& ter, Bombe& b) {
-	ter.estTuee(b.getPosX() + b.getPortee(), b.getPosY());
-	ter.estTuee(b.getPosX(), b.getPosY());
-	ter.estTuee(b.getPosX() - b.getPortee(), b.getPosY());
-	ter.estTuee(b.getPosX(), b.getPosY() + b.getPortee());
-	ter.estTuee(b.getPosX(), b.getPosY() - b.getPortee());
-	po.vivant = false;
-	cout << "mort" << endl;
+	if( (po.getPosX() == b.getPosX() + b.getPortee() && po.getPosY() == b.getPosY()) || 
+		(po.getPosX() == b.getPosX() - b.getPortee() && po.getPosY() == b.getPosY()) ||
+		(po.getPosY() == b.getPosY() + b.getPortee() && po.getPosX() == b.getPosX()) || 
+		(po.getPosY() == b.getPosY() - b.getPortee() && po.getPosX() == b.getPosX()) || 
+		(po.getPosX() == b.getPosX() && po.getPosY() == b.getPosY())) 
+	{
+		po.vivant = false;	
+	}
 }
 
 bool Jeu::actionClavier(const char touche) {
