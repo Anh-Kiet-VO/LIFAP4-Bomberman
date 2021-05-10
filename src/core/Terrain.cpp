@@ -64,7 +64,7 @@ void Terrain::bombeEstExplosee(unsigned int x, unsigned int y) {
 	if(ter[x][y] == 'o'){
 		ter[x][y] = ' ';
 	}
-}
+}	
 
 void Terrain::estExplosee(unsigned int x, unsigned int y) {
 	assert(x>=0);
