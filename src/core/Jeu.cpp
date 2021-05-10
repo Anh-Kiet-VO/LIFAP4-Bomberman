@@ -82,19 +82,15 @@ bool Jeu::actionClavier(const char touche) {
 		// Commandes du 1er joueur
 		case 'g' :
 			perso.gauche(ter);
-			cout<<"gauche : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 			break;
 		case 'd' :
 			perso.droite(ter);
-			cout<<"droite : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 			break;
 		case 'h' :
 			perso.haut(ter);
-			cout<<"bas : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 			break;
 		case 'b' :
 			perso.bas(ter);
-			cout<<"haut : " << perso.getPosX() << " " << perso.getPosY() << endl; 
 			break;
 		case 'n' :
 			placerBombe(perso, ter, b1);
@@ -103,19 +99,15 @@ bool Jeu::actionClavier(const char touche) {
 		// Commandes du 2e joueurs
 		case 'f' :
 			in_perso.gauche(ter);
-			cout<<"perso2 gauche : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
 			break;
 		case 'c' :
 			in_perso.droite(ter);
-			cout<<"perso2 droite : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
 			break;
 		case 'v' :
 			in_perso.haut(ter);
-			cout<<"perso2 bas : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
 			break;
 		case 'j' :
 			in_perso.bas(ter);
-			cout<<"perso2 haut : " << in_perso.getPosX() << " " << in_perso.getPosY() << endl; 
 			break;
 		case 'u' :
 			placerBombe(in_perso, ter, b2);
