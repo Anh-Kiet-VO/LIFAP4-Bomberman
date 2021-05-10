@@ -77,8 +77,10 @@ void txtBoucle(Jeu & jeu) {
 				jeu.actionClavier('b');
 				break;
 			case 'p':
-				jeu.actionClavier('n');
-				t0 = t1;
+				if(!jeu.getBombe(0).estSurLeTerrain) {
+					jeu.actionClavier('n');
+					t0 = t1;
+				}
 				break;
 			case 'c':
 				ok = false;
@@ -97,8 +99,10 @@ void txtBoucle(Jeu & jeu) {
                 jeu.actionClavier('c');
                 break;
             case 'a':
-                jeu.actionClavier('u');
-				t2 = t3;
+				if(!jeu.getBombe(1).estSurLeTerrain) {
+					jeu.actionClavier('u');
+					t2 = t3;
+				}
                 break;
 		}
 	} while (ok);
