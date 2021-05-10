@@ -89,7 +89,7 @@ La documentation a été générée automatiquement via [Doxygen](https://www.do
 
 Pour pouvoir accéder à la documentation :  
 ```
-doxygen doc/image.doxy
+doxygen doc/doxyfile.doxy
 ```
 
 Puis pour afficher la documentation :
