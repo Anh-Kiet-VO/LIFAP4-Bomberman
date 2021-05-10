@@ -1,11 +1,5 @@
 # LIFAP4 - Bomberman
 
-## TO-DO LIST
-- [ ] Problème chrono Bombe explosion (Version TXT) + limitation de pose de Bombe
-- [ ] Bonus sur le terrain
-- [ ] Condition de victoire
-- [ ] Diapo explication détaillé + MaJ CdC
-
 ## 🎓 Étudiants :
 Kévin CUZIN (p1909458 - kevin.cuzin@etu.univ-lyon1.fr)  
 Anh-Kiet VO (p1907921 - anh-kiet.vo@etu.univ-lyon1.fr)  
